@@ -59,6 +59,8 @@ func _process(delta: float) -> void:
 		$Line2D.show()
 		$Line2D.set_point_position(1, mouse_pos)
 		Input.set_custom_mouse_cursor(wand_cursor)
+		$RayCast2D.target_position = mouse_pos
 	else:
 		$Line2D.hide()
 		Input.set_custom_mouse_cursor(cross_cursor)
+		$RayCast2D.target_position = Vector2(7, 0)

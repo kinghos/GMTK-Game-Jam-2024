@@ -1,29 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3dk70iutvga"]
+[gd_scene load_steps=4 format=3 uid="uid://0atsvbkofj8u"]
 
-[ext_resource type="Script" path="res://scenes/temporary/scaling.gd" id="2_7q65e"]
-[ext_resource type="Texture2D" uid="uid://cw1xnb66ku7ao" path="res://assets/temporary/knight.png" id="2_87wts"]
+[ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="1_b2lgm"]
+[ext_resource type="PackedScene" uid="uid://bqb28c3c0c76j" path="res://scenes/player/player.tscn" id="2_mylql"]
 
-[node name="RigidBody2D" type="RigidBody2D" groups=["Resizables"]]
-position = Vector2(640, 360)
-input_pickable = true
-gravity_scale = 0.0
-script = ExtResource("2_7q65e")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_co38n"]
+size = Vector2(494, 20)
 
-[node name="Area2D" type="Area2D" parent="."]
-scale = Vector2(5, 5)
+[node name="Node2D" type="Node2D"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-polygon = PackedVector2Array(-6, -7, -6, -6, -7, -6, -7, -3, -5, -3, -5, 4, -6, 4, -6, 12, 0, 12, 0, 11, 1, 11, 1, 12, 4, 12, 4, 11, 5, 11, 5, 5, 6, 5, 6, -2, 5, -2, 5, -4, 2, -4, 2, -6, 1, -6, 1, -7)
+[node name="Crate" parent="." instance=ExtResource("1_b2lgm")]
+position = Vector2(440, 177)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-scale = Vector2(5, 5)
-polygon = PackedVector2Array(-6, -7, -6, -6, -7, -6, -7, -3, -5, -3, -5, 4, -6, 4, -6, 12, 0, 12, 0, 11, 1, 11, 1, 12, 4, 12, 4, 11, 5, 11, 5, 5, 6, 5, 6, -2, 5, -2, 5, -4, 2, -4, 2, -6, 1, -6, 1, -7)
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(499, 520)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-scale = Vector2(5, 5)
-texture = ExtResource("2_87wts")
-hframes = 8
-vframes = 8
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_co38n")
 
-[connection signal="input_event" from="Area2D" to="." method="_on_input_event"]
+[node name="Player" parent="." instance=ExtResource("2_mylql")]
+position = Vector2(318, 394)

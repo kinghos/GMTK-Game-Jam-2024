@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bwornrfyehb5y"]
+
+[ext_resource type="Script" path="res://scenes/temporary/scaling.gd" id="2_7q65e"]
+
+[node name="RigidBody2D" type="RigidBody2D" groups=["Resizables"]]
+gravity_scale = 0.0
+script = ExtResource("2_7q65e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+texture_filter = 1
+scale = Vector2(5, 5)
