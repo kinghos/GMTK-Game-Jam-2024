@@ -53,7 +53,7 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var mouse_pos = $Camera2D.get_local_mouse_position()
 	
 	
@@ -77,7 +77,6 @@ func _process(delta: float) -> void:
 			new_scale = collider.get_child(0).scale + Vector2(0.5, 0.5)
 			new_scale.x = min(new_scale.x, MAX_SIZE)
 			new_scale.y = min(new_scale.y, MAX_SIZE)
-			print(new_scale)
 			collider.resize(new_scale)
 		elif collider.is_in_group("Resizables") and Input.is_action_pressed("Secondary"):
 			new_scale = collider.get_child(0).scale - Vector2(0.5, 0.5)
