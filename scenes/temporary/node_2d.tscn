@@ -4,17 +4,24 @@
 [ext_resource type="PackedScene" uid="uid://bqb28c3c0c76j" path="res://scenes/player/player.tscn" id="2_kkxm7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sn07j"]
-size = Vector2(300, 20)
+size = Vector2(306, 22)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_bae16")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(28, 196)
+position = Vector2(72, 333)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(140, 0)
 shape = SubResource("RectangleShape2D_sn07j")
 
 [node name="Player" parent="." instance=ExtResource("2_kkxm7")]
-position = Vector2(99, 104)
+position = Vector2(88, 162)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(421, 310)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(140, 0)
+shape = SubResource("RectangleShape2D_sn07j")
