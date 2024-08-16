@@ -7,7 +7,7 @@ var scale_interval: float = 0.5
 var scale_change: float
 
 func resize(new_size: Vector2):
-	var resize_tween = get_tree().create_tween().set_trans(Tween.TRANS_CUBIC)
+	var resize_tween = get_tree().create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 	resize_tween.tween_property($CollisionShape2D, "scale", new_size, 1)
 	await resize_tween.finished
 
