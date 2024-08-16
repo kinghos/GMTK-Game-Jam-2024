@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 
 window/size/viewport_width=1080
 window/size/viewport_height=720
+mouse_cursor/custom_image="res://assets/graphics/cursors/wandcursor.png"
 
 [editor]
 
@@ -58,7 +59,8 @@ jump={
 
 [physics]
 
-common/physics_interpolation=true
+common/snap/snap_2d_transforms_to_pixel=true
+common/vsync/vsync_mode=1
 
 [rendering]
 

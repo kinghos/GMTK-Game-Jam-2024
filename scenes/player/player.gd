@@ -7,9 +7,9 @@ const MAGIC_RADIUS = 300
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
+var cross_cursor: Resource = load("res://assets/graphics/cursors/cross.png")
+var wand_cursor: Resource = load("res://assets/graphics/cursors/wandcursor.png")
 @onready var animated_sprite = $AnimatedSprite2D
-
 
 
 func _physics_process(delta):
@@ -49,12 +49,15 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _process(delta: float) -> void:
-	var mouse_pos = to_local(get_viewport().get_mouse_position())
+	var mouse_pos = $Camera2D.get_local_mouse_position()
+	
 	
 	# Find difference of vectors and see if its less than the max radius
 	var vector_diff = mouse_pos - to_local(position)
 	if vector_diff.length() < MAGIC_RADIUS:
 		$Line2D.show()
 		$Line2D.set_point_position(1, mouse_pos)
+		Input.set_custom_mouse_cursor(wand_cursor)
 	else:
 		$Line2D.hide()
+		Input.set_custom_mouse_cursor(cross_cursor)
