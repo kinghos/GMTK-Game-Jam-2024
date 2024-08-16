@@ -49,4 +49,11 @@ func _physics_process(delta):
 
 func _process(delta: float) -> void:
 	var mouse_pos = to_local(get_viewport().get_mouse_position())
-	$Line2D.set_point_position(1, mouse_pos)
+	
+	# Find difference of vectors and see if its less than the max radius
+	var vector_diff = mouse_pos - to_local(position)
+	if vector_diff.length() < MAGIC_RADIUS:
+		$Line2D.show()
+		$Line2D.set_point_position(1, mouse_pos)
+	else:
+		$Line2D.hide()
