@@ -1,13 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5newcuu5i6qc"]
+[gd_scene load_steps=3 format=3 uid="uid://b5newcuu5i6qc"]
 
-[ext_resource type="Script" path="res://scenes/temporary/node_2d.gd" id="1_bae16"]
 [ext_resource type="PackedScene" uid="uid://bqb28c3c0c76j" path="res://scenes/player/player.tscn" id="2_kkxm7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sn07j"]
 size = Vector2(306, 22)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_bae16")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(72, 333)
