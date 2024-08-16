@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://ylq8jvbdmlgm"]
+[gd_scene load_steps=3 format=3 uid="uid://c3dk70iutvga"]
 
 [ext_resource type="Script" path="res://scenes/temporary/scaling.gd" id="2_7q65e"]
 [ext_resource type="Texture2D" uid="uid://cw1xnb66ku7ao" path="res://assets/temporary/knight.png" id="2_87wts"]
 
-[node name="RigidBody2D" type="RigidBody2D" groups=["Objects"]]
+[node name="RigidBody2D" type="RigidBody2D" groups=["Resizables"]]
 position = Vector2(640, 360)
 input_pickable = true
 gravity_scale = 0.0
@@ -16,7 +16,6 @@ scale = Vector2(5, 5)
 polygon = PackedVector2Array(-6, -7, -6, -6, -7, -6, -7, -3, -5, -3, -5, 4, -6, 4, -6, 12, 0, 12, 0, 11, 1, 11, 1, 12, 4, 12, 4, 11, 5, 11, 5, 5, 6, 5, 6, -2, 5, -2, 5, -4, 2, -4, 2, -6, 1, -6, 1, -7)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
 scale = Vector2(5, 5)
 polygon = PackedVector2Array(-6, -7, -6, -6, -7, -6, -7, -3, -5, -3, -5, 4, -6, 4, -6, 12, 0, 12, 0, 11, 1, 11, 1, 12, 4, 12, 4, 11, 5, 11, 5, 5, 6, 5, 6, -2, 5, -2, 5, -4, 2, -4, 2, -6, 1, -6, 1, -7)
 

@@ -28,9 +28,10 @@ func _physics_process(delta):
 	# Flip sprite
 	if direction > 0:
 		animated_sprite.flip_h = false
+		$Line2D.set_point_position(0, Vector2(7, 0))
 	elif direction < 0:
 		animated_sprite.flip_h = true
-		$Line2D
+		$Line2D.set_point_position(0, Vector2(-7, 0))
 	
 	# Play animations
 	#if is_on_floor():
