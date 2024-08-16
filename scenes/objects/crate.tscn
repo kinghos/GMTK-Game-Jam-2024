@@ -7,8 +7,9 @@
 size = Vector2(157, 161)
 
 [node name="Crate" instance=ExtResource("1_ja3bh")]
+gravity_scale = 1.0
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="CollisionShape2D" parent="." index="0" groups=["Resizables"]]
 position = Vector2(-9.53674e-07, -4.76837e-07)
 shape = SubResource("RectangleShape2D_wywf6")
 

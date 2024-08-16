@@ -7,8 +7,7 @@ gravity_scale = 0.0
 script = ExtResource("2_7q65e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2(1, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" groups=["Resizables"]]
 texture_filter = 1
 scale = Vector2(5, 5)

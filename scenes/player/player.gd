@@ -5,11 +5,15 @@ const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 const MAGIC_RADIUS = 300
 
+@export var MAX_SIZE: float = 2
+@export var MIN_SIZE: float = 0.2
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var cross_cursor: Resource = load("res://assets/graphics/cursors/cross.png")
 var wand_cursor: Resource = load("res://assets/graphics/cursors/wandcursor.png")
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var ray_cast_2d: RayCast2D = $RayCast2D
 
 
 func _physics_process(delta):
@@ -63,4 +67,21 @@ func _process(delta: float) -> void:
 	else:
 		$Line2D.hide()
 		Input.set_custom_mouse_cursor(cross_cursor)
-		$RayCast2D.target_position = Vector2(7, 0)
+		ray_cast_2d.target_position = Vector2(7, 0)
+		
+	if ray_cast_2d.is_colliding():
+		var new_scale: Vector2
+		var collider = ray_cast_2d.get_collider()
+		
+		if collider.is_in_group("Resizables") and Input.is_action_pressed("Primary"):
+			new_scale = collider.get_child(0).scale + Vector2(0.5, 0.5)
+			new_scale.x = min(new_scale.x, MAX_SIZE)
+			new_scale.y = min(new_scale.y, MAX_SIZE)
+			print(new_scale)
+			collider.resize(new_scale)
+		elif collider.is_in_group("Resizables") and Input.is_action_pressed("Secondary"):
+			new_scale = collider.get_child(0).scale - Vector2(0.5, 0.5)
+			new_scale.x = max(new_scale.x, MIN_SIZE)
+			new_scale.y = max(new_scale.y, MIN_SIZE)
+			collider.resize(new_scale)
+			
