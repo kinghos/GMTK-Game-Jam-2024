@@ -1,6 +1,5 @@
-[gd_scene load_steps=11 format=3 uid="uid://b5newcuu5i6qc"]
+[gd_scene load_steps=10 format=3 uid="uid://b5newcuu5i6qc"]
 
-[ext_resource type="Script" path="res://scenes/temporary/node_2d.gd" id="1_bae16"]
 [ext_resource type="Script" path="res://scenes/temporary/character_body_2d.gd" id="2_wvona"]
 [ext_resource type="Texture2D" uid="uid://cw1xnb66ku7ao" path="res://assets/temporary/knight.png" id="3_uo0do"]
 
@@ -47,7 +46,6 @@ animations = [{
 size = Vector2(300, 20)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_bae16")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(149, 65)
