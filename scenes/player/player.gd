@@ -83,20 +83,21 @@ func _process(_delta: float) -> void:
 		if collider.is_in_group("Resizables"):
 			var current_scale: Vector2 = collider.get_child(0).scale
 			var new_values: Array = []
-			var new_scale: Vector2 = current_scale
-			var new_mass: float
-			var new_friction: float
+			var resize_duration: float = 1
 			
-			if Input.is_action_pressed("Primary") and scale_presets.has(current_scale):
+			if !scale_presets.has(current_scale):
+				resize_duration = 0.5
+				return
+			if Input.is_action_pressed("Primary"):
 				new_values = get_adjacent_scale(current_scale, 1)
-			elif Input.is_action_pressed("Secondary") and scale_presets.has(current_scale):
+			elif Input.is_action_pressed("Secondary"):
 				new_values = get_adjacent_scale(current_scale, -1)
 			
 			if new_values:
-				new_scale = new_values[0]
-				new_mass = new_values[1]
-				new_friction = new_values[2]
-				collider.resize(new_scale, new_mass, new_friction)
+				var new_scale: Vector2 = new_values[0]
+				var new_mass: float = new_values[1]
+				var new_friction: float = new_values[2]
+				collider.resize(new_scale, new_mass, new_friction, resize_duration)
 				new_values = []
 
 func get_adjacent_scale(current_scale: Vector2, direction: int):
