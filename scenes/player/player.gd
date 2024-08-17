@@ -58,7 +58,6 @@ func _physics_process(delta):
 func _process(_delta: float) -> void:
 	var mouse_pos = $Camera2D.get_local_mouse_position()
 	
-	
 	# Find difference of vectors and see if its less than the max radius
 	var vector_diff = mouse_pos - to_local(position)
 	if vector_diff.length() < MAGIC_RADIUS:
@@ -85,4 +84,3 @@ func _process(_delta: float) -> void:
 			new_scale.x = max(new_scale.x, MIN_SIZE)
 			new_scale.y = max(new_scale.y, MIN_SIZE)
 			collider.resize(new_scale)
-			

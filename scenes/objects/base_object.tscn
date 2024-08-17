@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scenes/temporary/scaling.gd" id="1_nwegr"]
 
 [node name="RigidBody2D" type="RigidBody2D" groups=["Resizables"]]
+input_pickable = true
 gravity_scale = 0.0
 script = ExtResource("1_nwegr")
 
@@ -11,3 +12,6 @@ script = ExtResource("1_nwegr")
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" groups=["Resizables"]]
 texture_filter = 1
 scale = Vector2(5, 5)
+
+[connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_enter"]
+[connection signal="mouse_shape_exited" from="." to="." method="_on_mouse_exit"]
