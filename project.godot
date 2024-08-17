@@ -20,6 +20,10 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 mouse_cursor/custom_image="res://assets/graphics/cursors/wandcursor.png"
 
+[dotnet]
+
+project/assembly_name="GMTK Game Jam 2024"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
