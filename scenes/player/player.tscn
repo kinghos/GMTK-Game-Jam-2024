@@ -109,6 +109,7 @@ shape = SubResource("CapsuleShape2D_3mord")
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(7, 0, 8, 0)
 width = 2.0
+default_color = Color(0.284774, 0.60126, 0.759265, 1)
 begin_cap_mode = 2
 end_cap_mode = 2
 
