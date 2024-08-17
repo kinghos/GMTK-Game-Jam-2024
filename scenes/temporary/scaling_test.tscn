@@ -8,9 +8,6 @@ size = Vector2(494, 20)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="Crate" parent="." instance=ExtResource("1_b2lgm")]
-position = Vector2(440, 177)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(499, 520)
 
@@ -19,3 +16,9 @@ shape = SubResource("RectangleShape2D_co38n")
 
 [node name="Player" parent="." instance=ExtResource("2_mylql")]
 position = Vector2(318, 394)
+
+[node name="Crate" parent="." instance=ExtResource("1_b2lgm")]
+position = Vector2(642, 418)
+
+[node name="Crate2" parent="." instance=ExtResource("1_b2lgm")]
+position = Vector2(470, 415)
