@@ -11,7 +11,7 @@ var scale_presets: Dictionary = {
 	# scale: [mass, friction]
 	Vector2(0.1, 0.1): [0.5, 0.4],
 	Vector2(0.2, 0.2): [1, 0.4],
-	Vector2(0.5, 0.5): [2, 0.95],
+	Vector2(0.5, 0.5): [2, 0.45],
 	Vector2(1.0, 1.0): [4, 1]
 	}
 =======
@@ -90,7 +90,7 @@ func _process(_delta: float) -> void:
 			var new_scale: Vector2 = current_scale
 <<<<<<< Updated upstream
 			var new_mass: float
-			var new_friction: int
+			var new_friction: float
 			
 			if Input.is_action_pressed("Primary") and scale_presets.has(current_scale):
 				new_values = get_adjacent_scale(current_scale, 1)
@@ -101,7 +101,6 @@ func _process(_delta: float) -> void:
 				new_scale = new_values[0]
 				new_mass = new_values[1]
 				new_friction = new_values[2]
-				print(new_values)
 				collider.resize(new_scale, new_mass, new_friction)
 				new_values = []
 =======
@@ -139,7 +138,10 @@ func push_object():
 		if col.get_collider() is RigidBody2D:
 <<<<<<< Updated upstream
 			col.get_collider().apply_central_force(col.get_normal() * -push_force) 
+<<<<<<< Updated upstream
 			print("Friction: %s"%col.get_collider().physics_material_override.friction)
 =======
 			col.get_collider().apply_central_force(col.get_normal() * -push_force)
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

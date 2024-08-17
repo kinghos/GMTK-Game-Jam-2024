@@ -8,9 +8,13 @@ func _ready():
 	$CollisionShape2D.scale = Vector2(0.2, 0.2)
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 func resize(new_size: Vector2, new_mass: float, new_friction: int):
 =======
 func resize(new_size: Vector2):
+>>>>>>> Stashed changes
+=======
+func resize(new_size: Vector2, new_mass: float, new_friction: float):
 >>>>>>> Stashed changes
 	if (resize_tween and resize_tween.is_running()) or not hovering:
 		return
@@ -19,8 +23,12 @@ func resize(new_size: Vector2):
 	resize_tween.tween_property($CollisionShape2D, "scale", new_size, 1)
 <<<<<<< Updated upstream
 	resize_tween.tween_property($".", "mass", new_mass, 1)
+<<<<<<< Updated upstream
 	$".".physics_material_override.friction = new_friction
 =======
+>>>>>>> Stashed changes
+=======
+	$".".physics_material_override.set_friction(new_friction)
 >>>>>>> Stashed changes
 	
 	await resize_tween.finished
