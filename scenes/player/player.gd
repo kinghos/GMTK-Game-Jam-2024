@@ -4,8 +4,7 @@ const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 const MAGIC_RADIUS = 300
 
-@export var MAX_SIZE: float = 2
-@export var MIN_SIZE: float = 0.1
+var scale_presets: Array = [Vector2(0.1, 0.1), Vector2(0.2, 0.2), Vector2(0.5, 0.5), Vector2(1.0, 1.0), Vector2(1.5, 1.5), Vector2(2.0, 2.0)]
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -13,7 +12,6 @@ var cross_cursor: Resource = load("res://assets/graphics/cursors/cross.png")
 var wand_cursor: Resource = load("res://assets/graphics/cursors/wandcursor.png")
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
-
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -56,7 +54,7 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _process(_delta: float) -> void:
-	var mouse_pos = to_local(get_viewport().get_mouse_position())
+	var mouse_pos = $Camera2D.get_local_mouse_position()
 	
 	# Find difference of vectors and see if its less than the max radius
 	var vector_diff = mouse_pos - to_local(position)
@@ -71,16 +69,25 @@ func _process(_delta: float) -> void:
 		ray_cast_2d.target_position = Vector2(7, 0)
 		
 	if ray_cast_2d.is_colliding():
-		var new_scale: Vector2
 		var collider = ray_cast_2d.get_collider()
 		
-		if collider.is_in_group("Resizables") and Input.is_action_pressed("Primary"):
-			new_scale = collider.get_child(0).scale + Vector2(0.5, 0.5)
-			new_scale.x = min(new_scale.x, MAX_SIZE)
-			new_scale.y = min(new_scale.y, MAX_SIZE)
-			collider.resize(new_scale)
-		elif collider.is_in_group("Resizables") and Input.is_action_pressed("Secondary"):
-			new_scale = collider.get_child(0).scale - Vector2(0.5, 0.5)
-			new_scale.x = max(new_scale.x, MIN_SIZE)
-			new_scale.y = max(new_scale.y, MIN_SIZE)
-			collider.resize(new_scale)
+		if collider.is_in_group("Resizables"):
+			var current_scale: Vector2 = collider.get_child(0).scale
+			var new_scale: Vector2 = current_scale
+			
+			if Input.is_action_pressed("Primary"):
+				new_scale = get_adjacent_scale(current_scale, 1)
+			elif Input.is_action_pressed("Secondary"):
+				new_scale = get_adjacent_scale(current_scale, -1)
+			
+			if new_scale != current_scale:
+				collider.resize(new_scale)
+
+func get_adjacent_scale(current_scale: Vector2, direction: int):
+	var index = scale_presets.find(current_scale)
+	index += direction
+	
+	if index >= 0 and index < scale_presets.size():
+		return scale_presets[index]
+	else:
+		return current_scale
