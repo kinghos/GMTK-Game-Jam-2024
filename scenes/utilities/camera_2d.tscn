@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://415h1nk31evj"]
+
+[ext_resource type="Script" path="res://scenes/utilities/camera_2d.gd" id="1_xap32"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ofck"]
+size = Vector2(2, 1080)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_13q4v"]
+size = Vector2(2, 1080)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iyyia"]
+size = Vector2(1922, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4yb0i"]
+size = Vector2(1922, 2)
+
+[node name="Camera2D" type="Camera2D"]
+script = ExtResource("1_xap32")
+
+[node name="RightBoundary" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBoundary"]
+position = Vector2(960, 0)
+shape = SubResource("RectangleShape2D_7ofck")
+
+[node name="LeftBoundary" type="Area2D" parent="."]
+position = Vector2(-960, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBoundary"]
+shape = SubResource("RectangleShape2D_13q4v")
+
+[node name="TopBoundary" type="Area2D" parent="."]
+position = Vector2(0, -540)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopBoundary"]
+shape = SubResource("RectangleShape2D_iyyia")
+
+[node name="BottomBoundary" type="Area2D" parent="."]
+position = Vector2(0, 540)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomBoundary"]
+shape = SubResource("RectangleShape2D_4yb0i")
