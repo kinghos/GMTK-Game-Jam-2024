@@ -72,6 +72,7 @@ tile_set = SubResource("TileSet_2yu6h")
 
 [node name="Player" parent="." index="2" instance=ExtResource("3_nynhs")]
 position = Vector2(-224, 720)
+skull_color = Color(0, 0, 0, 1)
 
 [node name="Crate" parent="." index="3" instance=ExtResource("4_r7reg")]
 position = Vector2(-7, 822)

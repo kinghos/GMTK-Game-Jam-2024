@@ -21,7 +21,7 @@ var scale_presets: Dictionary = {
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var cross_cursor: Resource = load("res://assets/graphics/cursors/cross.png")
 var wand_cursor: Resource = load("res://assets/graphics/cursors/wandcursor.png")
-@onready var animated_sprite = $AnimatedSprite2D
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 
 func _physics_process(delta):
@@ -45,18 +45,7 @@ func _physics_process(delta):
 		animated_sprite.flip_h = true
 		$Line2D.set_point_position(0, Vector2(-7, 0))
 		$RayCast2D.position = Vector2(-8, 0)
-	else:
-		animated_sprite.stop()
 	
-	# Play animations
-	if is_on_floor():
-		if velocity == Vector2.ZERO:
-			animated_sprite.play("idle")
-		else:
-			animated_sprite.play("walk")
-	else:
-		#animated_sprite.play("jump")
-		pass
 	
 	if direction:
 		velocity.x = direction * SPEED
@@ -67,6 +56,14 @@ func _physics_process(delta):
 	push_object()
 
 func _process(_delta: float) -> void:
+	# Play animations
+	if is_on_floor():
+		if velocity == Vector2.ZERO:
+			animated_sprite.play("idle")
+			print(animated_sprite.animation)
+		else:
+			animated_sprite.play("walk")
+			
 	var mouse_pos = to_local(get_viewport().get_camera_2d().get_global_mouse_position())
 	
 	# Find difference of vectors and see if its less than the max radius

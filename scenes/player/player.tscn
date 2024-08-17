@@ -7,35 +7,35 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3mord"]
 radius = 11.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cjaal"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0k30"]
 atlas = ExtResource("2_oiitm")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lvxng"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_084wj"]
 atlas = ExtResource("2_oiitm")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f8i6x"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_x61gq"]
 atlas = ExtResource("2_oiitm")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_35keh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7mjr"]
 atlas = ExtResource("2_oiitm")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x2agn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bo0h"]
 atlas = ExtResource("2_oiitm")
 region = Rect2(128, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wouj6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_m7187"]
 atlas = ExtResource("2_oiitm")
 region = Rect2(160, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_kj7ga"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_s06mq"]
 atlas = ExtResource("2_oiitm")
 region = Rect2(192, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_edm4i"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmt0u"]
 atlas = ExtResource("2_oiitm")
 region = Rect2(224, 0, 32, 32)
 
@@ -91,32 +91,32 @@ region = Rect2(352, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cjaal")
+"texture": SubResource("AtlasTexture_b0k30")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_lvxng")
+"texture": SubResource("AtlasTexture_084wj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f8i6x")
+"texture": SubResource("AtlasTexture_x61gq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_35keh")
+"texture": SubResource("AtlasTexture_h7mjr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_x2agn")
+"texture": SubResource("AtlasTexture_3bo0h")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wouj6")
+"texture": SubResource("AtlasTexture_m7187")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kj7ga")
+"texture": SubResource("AtlasTexture_s06mq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_edm4i")
+"texture": SubResource("AtlasTexture_hmt0u")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -166,7 +166,6 @@ polygon = PackedVector2Array(2, 13, 9, 13, 9, 4, 10, 3, 10, -1, 13, -3, 13, -12,
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 15
 script = ExtResource("1_ro3ok")
-skull_color = Color(0.415686, 0.745098, 0.188235, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
