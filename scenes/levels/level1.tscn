@@ -87,3 +87,4 @@ texture = ExtResource("5_e8wnk")
 
 [node name="Turret" parent="." index="6" instance=ExtResource("7_5i8s7")]
 position = Vector2(896, 608)
+color = Color(0, 0, 0, 1)

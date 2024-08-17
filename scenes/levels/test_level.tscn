@@ -50,6 +50,6 @@ text = "0"
 position = Vector2(545, 337)
 
 [node name="Turret" parent="." index="6" instance=ExtResource("5_c845s")]
-position = Vector2(645, 445)
+position = Vector2(647, 450)
 
 [connection signal="body_entered" from="Scale" to="Scale" method="_on_body_entered"]
