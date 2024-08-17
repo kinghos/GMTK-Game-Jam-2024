@@ -99,6 +99,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+collision_mask = 15
 script = ExtResource("1_ro3ok")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -115,10 +116,6 @@ end_cap_mode = 2
 position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_c72jt")
 animation = &"walk"
-frame = 5
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(6, 0)

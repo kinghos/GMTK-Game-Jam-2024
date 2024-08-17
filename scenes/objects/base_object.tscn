@@ -3,6 +3,8 @@
 [ext_resource type="Script" path="res://scenes/temporary/scaling.gd" id="1_nwegr"]
 
 [node name="RigidBody2D" type="RigidBody2D" groups=["Resizables"]]
+collision_layer = 2
+collision_mask = 13
 input_pickable = true
 gravity_scale = 0.0
 script = ExtResource("1_nwegr")
