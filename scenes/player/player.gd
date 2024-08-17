@@ -3,6 +3,7 @@ extends CharacterBody2D
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 
+@export var skull_color: Color
 @export var MAGIC_RADIUS = 300
 @export var push_force = 500
 

@@ -89,7 +89,7 @@ tracks/3/path = NodePath("Skull:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(1, 1.4),
+"times": PackedFloat32Array(0.75, 1.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -115,14 +115,15 @@ _data = {
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_su747"]
 particle_flag_disable_z = true
+emission_shape = 2
+emission_sphere_radius = 2.0
 angle_min = -720.0
 angle_max = 720.0
 spread = 180.0
 initial_velocity_min = 158.86
 initial_velocity_max = 249.7
-gravity = Vector3(0, 0, 0)
-scale_min = 0.2
-scale_max = 0.6
+gravity = Vector3(0, 1000, 0)
+scale_min = 0.7
 
 [node name="Death" type="Node2D"]
 position = Vector2(0, -7.6703e-05)
@@ -140,8 +141,8 @@ emitting = false
 amount = 50
 process_material = SubResource("ParticleProcessMaterial_su747")
 texture = ExtResource("2_4xgvf")
-lifetime = 0.2
+lifetime = 0.7
 one_shot = true
 speed_scale = 0.6
-explosiveness = 0.4
+explosiveness = 1.0
 randomness = 0.2

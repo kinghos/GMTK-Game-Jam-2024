@@ -77,3 +77,4 @@ position = Vector2(113, 590)
 
 [node name="Turret" parent="." index="6" instance=ExtResource("5_glje2")]
 position = Vector2(764, 604)
+skull_color = Color(0.447059, 0.427451, 0.937255, 1)

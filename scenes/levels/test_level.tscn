@@ -30,6 +30,7 @@ inertia = 0.1
 
 [node name="Player" parent="." index="3" instance=ExtResource("3_oeujk")]
 position = Vector2(304, 297)
+skull_color = Color(0, 0, 0, 1)
 
 [node name="Scale" type="Area2D" parent="." index="4"]
 position = Vector2(455, 433)
@@ -51,5 +52,7 @@ position = Vector2(545, 337)
 
 [node name="Turret" parent="." index="6" instance=ExtResource("5_c845s")]
 position = Vector2(647, 450)
+initial_light_color = Color(0.407843, 0.384314, 0.854902, 1)
+alert_light_color = Color(0.752941, 0, 0, 1)
 
 [connection signal="body_entered" from="Scale" to="Scale" method="_on_body_entered"]
