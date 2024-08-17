@@ -7,10 +7,11 @@ const JUMP_VELOCITY = -300.0
 @export var push_force = 500
 
 var scale_presets: Dictionary = {
-	Vector2(0.1, 0.1): 0.5,
-	Vector2(0.2, 0.2): 1,
-	Vector2(0.5, 0.5): 1.5,
-	Vector2(1.0, 1.0): 2
+	# scale: [mass, friction]
+	Vector2(0.1, 0.1): [0.5, 0.4],
+	Vector2(0.2, 0.2): [1, 0.4],
+	Vector2(0.5, 0.5): [2, 0.95],
+	Vector2(1.0, 1.0): [4, 1]
 	}
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -81,20 +82,23 @@ func _process(_delta: float) -> void:
 		
 		if collider.is_in_group("Resizables"):
 			var current_scale: Vector2 = collider.get_child(0).scale
+			var new_values: Array = []
 			var new_scale: Vector2 = current_scale
 			var new_mass: float
+			var new_friction: int
 			
-			if Input.is_action_pressed("Primary"):
-				var new_values = get_adjacent_scale(current_scale, 1)
+			if Input.is_action_pressed("Primary") and scale_presets.has(current_scale):
+				new_values = get_adjacent_scale(current_scale, 1)
+			elif Input.is_action_pressed("Secondary") and scale_presets.has(current_scale):
+				new_values = get_adjacent_scale(current_scale, -1)
+			
+			if new_values:
 				new_scale = new_values[0]
 				new_mass = new_values[1]
-			elif Input.is_action_pressed("Secondary"):
-				var new_values = get_adjacent_scale(current_scale, -1)
-				new_scale = new_values[0]
-				new_mass = new_values[1]
-			
-			if new_scale != current_scale:
-				collider.resize(new_scale, new_mass)
+				new_friction = new_values[2]
+				print(new_values)
+				collider.resize(new_scale, new_mass, new_friction)
+				new_values = []
 
 func get_adjacent_scale(current_scale: Vector2, direction: int):
 	var scales = scale_presets.keys()
@@ -103,12 +107,13 @@ func get_adjacent_scale(current_scale: Vector2, direction: int):
 	
 	if index >= 0 and index < scales.size():
 		var new_scale = scales[index]
-		return [new_scale, scale_presets[new_scale]]
+		return [new_scale, scale_presets[new_scale][0], scale_presets[new_scale][1]]
 	else:
-		return [current_scale, scale_presets[current_scale]]
+		return [current_scale, scale_presets[current_scale][0], scale_presets[current_scale][1]]
 
 func push_object():
 	for i in get_slide_collision_count():
 		var col = get_slide_collision(i)
 		if col.get_collider() is RigidBody2D:
 			col.get_collider().apply_central_force(col.get_normal() * -push_force) 
+			print("Friction: %s"%col.get_collider().physics_material_override.friction)

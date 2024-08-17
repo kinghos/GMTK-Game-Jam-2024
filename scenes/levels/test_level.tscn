@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://eorunkwj36vv"]
+[gd_scene load_steps=7 format=3 uid="uid://d3f6p3swm1ydx"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_84xje"]
 [ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="2_eov0c"]
@@ -45,14 +45,7 @@ offset_right = 19.0
 offset_bottom = 41.0
 text = "0"
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="." index="5"]
-position = Vector2(646, 317)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" index="0"]
-position = Vector2(-5, 117)
-shape = SubResource("RectangleShape2D_autsf")
-
-[node name="Camera2D" parent="." index="6"]
+[node name="Camera2D" parent="." index="5"]
 position = Vector2(545, 337)
 
 [connection signal="body_entered" from="Scale" to="Scale" method="_on_body_entered"]
