@@ -3,7 +3,6 @@ extends Area2D
 @onready var sprite_2d = $Sprite2D
 signal pressed(switch_id)
 
-
 func _ready():
 	sprite_2d.animation = "up"
 

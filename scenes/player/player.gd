@@ -46,7 +46,6 @@ func _physics_process(delta):
 		$Line2D.set_point_position(0, Vector2(-7, 0))
 		$RayCast2D.position = Vector2(-8, 0)
 	
-	
 	if direction:
 		velocity.x = direction * SPEED
 	else:
@@ -60,7 +59,6 @@ func _process(_delta: float) -> void:
 	if is_on_floor():
 		if velocity == Vector2.ZERO:
 			animated_sprite.play("idle")
-			print(animated_sprite.animation)
 		else:
 			animated_sprite.play("walk")
 			

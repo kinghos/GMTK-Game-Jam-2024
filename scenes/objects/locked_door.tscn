@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://vwmeby253gup"]
+[gd_scene load_steps=5 format=3 uid="uid://cellt2ya3waj0"]
 
 [ext_resource type="Script" path="res://scenes/objects/locked_door.gd" id="1_coiu6"]
 [ext_resource type="Texture2D" uid="uid://dl6gq8bkpvxv2" path="res://assets/graphics/cursors/cross.png" id="2_03nea"]

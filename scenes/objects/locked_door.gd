@@ -2,7 +2,7 @@ extends StaticBody2D
 
 @onready var sprite_2d = $Sprite2D
 @onready var collision_shape_2d = $CollisionShape2D
-@onready var lock_colour = $LockColour
+#@onready var lock_colour = $LockColour
 @export var trigger_switch: Node
 @export var colour: Color = Color("#bd314b")
 
