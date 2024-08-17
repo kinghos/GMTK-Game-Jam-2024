@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bqb28c3c0c76j" path="res://scenes/player/player.tscn" id="3_nynhs"]
 [ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="4_r7reg"]
 [ext_resource type="Texture2D" uid="uid://7a2kmkod0c2w" path="res://assets/graphics/doors/Level_1_Castle_Door.png" id="5_e8wnk"]
-[ext_resource type="PackedScene" uid="uid://c2rf2bqmkt8dr" path="res://scenes/enemies/turret.tscn" id="7_5i8s7"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/turret.tscn" id="7_5i8s7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lvik1"]
 texture = ExtResource("2_fdf2m")
