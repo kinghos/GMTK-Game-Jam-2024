@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://eorunkwj36vv"]
+
+[ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_84xje"]
+[ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="2_eov0c"]
+[ext_resource type="PackedScene" uid="uid://bqb28c3c0c76j" path="res://scenes/player/player.tscn" id="3_oeujk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e5x20"]
+size = Vector2(494, 20)
+
+[node name="BaseLevel" instance=ExtResource("1_84xje")]
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." index="0"]
+position = Vector2(493, 485)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="0"]
+shape = SubResource("RectangleShape2D_e5x20")
+
+[node name="Crate" parent="." index="1" instance=ExtResource("2_eov0c")]
+position = Vector2(467, 132)
+
+[node name="Crate2" parent="." index="2" instance=ExtResource("2_eov0c")]
+position = Vector2(651, 133)
+
+[node name="Player" parent="." index="3" instance=ExtResource("3_oeujk")]
+position = Vector2(304, 297)
