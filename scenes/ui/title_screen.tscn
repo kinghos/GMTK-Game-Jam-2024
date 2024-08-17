@@ -1,74 +1,75 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6ov1c07brllg"]
+[gd_scene load_steps=4 format=3 uid="uid://b6ov1c07brllg"]
 
 [ext_resource type="Script" path="res://scenes/ui/title_screen.gd" id="1_v1y6f"]
-[ext_resource type="Texture2D" uid="uid://jswptmwsfqjo" path="res://assets/graphics/misc/title_card.png" id="2_dcsig"]
+[ext_resource type="Texture2D" uid="uid://jswptmwsfqjo" path="res://assets/graphics/misc/title_card.png" id="2_gn1v6"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
-script = ExtResource("1_v1y6f")
+[sub_resource type="SystemFont" id="SystemFont_i6skl"]
+font_names = PackedStringArray("Franklin Gothic")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-anchors_preset = -1
-anchor_right = 0.37
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-grow_vertical = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-color = Color(0, 0, 0, 0.372549)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchors_preset = -1
-anchor_left = 0.1
-anchor_top = 0.2
-anchor_right = 0.25
-anchor_bottom = 0.8
-offset_right = 40.0
-offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-alignment = 1
+script = ExtResource("1_v1y6f")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.8
+offset_left = -95.0
+offset_right = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+alignment = 2
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
-text = "START"
+theme_override_fonts/font = SubResource("SystemFont_i6skl")
+theme_override_font_sizes/font_size = 30
+text = "NEW GAME"
 
 [node name="LevelButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_i6skl")
+theme_override_font_sizes/font_size = 30
 text = "LEVEL SELECT"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_i6skl")
+theme_override_font_sizes/font_size = 30
 text = "OPTIONS"
 
 [node name="CreditsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_i6skl")
+theme_override_font_sizes/font_size = 30
 text = "CREDITS"
 
 [node name="ExitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
+theme_override_fonts/font = SubResource("SystemFont_i6skl")
+theme_override_font_sizes/font_size = 30
 text = "BYE BYE"
 
-[node name="Title" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.832
-anchor_top = 0.093
-anchor_right = 0.832
-anchor_bottom = 0.093
-offset_left = -645.0
+anchor_left = 0.5
+anchor_top = 0.1
+anchor_right = 0.5
+anchor_bottom = 0.1
+offset_left = -322.5
+offset_right = 322.5
 offset_bottom = 278.0
 grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("2_dcsig")
-
-[node name="Lizard" type="TextureRect" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+texture = ExtResource("2_gn1v6")
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/LevelButton" to="." method="_on_level_button_pressed"]
