@@ -146,3 +146,5 @@ target_position = Vector2(157, 0)
 [node name="LeftCast" type="RayCast2D" parent="." index="6"]
 position = Vector2(1, -30)
 target_position = Vector2(-157, 0)
+
+[connection signal="body_entered" from="KillArea" to="." method="_on_kill_area_body_entered"]

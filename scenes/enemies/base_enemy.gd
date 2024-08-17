@@ -5,4 +5,6 @@ func _ready():
 
 
 func _on_kill_area_body_entered(body: Node2D) -> void:
-	if body
+	print("HERLLO")
+	if body.is_in_group("Resizables"):
+		queue_free()
