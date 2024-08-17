@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_ro3ok"]
 [ext_resource type="Texture2D" uid="uid://nmnip41ehyje" path="res://assets/graphics/player/lizardwalk.png" id="2_4g4ha"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uy5m4"]
-size = Vector2(30, 32)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3mord"]
+radius = 11.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_45461"]
 atlas = ExtResource("2_4g4ha")
@@ -103,8 +103,8 @@ collision_mask = 15
 script = ExtResource("1_ro3ok")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -3)
-shape = SubResource("RectangleShape2D_uy5m4")
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_3mord")
 
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(7, 0, 8, 0)
