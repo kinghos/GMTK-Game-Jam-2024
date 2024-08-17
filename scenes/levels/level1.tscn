@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://duwfel60dw7ae"]
+[gd_scene load_steps=7 format=4 uid="uid://b64feohs7ud18"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_xxpsw"]
 [ext_resource type="Texture2D" uid="uid://b4vhfel5fu7ik" path="res://assets/graphics/tilesets/brick_tileset.png" id="2_fdf2m"]
@@ -50,7 +50,7 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_4r7g0")
 
-[node name="BaseLevel" instance=ExtResource("1_xxpsw")]
+[node name="Level" instance=ExtResource("1_xxpsw")]
 
 [node name="Tilemaps" type="Node2D" parent="." index="0"]
 
@@ -63,3 +63,6 @@ position = Vector2(25, 554)
 
 [node name="Crate" parent="." index="2" instance=ExtResource("4_r7reg")]
 position = Vector2(240, 618)
+
+[node name="Camera2D" parent="." index="3"]
+position = Vector2(460, 357)
