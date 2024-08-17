@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://nmnip41ehyje"
-path="res://.godot/imported/lizardwalk.png-cd38dddde901c4652a799af301c6a798.ctex"
+path="res://.godot/imported/lizardwalk.png-ee7805caa830e92ae6fc033decf65c7a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/lizardwalk.png"
-dest_files=["res://.godot/imported/lizardwalk.png-cd38dddde901c4652a799af301c6a798.ctex"]
+source_file="res://assets/graphics/player/lizardwalk.png"
+dest_files=["res://.godot/imported/lizardwalk.png-ee7805caa830e92ae6fc033decf65c7a.ctex"]
 
 [params]
 
