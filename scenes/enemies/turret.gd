@@ -28,4 +28,3 @@ func _process(_delta):
 func _on_kill_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Resizables"):
 		kill.emit(self, skull_color)
-		queue_free()
