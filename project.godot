@@ -34,7 +34,6 @@ version_control/autoload_on_startup=true
 Resizables=""
 CameraAdjuster=""
 Enemies=""
-Player=""
 
 [input]
 

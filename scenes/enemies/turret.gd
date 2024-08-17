@@ -5,6 +5,7 @@ signal kill(node, color)
 
 func _ready():
 	$AnimationPlayer.play("eyeball bob")
+	$Line2D.hide()
 
 func _process(_delta):
 	var collider: CollisionObject2D = null
@@ -13,10 +14,11 @@ func _process(_delta):
 	elif $RightCast.is_colliding():
 		collider = $RightCast.get_collider()
 	
-	if !collider or !collider.is_in_group("Player"):
+	if !collider or collider.get_name() != "Player":
 		return
 	
-	$RightCast/Line2D.add_point(to_local(collider.position))
+	$Line2D.set_point_position(1, to_local(collider.global_position))
+	$Line2D.show()
 
 func _on_kill_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Resizables"):
