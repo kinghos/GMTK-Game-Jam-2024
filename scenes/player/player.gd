@@ -50,9 +50,8 @@ func _physics_process(delta):
 	
 	# Play animations
 	if is_on_floor():
-		if direction == 0:
-			#animated_sprite.play("idle")	
-			pass
+		if velocity == Vector2.ZERO:
+			animated_sprite.play("idle")
 		else:
 			animated_sprite.play("walk")
 	else:
