@@ -2,6 +2,9 @@ extends Node2D
 
 var resize_tween: Tween = null
 
+func _ready():
+	$CollisionShape2D.scale = Vector2(0.2, 0.2)
+
 func resize(new_size: Vector2):
 	if resize_tween and resize_tween.is_running():
 		return
