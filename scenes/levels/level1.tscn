@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="4_r7reg"]
 [ext_resource type="Texture2D" uid="uid://7a2kmkod0c2w" path="res://assets/graphics/doors/Level_1_Castle_Door.png" id="5_e8wnk"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4r7g0"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lvik1"]
 texture = ExtResource("2_fdf2m")
 texture_region_size = Vector2i(32, 32)
 0:1/0 = 0
@@ -50,7 +50,7 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_2yu6h"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_4r7g0")
+sources/0 = SubResource("TileSetAtlasSource_lvik1")
 
 [node name="Level" instance=ExtResource("1_xxpsw")]
 
