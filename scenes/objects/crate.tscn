@@ -19,6 +19,7 @@ lock_rotation = true
 
 [node name="CollisionShape2D" parent="." index="0" groups=["Resizables"]]
 position = Vector2(-9.53674e-07, -4.76837e-07)
+scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_wywf6")
 
 [node name="Sprite2D" parent="CollisionShape2D" index="0"]
