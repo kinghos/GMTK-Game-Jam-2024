@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cbxh2w82ol1o8"]
+[gd_scene load_steps=7 format=3 uid="uid://cbxh2w82ol1o8"]
 
 [ext_resource type="Texture2D" uid="uid://dh41wl7xwtlcx" path="res://assets/graphics/misc/skull.png" id="1_ywjqb"]
 [ext_resource type="Texture2D" uid="uid://b076qafr3p331" path="res://assets/graphics/particles/death_particle.png" id="2_4xgvf"]
-[ext_resource type="Script" path="res://scenes/utilities/death.gd" id="2_qofpt"]
 
 [sub_resource type="Animation" id="Animation_q1dvo"]
 length = 0.001
@@ -45,7 +44,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_twt7j"]
 resource_name = "death"
-length = 1.2
+length = 1.4
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -78,10 +77,10 @@ tracks/2/path = NodePath("Skull:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.323611, 1.2),
+"times": PackedFloat32Array(0.323611, 1.4),
 "transitions": PackedFloat32Array(2, 2),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(0, -54)]
+"values": [Vector2(0, 0), Vector2(0, -60)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -90,7 +89,7 @@ tracks/3/path = NodePath("Skull:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.3236, 1.2),
+"times": PackedFloat32Array(1, 1.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -127,7 +126,6 @@ scale_max = 0.6
 
 [node name="Death" type="Node2D"]
 position = Vector2(0, -7.6703e-05)
-script = ExtResource("2_qofpt")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

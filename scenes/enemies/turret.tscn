@@ -150,8 +150,16 @@ texture = ExtResource("3_n28b6")
 position = Vector2(1, -30)
 target_position = Vector2(157, 0)
 
+[node name="Line2D" type="Line2D" parent="RightCast" index="0"]
+points = PackedVector2Array(-1, -7.5)
+width = 2.0
+default_color = Color(1, 0, 0, 1)
+texture_mode = 2
+
 [node name="LeftCast" type="RayCast2D" parent="." index="6"]
 position = Vector2(1, -30)
 target_position = Vector2(-157, 0)
+
+[node name="Line2D" type="Line2D" parent="LeftCast" index="0"]
 
 [connection signal="body_entered" from="KillArea" to="." method="_on_kill_area_body_entered"]
