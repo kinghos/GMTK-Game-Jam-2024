@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://eorunkwj36vv"]
+[gd_scene load_steps=8 format=3 uid="uid://d3f6p3swm1ydx"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_84xje"]
 [ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="2_eov0c"]
 [ext_resource type="PackedScene" uid="uid://bqb28c3c0c76j" path="res://scenes/player/player.tscn" id="3_oeujk"]
 [ext_resource type="Script" path="res://scenes/objects/scale/scale.gd" id="4_ang7j"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/turret.tscn" id="5_c845s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5x20"]
 size = Vector2(494, 20)
@@ -47,5 +48,8 @@ text = "0"
 
 [node name="Camera2D" parent="." index="5"]
 position = Vector2(545, 337)
+
+[node name="Turret" parent="." index="6" instance=ExtResource("5_c845s")]
+position = Vector2(645, 445)
 
 [connection signal="body_entered" from="Scale" to="Scale" method="_on_body_entered"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://c2rf2bqmkt8dr"]
+[gd_scene load_steps=15 format=3 uid="uid://c2rf2bqmkt8dr"]
 
 [ext_resource type="PackedScene" uid="uid://b1vqoci20v4c0" path="res://scenes/enemies/base_enemy.tscn" id="1_c485c"]
 [ext_resource type="Texture2D" uid="uid://cluns4r5t6in1" path="res://assets/graphics/enemies/turret.png" id="2_3imhe"]
+[ext_resource type="Script" path="res://scenes/enemies/turret.gd" id="2_m681b"]
 [ext_resource type="Texture2D" uid="uid://cxel518b2ipti" path="res://assets/graphics/enemies/eyeball.png" id="3_l13rl"]
 [ext_resource type="Texture2D" uid="uid://dbad4kau4kgp5" path="res://assets/graphics/lights/circle.png" id="3_n28b6"]
 
@@ -104,6 +105,7 @@ _data = {
 }
 
 [node name="Turret" instance=ExtResource("1_c485c")]
+script = ExtResource("2_m681b")
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(0, -17)
@@ -117,6 +119,8 @@ frame = 1
 
 [node name="KillArea" type="Area2D" parent="." index="2"]
 position = Vector2(0, -37)
+collision_layer = 16
+collision_mask = 3
 
 [node name="Eyeball" type="AnimatedSprite2D" parent="KillArea" index="0"]
 position = Vector2(0, 10)
@@ -134,7 +138,7 @@ libraries = {
 }
 
 [node name="PointLight2D" type="PointLight2D" parent="." index="4"]
-position = Vector2(0, -30)
+position = Vector2(-1, -30)
 color = Color(0.407843, 0.384314, 0.854902, 1)
 energy = 1.16
 texture = ExtResource("3_n28b6")
@@ -146,3 +150,5 @@ target_position = Vector2(157, 0)
 [node name="LeftCast" type="RayCast2D" parent="." index="6"]
 position = Vector2(1, -30)
 target_position = Vector2(-157, 0)
+
+[connection signal="body_entered" from="KillArea" to="." method="_on_kill_area_body_entered"]
