@@ -1,8 +1,47 @@
-[gd_scene load_steps=10 format=3 uid="uid://cbxh2w82ol1o8"]
+[gd_scene load_steps=8 format=3 uid="uid://cbxh2w82ol1o8"]
 
 [ext_resource type="Texture2D" uid="uid://dh41wl7xwtlcx" path="res://assets/graphics/misc/skull.png" id="1_ywjqb"]
 [ext_resource type="Texture2D" uid="uid://b076qafr3p331" path="res://assets/graphics/particles/death_particle.png" id="2_4xgvf"]
 [ext_resource type="Script" path="res://scenes/utilities/death.gd" id="2_qofpt"]
+
+[sub_resource type="Animation" id="Animation_q1dvo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GPUParticles2D:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("GPUParticles2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skull:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_twt7j"]
 resource_name = "death"
@@ -54,7 +93,7 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0.323611, 1.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0.0235485, 0.73438, 9.62615e-07, 1), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 tracks/4/type = "value"
 tracks/4/imported = false
@@ -69,56 +108,11 @@ tracks/4/keys = {
 "values": [false, true]
 }
 
-[sub_resource type="Animation" id="Animation_q1dvo"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("GPUParticles2D:emitting")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("GPUParticles2D:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Skull:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7fk6a"]
 _data = {
 "RESET": SubResource("Animation_q1dvo"),
 "death": SubResource("Animation_twt7j")
 }
-
-[sub_resource type="Gradient" id="Gradient_hm30t"]
-colors = PackedColorArray(0, 0.854902, 0, 1, 0.219608, 1, 0.443137, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_c7xla"]
-gradient = SubResource("Gradient_hm30t")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_su747"]
 particle_flag_disable_z = true
@@ -130,21 +124,19 @@ initial_velocity_max = 249.7
 gravity = Vector3(0, 0, 0)
 scale_min = 0.2
 scale_max = 0.6
-color_ramp = SubResource("GradientTexture1D_c7xla")
 
 [node name="Death" type="Node2D"]
 modulate = Color(0.0491653, 0.741348, 0.0262355, 0.973765)
 position = Vector2(0, -7.6703e-05)
 script = ExtResource("2_qofpt")
 
-[node name="Skull" type="Sprite2D" parent="."]
-modulate = Color(0.0235485, 0.73438, 9.62615e-07, 1)
-texture = ExtResource("1_ywjqb")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_7fk6a")
 }
+
+[node name="Skull" type="Sprite2D" parent="."]
+texture = ExtResource("1_ywjqb")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 emitting = false
