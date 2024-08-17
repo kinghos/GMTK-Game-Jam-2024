@@ -1,6 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://5w74eu3bsjko"]
+[gd_scene load_steps=5 format=3 uid="uid://5w74eu3bsjko"]
 
 [ext_resource type="Script" path="res://scenes/levels/base_level.gd" id="1_cfftt"]
+[ext_resource type="PackedScene" uid="uid://bqb28c3c0c76j" path="res://scenes/player/player.tscn" id="2_n6yue"]
+[ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="3_7y7uo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqona"]
+size = Vector2(494, 20)
 
 [node name="BaseLevel" type="Node2D"]
 script = ExtResource("1_cfftt")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(499, 520)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_wqona")
+
+[node name="Player" parent="." instance=ExtResource("2_n6yue")]
+position = Vector2(318, 394)
+
+[node name="Crate" parent="." instance=ExtResource("3_7y7uo")]
+position = Vector2(642, 418)
+collision_layer = 1
+collision_mask = 1
+
+[node name="Crate2" parent="." instance=ExtResource("3_7y7uo")]
+position = Vector2(470, 415)
+collision_layer = 1
+collision_mask = 1

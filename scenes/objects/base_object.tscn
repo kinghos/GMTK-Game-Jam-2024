@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bwornrfyehb5y"]
 
-[ext_resource type="Script" path="res://scenes/temporary/scaling.gd" id="1_nwegr"]
+[ext_resource type="Script" path="res://scenes/objects/scaling.gd" id="1_nwegr"]
 
 [node name="RigidBody2D" type="RigidBody2D" groups=["Resizables"]]
 collision_layer = 2
