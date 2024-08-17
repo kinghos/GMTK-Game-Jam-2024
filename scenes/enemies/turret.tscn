@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c2rf2bqmkt8dr"]
+[gd_scene load_steps=17 format=3 uid="uid://c2rf2bqmkt8dr"]
 
 [ext_resource type="PackedScene" uid="uid://b1vqoci20v4c0" path="res://scenes/enemies/base_enemy.tscn" id="1_c485c"]
 [ext_resource type="Texture2D" uid="uid://cluns4r5t6in1" path="res://assets/graphics/enemies/turret.png" id="2_3imhe"]
@@ -67,6 +67,42 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(0, -37)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LightOccluder2D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-5, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LightOccluder2D3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-5, 15)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PointLight2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -28)]
+}
 
 [sub_resource type="Animation" id="Animation_pwfhl"]
 resource_name = "eyeball bob"
@@ -97,12 +133,54 @@ tracks/1/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LightOccluder2D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-5, 1), Vector2(-5, -8), Vector2(-5, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LightOccluder2D3:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-5, 15), Vector2(-5, 6), Vector2(-5, 15)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PointLight2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -28), Vector2(0, -37), Vector2(0, -28)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_11wmf"]
 _data = {
 "RESET": SubResource("Animation_iyp54"),
 "eyeball bob": SubResource("Animation_pwfhl")
 }
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dd4yq"]
+polygon = PackedVector2Array(0, -21, -16, 0, 16, 0)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xa0gt"]
+polygon = PackedVector2Array(-17, -33, 29, -33, 29, -39, -17, -39)
 
 [node name="Turret" instance=ExtResource("1_c485c")]
 collision_layer = 4
@@ -141,9 +219,10 @@ libraries = {
 }
 
 [node name="PointLight2D" type="PointLight2D" parent="." index="4"]
-position = Vector2(-1, -30)
+position = Vector2(0, -28)
 color = Color(0.407843, 0.384314, 0.854902, 1)
-energy = 1.16
+energy = 2.64
+shadow_enabled = true
 texture = ExtResource("3_n28b6")
 
 [node name="RightCast" type="RayCast2D" parent="." index="5"]
@@ -154,11 +233,15 @@ target_position = Vector2(157, 0)
 position = Vector2(1, -30)
 target_position = Vector2(-157, 0)
 
-[node name="Line2D" type="Line2D" parent="." index="7"]
-position = Vector2(1, -30)
-points = PackedVector2Array(-1, -7.5, 0, 0)
-width = 2.0
-default_color = Color(1, 0, 0, 1)
-texture_mode = 2
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." index="7"]
+occluder = SubResource("OccluderPolygon2D_dd4yq")
+
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="." index="8"]
+position = Vector2(-5, 1)
+occluder = SubResource("OccluderPolygon2D_xa0gt")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="." index="9"]
+position = Vector2(-5, 15)
+occluder = SubResource("OccluderPolygon2D_xa0gt")
 
 [connection signal="body_entered" from="KillArea" to="." method="_on_kill_area_body_entered"]

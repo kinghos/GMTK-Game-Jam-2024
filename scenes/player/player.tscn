@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bqb28c3c0c76j"]
+[gd_scene load_steps=18 format=3 uid="uid://bqb28c3c0c76j"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_ro3ok"]
 [ext_resource type="Texture2D" uid="uid://nmnip41ehyje" path="res://assets/graphics/player/lizardwalk.png" id="2_4g4ha"]
@@ -98,6 +98,9 @@ animations = [{
 "speed": 30.0
 }]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_om30a"]
+polygon = PackedVector2Array(2, 13, 9, 13, 9, 4, 10, 3, 10, -1, 13, -3, 13, -12, 7, -12, 3, -20, 0, -19, -3, -12, -9, -11, -11, -6, -14, -4, -14, 6, -11, 10, -7, 13)
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 15
 script = ExtResource("1_ro3ok")
@@ -122,3 +125,6 @@ animation = &"walk"
 position = Vector2(6, 0)
 target_position = Vector2(8, 0)
 collision_mask = 14
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_om30a")
