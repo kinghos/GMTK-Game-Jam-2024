@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://bqb28c3c0c76j"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_ro3ok"]
-[ext_resource type="Texture2D" uid="uid://nmnip41ehyje" path="res://assets/graphics/lizardwalk.png" id="2_4g4ha"]
+[ext_resource type="Texture2D" uid="uid://nmnip41ehyje" path="res://assets/graphics/player/lizardwalk.png" id="2_4g4ha"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uy5m4"]
 size = Vector2(30, 32)
@@ -120,3 +120,4 @@ animation = &"walk"
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(6, 0)
 target_position = Vector2(8, 0)
+collision_mask = 14

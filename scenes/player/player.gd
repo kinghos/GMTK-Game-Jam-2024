@@ -2,7 +2,9 @@ extends CharacterBody2D
 
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
-const MAGIC_RADIUS = 300
+
+@export var MAGIC_RADIUS = 300
+@export var push_force = 10
 
 var scale_presets: Array = [Vector2(0.1, 0.1), Vector2(0.2, 0.2), Vector2(0.5, 0.5), Vector2(1.0, 1.0), Vector2(1.5, 1.5), Vector2(2.0, 2.0)]
 
@@ -82,6 +84,8 @@ func _process(_delta: float) -> void:
 			
 			if new_scale != current_scale:
 				collider.resize(new_scale)
+				
+	push_object()
 
 func get_adjacent_scale(current_scale: Vector2, direction: int):
 	var index = scale_presets.find(current_scale)
@@ -91,3 +95,9 @@ func get_adjacent_scale(current_scale: Vector2, direction: int):
 		return scale_presets[index]
 	else:
 		return current_scale
+
+func push_object():
+	for i in get_slide_collision_count():
+		var col = get_slide_collision(i)
+		if col.get_collider() is RigidBody2D:
+			col.get_collider().apply_central_impulse(col.get_normal() * -push_force)
