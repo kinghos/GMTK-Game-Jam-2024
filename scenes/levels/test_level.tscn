@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://eorunkwj36vv"]
+[gd_scene load_steps=9 format=3 uid="uid://eorunkwj36vv"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_84xje"]
 [ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="2_eov0c"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c2rf2bqmkt8dr" path="res://scenes/enemies/turret.tscn" id="5_c845s"]
 [ext_resource type="PackedScene" uid="uid://dwaecaj5nimj7" path="res://scenes/objects/trapdoor.tscn" id="6_dcob2"]
 [ext_resource type="PackedScene" uid="uid://8ugc5pmxilxp" path="res://scenes/objects/button.tscn" id="6_fg616"]
+[ext_resource type="PackedScene" uid="uid://vwmeby253gup" path="res://scenes/objects/locked_door.tscn" id="7_anx7r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5x20"]
 size = Vector2(494, 20)
@@ -29,7 +30,6 @@ inertia = 0.1
 
 [node name="Player" parent="." index="3" instance=ExtResource("3_oeujk")]
 position = Vector2(304, 297)
-skull_color = Color(0, 0, 0, 1)
 
 [node name="Camera2D" parent="." index="4"]
 position = Vector2(545, 337)
@@ -48,3 +48,7 @@ polygon = PackedVector2Array(595, 163, 551, 163, 552, 200, 608, 200, 608, 240, 5
 
 [node name="Button" parent="." index="9" instance=ExtResource("6_fg616")]
 position = Vector2(376, 448)
+
+[node name="LockedDoor" parent="." index="10" node_paths=PackedStringArray("trigger_switch") instance=ExtResource("7_anx7r")]
+position = Vector2(440, 416)
+trigger_switch = NodePath("../Button")
