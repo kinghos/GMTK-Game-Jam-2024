@@ -108,7 +108,7 @@ _data = {
 collision_layer = 4
 collision_mask = 11
 script = ExtResource("2_m681b")
-color = Color(0.906777, 0.735276, 0.281379, 1)
+color = Color(0.329412, 0.305882, 0.85098, 1)
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2(0, -17)
