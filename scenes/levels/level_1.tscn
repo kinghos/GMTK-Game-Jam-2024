@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bap2533honq23"]
+[gd_scene load_steps=10 format=4 uid="uid://b64feohs7ud18"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_xxpsw"]
 [ext_resource type="Texture2D" uid="uid://bx2kuo38pcbh1" path="res://assets/graphics/backgrounds/outside.png" id="2_avu0q"]
@@ -53,7 +53,7 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lvik1")
 
-[node name="Level2" instance=ExtResource("1_xxpsw")]
+[node name="Level1" instance=ExtResource("1_xxpsw")]
 
 [node name="TextureRect" type="TextureRect" parent="." index="0"]
 offset_left = -502.0
@@ -87,3 +87,7 @@ texture = ExtResource("5_e8wnk")
 
 [node name="Turret" parent="." index="6" instance=ExtResource("7_5i8s7")]
 position = Vector2(896, 608)
+
+[node name="NextLevel" parent="." index="7"]
+position = Vector2(665, 429)
+next_level_path = "res://scenes/levels/level_2.tscn"
