@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cw1xnb66ku7ao"
-path="res://.godot/imported/knight.png-2b1012af74b5845187254c6fe6ddcbcd.ctex"
+uid="uid://nmnip41ehyje"
+path="res://.godot/imported/lizardwalk.png-cd38dddde901c4652a799af301c6a798.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/temporary/knight.png"
-dest_files=["res://.godot/imported/knight.png-2b1012af74b5845187254c6fe6ddcbcd.ctex"]
+source_file="res://assets/graphics/lizardwalk.png"
+dest_files=["res://.godot/imported/lizardwalk.png-cd38dddde901c4652a799af301c6a798.ctex"]
 
 [params]
 

@@ -1,11 +1,5 @@
 extends Node2D
 
-@export var MAX_SIZE: float = 4
-@export var MIN_SIZE: float = 0.5
-
-var scale_interval: float = 0.5
-var scale_change: float
-
 var resize_tween: Tween = null
 
 func resize(new_size: Vector2):
