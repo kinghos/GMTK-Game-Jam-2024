@@ -6,7 +6,7 @@ const JUMP_VELOCITY = -300.0
 @export var MAGIC_RADIUS = 300
 @export var push_force = 500
 
-var scale_presets: Array = [Vector2(0.1, 0.1), Vector2(0.2, 0.2), Vector2(0.5, 0.5), Vector2(1.0, 1.0), Vector2(1.5, 1.5), Vector2(2.0, 2.0)]
+var scale_presets: Array = [Vector2(0.1, 0.1), Vector2(0.2, 0.2), Vector2(0.5, 0.5), Vector2(1.0, 1.0)]
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
