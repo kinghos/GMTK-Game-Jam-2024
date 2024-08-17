@@ -37,9 +37,11 @@ func _physics_process(delta):
 	if direction > 0:
 		animated_sprite.flip_h = false
 		$Line2D.set_point_position(0, Vector2(7, 0))
+		$RayCast2D.position = Vector2(8, 0)
 	elif direction < 0:
 		animated_sprite.flip_h = true
 		$Line2D.set_point_position(0, Vector2(-7, 0))
+		$RayCast2D.position = Vector2(-8, 0)
 	else:
 		animated_sprite.stop()
 	

@@ -96,3 +96,7 @@ position = Vector2(0, -30)
 color = Color(0.407843, 0.384314, 0.854902, 1)
 energy = 1.16
 texture = ExtResource("3_n28b6")
+
+[node name="RayCast2D" type="RayCast2D" parent="." index="5"]
+position = Vector2(1, -30)
+target_position = Vector2(157, 0)
