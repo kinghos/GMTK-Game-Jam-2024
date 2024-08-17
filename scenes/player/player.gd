@@ -6,7 +6,12 @@ const JUMP_VELOCITY = -300.0
 @export var MAGIC_RADIUS = 300
 @export var push_force = 500
 
-var scale_presets: Array = [Vector2(0.1, 0.1), Vector2(0.2, 0.2), Vector2(0.5, 0.5), Vector2(1.0, 1.0)]
+var scale_presets: Dictionary = {
+	Vector2(0.1, 0.1): 0.5,
+	Vector2(0.2, 0.2): 1,
+	Vector2(0.5, 0.5): 1.5,
+	Vector2(1.0, 1.0): 2
+	}
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -77,27 +82,33 @@ func _process(_delta: float) -> void:
 		if collider.is_in_group("Resizables"):
 			var current_scale: Vector2 = collider.get_child(0).scale
 			var new_scale: Vector2 = current_scale
+			var new_mass: float
 			
 			if Input.is_action_pressed("Primary"):
-				new_scale = get_adjacent_scale(current_scale, 1)
+				var new_values = get_adjacent_scale(current_scale, 1)
+				new_scale = new_values[0]
+				new_mass = new_values[1]
 			elif Input.is_action_pressed("Secondary"):
-				new_scale = get_adjacent_scale(current_scale, -1)
+				var new_values = get_adjacent_scale(current_scale, -1)
+				new_scale = new_values[0]
+				new_mass = new_values[1]
 			
 			if new_scale != current_scale:
-				collider.resize(new_scale)
-				
+				collider.resize(new_scale, new_mass)
 
 func get_adjacent_scale(current_scale: Vector2, direction: int):
-	var index = scale_presets.find(current_scale)
+	var scales = scale_presets.keys()
+	var index = scales.find(current_scale)
 	index += direction
 	
-	if index >= 0 and index < scale_presets.size():
-		return scale_presets[index]
+	if index >= 0 and index < scales.size():
+		var new_scale = scales[index]
+		return [new_scale, scale_presets[new_scale]]
 	else:
-		return current_scale
+		return [current_scale, scale_presets[current_scale]]
 
 func push_object():
 	for i in get_slide_collision_count():
 		var col = get_slide_collision(i)
 		if col.get_collider() is RigidBody2D:
-			col.get_collider().apply_central_force(col.get_normal() * -push_force)
+			col.get_collider().apply_central_force(col.get_normal() * -push_force) 
