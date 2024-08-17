@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6ov1c07brllg"]
+[gd_scene load_steps=3 format=3 uid="uid://b6ov1c07brllg"]
 
 [ext_resource type="Script" path="res://scenes/ui/title_screen.gd" id="1_v1y6f"]
+[ext_resource type="Texture2D" uid="uid://jswptmwsfqjo" path="res://assets/graphics/misc/title_card.png" id="2_dcsig"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 script = ExtResource("1_v1y6f")
@@ -54,6 +55,18 @@ size_flags_vertical = 3
 text = "BYE BYE"
 
 [node name="Title" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.832
+anchor_top = 0.093
+anchor_right = 0.832
+anchor_bottom = 0.093
+offset_left = -645.0
+offset_bottom = 278.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_dcsig")
+
+[node name="Lizard" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
 
