@@ -71,7 +71,7 @@ tile_map_data = PackedByteArray("AAAAABUAAAAEAAQAAAABABUAAAAEAAUAAAACABUAAAAEAAU
 tile_set = SubResource("TileSet_2yu6h")
 
 [node name="Player" parent="." index="2" instance=ExtResource("3_nynhs")]
-position = Vector2(570, 554)
+position = Vector2(-224, 720)
 
 [node name="Crate" parent="." index="3" instance=ExtResource("4_r7reg")]
 position = Vector2(-7, 822)
@@ -95,3 +95,7 @@ next_level_path = "res://scenes/levels/level_2.tscn"
 
 [node name="Crate2" parent="." index="8" instance=ExtResource("4_r7reg")]
 position = Vector2(605, 553)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="9"]
+energy = 0.3
+blend_mode = 1

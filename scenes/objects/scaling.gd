@@ -3,6 +3,7 @@ extends Node2D
 var hovering: bool = false
 
 var resize_tween: Tween = null
+var can_push_switch
 
 func _ready():
 	$CollisionShape2D.scale = Vector2(0.2, 0.2)

@@ -7,6 +7,8 @@ const JUMP_VELOCITY = -300.0
 @export var MAGIC_RADIUS = 300
 @export var push_force = 500
 
+var can_push_switch
+
 var scale_presets: Dictionary = {
 	# scale: [mass, friction]
 	Vector2(0.1, 0.1): [0.5, 0.4],

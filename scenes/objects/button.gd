@@ -4,10 +4,10 @@ extends Area2D
 signal pressed(switch_id)
 
 
-#func _ready():
-	#sprite_2d.animation = "inactive"
+func _ready():
+	sprite_2d.animation = "up"
 
 func _on_body_entered(body):
-	if "canPushSwitch" in body:
-		sprite_2d.animation = "active"
+	if "can_push_switch" in body:
+		sprite_2d.animation = "down"
 		pressed.emit(self)
