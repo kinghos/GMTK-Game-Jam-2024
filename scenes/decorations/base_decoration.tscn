@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dcbivcgk76rcd"]
+
+[node name="Decoration" type="StaticBody2D"]
+collision_layer = 64
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

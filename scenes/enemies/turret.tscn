@@ -285,12 +285,12 @@ texture = ExtResource("3_n28b6")
 [node name="RightCast" type="RayCast2D" parent="." index="5"]
 position = Vector2(1, -30)
 target_position = Vector2(157, 0)
-collision_mask = 11
+collision_mask = 3
 
 [node name="LeftCast" type="RayCast2D" parent="." index="6"]
 position = Vector2(1, -30)
 target_position = Vector2(-157, 0)
-collision_mask = 11
+collision_mask = 3
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." index="7"]
 occluder = SubResource("OccluderPolygon2D_dd4yq")

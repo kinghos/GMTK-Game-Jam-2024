@@ -100,6 +100,10 @@ position = Vector2(764, 604)
 position = Vector2(113, 590)
 
 [node name="NextLevel" parent="." index="5"]
+<<<<<<< HEAD
 position = Vector2(1635, 568)
+=======
+position = Vector2(354, 829)
+>>>>>>> dcccfc731f1af9a5867a7af314a6326684f00e07
 next_level_path = "res://scenes/levels/level_1.tscn"
 flip_horizontal = true
