@@ -99,7 +99,12 @@ position = Vector2(764, 604)
 [node name="Player" parent="." index="3" instance=ExtResource("4_4ginr")]
 position = Vector2(113, 590)
 
+<<<<<<< HEAD
 [node name="NextLevel" parent="." index="4"]
 position = Vector2(1635, 568)
+=======
+[node name="NextLevel" parent="." index="5"]
+position = Vector2(354, 829)
+>>>>>>> a648de05ead3aebef256e4a69f82345df8491f37
 next_level_path = "res://scenes/levels/level_1.tscn"
 flip_horizontal = true

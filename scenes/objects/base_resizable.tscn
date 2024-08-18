@@ -1,13 +1,13 @@
 [gd_scene load_steps=2 format=3 uid="uid://bwornrfyehb5y"]
 
-[ext_resource type="Script" path="res://scenes/objects/base_object.gd" id="1_nwegr"]
+[ext_resource type="Script" path="res://scenes/objects/base_resizable.gd" id="1_u6frm"]
 
 [node name="RigidBody2D" type="RigidBody2D" groups=["Resizables"]]
 collision_layer = 2
 collision_mask = 13
 input_pickable = true
 gravity_scale = 0.0
-script = ExtResource("1_nwegr")
+script = ExtResource("1_u6frm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
