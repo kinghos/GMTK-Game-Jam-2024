@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://b64feohs7ud18"]
+[gd_scene load_steps=10 format=4 uid="uid://b64feohs7ud18"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_xxpsw"]
 [ext_resource type="Texture2D" uid="uid://bx2kuo38pcbh1" path="res://assets/graphics/backgrounds/outside.png" id="2_avu0q"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bqb28c3c0c76j" path="res://scenes/player/player.tscn" id="3_nynhs"]
 [ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="4_r7reg"]
 [ext_resource type="PackedScene" uid="uid://c2rf2bqmkt8dr" path="res://scenes/enemies/turret.tscn" id="7_5i8s7"]
-[ext_resource type="PackedScene" uid="uid://d0c1is7hgphh5" path="res://scenes/decorations/grass.tscn" id="7_yifyk"]
 [ext_resource type="Texture2D" uid="uid://dmnqrqc7h66qx" path="res://assets/graphics/decorations/grass.png" id="8_334mq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rlcud"]
@@ -131,23 +130,21 @@ position = Vector2(614, 777)
 energy = 0.3
 blend_mode = 1
 
+[node name="Grass" type="Sprite2D" parent="Decorations" index="0"]
+position = Vector2(-469, 731)
+texture = ExtResource("8_334mq")
+
+[node name="Grass2" type="Sprite2D" parent="Decorations" index="1"]
+position = Vector2(-152, 731)
+texture = ExtResource("8_334mq")
+
+[node name="Grass3" type="Sprite2D" parent="Decorations" index="2"]
+position = Vector2(-312, 731)
+texture = ExtResource("8_334mq")
+
 [node name="Player" parent="." index="5" instance=ExtResource("3_nynhs")]
 position = Vector2(-220, 715)
 
-[node name="Grass" parent="." index="7" instance=ExtResource("7_yifyk")]
-position = Vector2(-468, 730)
-collision_layer = 64
-collision_mask = 0
-
-[node name="Decoration2" parent="." index="8" instance=ExtResource("7_yifyk")]
-position = Vector2(-163, 730)
-collision_layer = 64
-collision_mask = 0
-
-[node name="NextLevel" parent="." index="9"]
+[node name="NextLevel" parent="." index="7"]
 position = Vector2(890, 562)
 next_level_path = "res://scenes/levels/level_2.tscn"
-
-[node name="Sprite2D" type="Sprite2D" parent="." index="10"]
-position = Vector2(-340, 730)
-texture = ExtResource("8_334mq")
