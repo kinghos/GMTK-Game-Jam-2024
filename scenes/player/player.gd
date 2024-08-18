@@ -3,19 +3,11 @@ extends CharacterBody2D
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
 
-@export var skull_color: Color
+@export var skull_color: Color = "#6abe30"
 @export var MAGIC_RADIUS = 300
 @export var push_force = 500
 
 var can_push_switch
-
-var scale_presets: Dictionary = {
-	# scale: [mass, friction]
-	Vector2(0.1, 0.1): [0.5, 0.4],
-	Vector2(0.2, 0.2): [1, 0.4],
-	Vector2(0.5, 0.5): [2, 0.45],
-	Vector2(1.0, 1.0): [4, 1]
-	}
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -52,7 +44,7 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-	push_object()
+	push_objects()
 
 func _process(_delta: float) -> void:
 	# Play animations
@@ -81,32 +73,13 @@ func _process(_delta: float) -> void:
 		
 		if collider.is_in_group("Resizables"):
 			var current_scale: Vector2 = collider.get_child(0).scale
-			var new_values: Array = []
 
-			if Input.is_action_pressed("Primary") and scale_presets.has(current_scale):
-				new_values = get_adjacent_scale(current_scale, 1)
-			elif Input.is_action_pressed("Secondary") and scale_presets.has(current_scale):
-				new_values = get_adjacent_scale(current_scale, -1)
-			
-			if new_values:
-				var new_scale: Vector2 = new_values[0]
-				var new_mass: float = new_values[1]
-				var new_friction: float = new_values[2]
-				collider.resize(new_scale, new_mass, new_friction)
-				new_values = []
+			if Input.is_action_pressed("Primary"):
+				collider.resize(current_scale, 1)
+			elif Input.is_action_pressed("Secondary"):
+				collider.resize(current_scale, -1)
 
-func get_adjacent_scale(current_scale: Vector2, direction: int):
-	var scales = scale_presets.keys()
-	var index = scales.find(current_scale)
-	index += direction
-	
-	if index >= 0 and index < scales.size():
-		var new_scale = scales[index]
-		return [new_scale, scale_presets[new_scale][0], scale_presets[new_scale][1]]
-	else:
-		return [current_scale, scale_presets[current_scale][0], scale_presets[current_scale][1]]
-
-func push_object():
+func push_objects():
 	for i in get_slide_collision_count():
 		var col = get_slide_collision(i)
 		if col.get_collider() is RigidBody2D:
