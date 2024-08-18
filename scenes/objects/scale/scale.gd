@@ -9,7 +9,7 @@ var body_masses: Dictionary = {}
 
 func update_total_mass_applied(value: float) -> void:
 	total_mass_applied = value
-	$Label.text = "Scale's current mass: " + str(snapped(total_mass_applied, 0.1))
+	$Label.text = str(snapped(total_mass_applied, 0.1)) + "/" + str(mass_required)
 	if total_mass_applied < mass_required:
 		$Label.set("theme_override_colors/font_color", Color("red"))
 		pressed.emit(false)

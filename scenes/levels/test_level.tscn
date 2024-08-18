@@ -72,14 +72,18 @@ mass_required = 2.0
 
 [node name="Label" type="Label" parent="Area2D" index="0"]
 texture_filter = 1
-offset_left = -173.0
-offset_top = -108.0
-offset_right = 16.0
-offset_bottom = -85.0
-text = "Current mass on scale: 0"
+offset_left = -105.0
+offset_top = -35.0
+offset_right = 84.0
+offset_bottom = -12.0
+scale = Vector2(1.12, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "0/2"
+horizontal_alignment = 1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" index="1"]
-position = Vector2(0, 11)
+position = Vector2(1, 6)
+scale = Vector2(2.1031, 1.48254)
 polygon = PackedVector2Array(-10, 7, 10, 7, 10, 9, 11, 9, 11, 10, -12, 10, -12, 9, -10, 9)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
