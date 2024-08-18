@@ -8,6 +8,7 @@ radius = 20.5
 height = 56.0
 
 [node name="NextLevel" type="Area2D"]
+texture_filter = 1
 collision_layer = 16
 script = ExtResource("1_8xcq1")
 

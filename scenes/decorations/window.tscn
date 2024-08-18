@@ -78,4 +78,3 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_x5588")
 animation = &"raining"
 autoplay = "raining"
-frame_progress = 0.344438

@@ -185,5 +185,5 @@ collision_mask = 0
 shape = SubResource("RectangleShape2D_capah")
 
 [node name="NextLevel" parent="." index="7"]
-position = Vector2(1397, 741)
+position = Vector2(1430, 726)
 next_level_path = "res://scenes/levels/level_2.tscn"
