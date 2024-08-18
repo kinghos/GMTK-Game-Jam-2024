@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 const SPEED = 130.0
 const JUMP_VELOCITY = -300.0
@@ -61,7 +61,7 @@ func _process(_delta: float) -> void:
 		else:
 			animated_sprite.play("walk")
 			
-	var mouse_pos = to_local($Camera2D.get_global_mouse_position())
+	var mouse_pos = to_local(get_viewport().get_camera_2d().get_global_mouse_position())
 	
 	# Find difference of vectors and see if its less than the max radius
 	var vector_diff = mouse_pos - to_local(position)
@@ -92,20 +92,21 @@ func push_objects():
 		if col.get_collider() is RigidBody2D:
 			col.get_collider().apply_central_force(col.get_normal() * -push_force)
 
-func _on_camera_area_entered(area: Area2D) -> void:
-	var collision_shape = area.get_node("CollisionShape2D")
-	var size = collision_shape.shape.size
-	
-	var view_size = get_viewport_rect().size
-	if size.y < view_size.y:
-		size.y = view_size.y
-	
-	if size.x < view_size.x:
-		size.x = view_size.x
-	
-	var cam = $Camera2D
-	cam.limit_top = collision_shape.global_position.y - size.y/2
-	cam.limit_left = collision_shape.global_position.x - size.x/2
-	
-	$Camera2D.limit_bottom = cam.limit_top + size.y
-	$Camera2D.limit_right = cam.limit_left + size.x
+#func _on_camera_area_entered(area: Area2D) -> void:
+	#print("fuck this")
+	#var collision_shape = area.get_node("CollisionShape2D")
+	#var size = collision_shape.shape.size
+	#
+	#var view_size = get_viewport_rect().size
+	#if size.y < view_size.y:
+		#size.y = view_size.y
+	#
+	#if size.x < view_size.x:
+		#size.x = view_size.x
+	#
+	#var cam = $Camera2D
+	#cam.limit_top = collision_shape.global_position.y - size.y/2
+	#cam.limit_left = collision_shape.global_position.x - size.x/2
+	#
+	#$Camera2D.limit_bottom = cam.limit_top + size.y
+	#$Camera2D.limit_right = cam.limit_left + size.x

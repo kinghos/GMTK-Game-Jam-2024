@@ -8,6 +8,8 @@ func _ready():
 	if $".".get_parent().name == "Level1":
 		$Sprite2D.texture = level_1_texture
 		$Sprite2D.scale = Vector2(4, 4)
+	else:
+		$AnimationPlayer.play("hovering")
 
 func _on_body_entered(body):
 	if body.get_name() == "Player":

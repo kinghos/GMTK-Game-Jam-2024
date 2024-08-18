@@ -1,7 +1,45 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbifvccr5x412"]
+[gd_scene load_steps=7 format=3 uid="uid://dbifvccr5x412"]
 
 [ext_resource type="Script" path="res://scenes/levels/next_level_warp/next_level.gd" id="1_8xcq1"]
 [ext_resource type="Texture2D" uid="uid://b1xanlb78wt7y" path="res://assets/graphics/misc/portal.png" id="2_1y77f"]
+
+[sub_resource type="Animation" id="Animation_l68uk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -2)]
+}
+
+[sub_resource type="Animation" id="Animation_s8jte"]
+resource_name = "hovering"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.4, 0.5, 0.6, 0.75, 1, 1.23333, 1.4, 1.5, 1.6, 1.73333, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -1), Vector2(0, -2), Vector2(0, -3), Vector2(0, -2), Vector2(0, -1), Vector2(0, 0), Vector2(0, 1), Vector2(0, 2), Vector2(0, 3), Vector2(0, 2), Vector2(0, 1), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fnbut"]
+_data = {
+"RESET": SubResource("Animation_l68uk"),
+"hovering": SubResource("Animation_s8jte")
+}
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jhj1e"]
 radius = 20.5
@@ -9,8 +47,14 @@ height = 56.0
 
 [node name="NextLevel" type="Area2D"]
 texture_filter = 1
+position = Vector2(0, -2)
 collision_layer = 16
 script = ExtResource("1_8xcq1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_fnbut")
+}
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.2, 1.2)

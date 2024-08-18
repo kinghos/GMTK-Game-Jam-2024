@@ -80,8 +80,5 @@ polygon = PackedVector2Array(-10, 7, 10, 7, 10, 9, 11, 9, 11, 10, -12, 10, -12, 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
 polygon = PackedVector2Array(595, 163, 551, 163, 552, 200, 608, 200, 608, 240, 525, 209, 530, 134, 604, 141, 620, 156, 629, 90, 711, 96, 708, 145, 799, 143, 785, 235, 704, 240, 704, 200, 752, 200, 759, 162, 695, 162, 688, 109, 633, 109, 632, 160)
 
-[node name="NextLevel" parent="." index="10"]
-position = Vector2(1467, 427)
-
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
