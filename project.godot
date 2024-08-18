@@ -90,6 +90,7 @@ Secondary={
 2d_physics/layer_5="Zones and Hitboxes"
 2d_physics/layer_6="Pressure Plates"
 2d_physics/layer_7="Decorations"
+2d_physics/layer_8="Camera Areas"
 
 [physics]
 

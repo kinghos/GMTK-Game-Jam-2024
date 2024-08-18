@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bqb28c3c0c76j"]
+[gd_scene load_steps=28 format=3 uid="uid://bqb28c3c0c76j"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_ro3ok"]
 [ext_resource type="Texture2D" uid="uid://nmnip41ehyje" path="res://assets/graphics/player/lizard_walk.png" id="2_4g4ha"]
@@ -163,6 +163,9 @@ animations = [{
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_om30a"]
 polygon = PackedVector2Array(2, 13, 9, 13, 9, 4, 10, 3, 10, -1, 13, -3, 13, -12, 7, -12, 3, -20, 0, -19, -3, -12, -9, -11, -11, -6, -14, -4, -14, 6, -11, 10, -7, 13)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_polw7"]
+size = Vector2(27.5, 32)
+
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 47
 script = ExtResource("1_ro3ok")
@@ -193,7 +196,14 @@ collision_mask = 14
 occluder = SubResource("OccluderPolygon2D_om30a")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
 
 [node name="CameraAreaDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 128
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraAreaDetector"]
+position = Vector2(0.25, -3)
+shape = SubResource("RectangleShape2D_polw7")
+
+[connection signal="area_entered" from="CameraAreaDetector" to="." method="_on_camera_area_entered"]
