@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://ksscipjj6y65"]
+
+[ext_resource type="Texture2D" uid="uid://d16gafbe8degu" path="res://assets/graphics/decorations/window_rain.png" id="1_dew4c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvvua"]
+atlas = ExtResource("1_dew4c")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5l5p"]
+atlas = ExtResource("1_dew4c")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3ic1"]
+atlas = ExtResource("1_dew4c")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msn0n"]
+atlas = ExtResource("1_dew4c")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hnbk6"]
+atlas = ExtResource("1_dew4c")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvv2l"]
+atlas = ExtResource("1_dew4c")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ay5w"]
+atlas = ExtResource("1_dew4c")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwat1"]
+atlas = ExtResource("1_dew4c")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6dpf"]
+atlas = ExtResource("1_dew4c")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x5588"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvvua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5l5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3ic1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msn0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hnbk6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wvv2l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ay5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwat1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6dpf")
+}],
+"loop": true,
+"name": &"raining",
+"speed": 10.0
+}]
+
+[node name="Window" type="AnimatedSprite2D"]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_x5588")
+animation = &"raining"
+autoplay = "raining"
+frame_progress = 0.344438
