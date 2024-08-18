@@ -3,9 +3,13 @@ extends Area2D
 signal pressed(pressed)
 
 @export var mass_required: float
+@export var color: Color = "#98702a"
 
 var total_mass_applied: float = 0.0 : set = update_total_mass_applied
 var body_masses: Dictionary = {}
+
+func _ready() -> void:
+	$".".modulate = color
 
 func update_total_mass_applied(value: float) -> void:
 	total_mass_applied = value

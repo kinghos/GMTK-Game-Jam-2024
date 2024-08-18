@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://y08qj51uuc8j" path="res://scenes/objects/trapdoor.tscn" id="6_dcob2"]
 [ext_resource type="PackedScene" uid="uid://8ugc5pmxilxp" path="res://scenes/objects/button.tscn" id="6_fg616"]
 [ext_resource type="PackedScene" uid="uid://cellt2ya3waj0" path="res://scenes/objects/locked_door.tscn" id="7_anx7r"]
-[ext_resource type="Script" path="res://scenes/objects/pressure_plate.gd" id="8_ev7u1"]
+[ext_resource type="PackedScene" uid="uid://bduw5usetp2dr" path="res://scenes/objects/pressure_plate.tscn" id="9_3e5h6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5x20"]
 size = Vector2(1919, 20)
@@ -21,9 +21,6 @@ position = Vector2(493, 485)
 position = Vector2(49.5, -25)
 shape = SubResource("RectangleShape2D_e5x20")
 
-[node name="Player" parent="." index="1" instance=ExtResource("3_oeujk")]
-position = Vector2(-389, 432)
-
 [node name="Crate" parent="Objects" index="0" instance=ExtResource("2_eov0c")]
 position = Vector2(-229, 430)
 inertia = 0.1
@@ -33,7 +30,7 @@ position = Vector2(67, 427)
 inertia = 0.1
 
 [node name="Crate3" parent="Objects" index="2" instance=ExtResource("2_eov0c")]
-position = Vector2(653, 151)
+position = Vector2(653.105, 159.504)
 
 [node name="Crate4" parent="Objects" index="3" instance=ExtResource("2_eov0c")]
 position = Vector2(486, 431)
@@ -41,47 +38,28 @@ position = Vector2(486, 431)
 [node name="Trapdoor" parent="Objects" index="4" instance=ExtResource("6_dcob2")]
 position = Vector2(650, 180)
 
+[node name="PressurePlate" parent="Objects" index="5" instance=ExtResource("9_3e5h6")]
+modulate = Color(0.623529, 0, 0, 1)
+position = Vector2(178, 434)
+
 [node name="Turret" parent="Enemies" index="0" instance=ExtResource("5_c845s")]
-position = Vector2(647, 450)
+position = Vector2(660, 450)
 alert_light_color = Color(0.752941, 0, 0, 1)
 
-[node name="Button" parent="." index="5" instance=ExtResource("6_fg616")]
+[node name="Button" parent="." index="4" instance=ExtResource("6_fg616")]
 position = Vector2(376, 448)
 
-[node name="LockedDoor" parent="." index="6" node_paths=PackedStringArray("trigger_switch") instance=ExtResource("7_anx7r")]
+[node name="LockedDoor" parent="." index="5" node_paths=PackedStringArray("trigger_switch") instance=ExtResource("7_anx7r")]
 position = Vector2(440, 416)
 trigger_switch = NodePath("../Button")
 
-[node name="Area2D" type="Area2D" parent="." index="7"]
-position = Vector2(277, 429)
-collision_layer = 32
-collision_mask = 3
-script = ExtResource("8_ev7u1")
-mass_required = 2.0
-
-[node name="Label" type="Label" parent="Area2D" index="0"]
-texture_filter = 1
-offset_left = -105.0
-offset_top = -35.0
-offset_right = 84.0
-offset_bottom = -12.0
-scale = Vector2(1.12, 1)
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-text = "0/2"
-horizontal_alignment = 1
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" index="1"]
-position = Vector2(1, 6)
-scale = Vector2(2.1031, 1.48254)
-polygon = PackedVector2Array(-10, 7, 10, 7, 10, 9, 11, 9, 11, 10, -12, 10, -12, 9, -10, 9)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="8"]
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="6"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
-polygon = PackedVector2Array(595, 163, 551, 163, 552, 200, 608, 200, 608, 240, 525, 209, 530, 134, 604, 141, 620, 156, 629, 90, 711, 96, 708, 145, 799, 143, 785, 235, 704, 240, 704, 200, 752, 200, 759, 162, 695, 162, 688, 109, 633, 109, 632, 160)
+polygon = PackedVector2Array(670, 176, 670, 143, 636, 143, 636, 176, 569, 176, 569, 184, 613, 184, 613, 187, 569, 187, 564, 187, 564, 173, 633, 173, 633, 140, 673, 140, 673, 173, 733, 173, 733, 188, 690, 188, 690, 184, 731, 184, 731, 176)
 
-[node name="NextLevel" parent="." index="10"]
+[node name="Player" parent="." index="7" instance=ExtResource("3_oeujk")]
+position = Vector2(-328, 434)
+
+[node name="NextLevel" parent="." index="9"]
 position = Vector2(1467, 427)
-
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
