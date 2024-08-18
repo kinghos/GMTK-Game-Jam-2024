@@ -14,7 +14,7 @@ var scale_presets: Dictionary = {
 	Vector2(0.2, 0.2): [1, 0.4],
 	Vector2(0.5, 0.5): [2, 0.45],
 	Vector2(1.0, 1.0): [4, 1]
-	}
+}
 
 func set_mass(value: float) -> void:
 	if _mass != value:
@@ -23,6 +23,7 @@ func set_mass(value: float) -> void:
 		mass_changed.emit(_mass, self)
 
 func _ready():
+	add_to_group("Resizables") # make sure it's in Resizables
 	$CollisionShape2D.scale = Vector2(0.2, 0.2)
 	set_mass($".".mass)
 
