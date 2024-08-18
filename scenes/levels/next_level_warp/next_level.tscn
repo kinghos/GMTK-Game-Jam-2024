@@ -4,18 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://dsdtasjrcodiw" path="res://assets/graphics/enemies/michael.png" id="2_8n4j0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3tq77"]
-size = Vector2(36, 33)
+size = Vector2(45, 60)
 
 [node name="NextLevel" type="Area2D"]
 collision_layer = 16
 script = ExtResource("1_8xcq1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
 texture = ExtResource("2_8n4j0")
 flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-6, 1)
+position = Vector2(-0.5, 2)
 shape = SubResource("RectangleShape2D_3tq77")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
