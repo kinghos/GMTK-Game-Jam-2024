@@ -12,10 +12,16 @@ func _ready():
 
 func _process(_delta):
 	var collider: CollisionObject2D = null
+	
 	if $LeftCast.is_colliding():
-		collider = $LeftCast.get_collider()
-	elif $RightCast.is_colliding():
-		collider = $RightCast.get_collider()
+		var left_collider = $LeftCast.get_collider()
+		if left_collider and left_collider.get_name() == "Player":
+			collider = left_collider
+			
+	if $RightCast.is_colliding():
+		var right_collider = $RightCast.get_collider()
+		if right_collider and right_collider.get_name() == "Player":
+			collider = right_collider
 	
 	if collider and collider.get_name() == "Player":
 		if not player_dying:
