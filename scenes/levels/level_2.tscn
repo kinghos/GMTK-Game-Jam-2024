@@ -104,9 +104,9 @@ position = Vector2(1301, 749)
 [node name="Turret" parent="Enemies" index="0" instance=ExtResource("5_glje2")]
 position = Vector2(764, 604)
 
-[node name="Player" parent="." index="4" instance=ExtResource("4_4ginr")]
+[node name="Player" parent="." index="5" instance=ExtResource("4_4ginr")]
 position = Vector2(113, 590)
 
-[node name="NextLevel" parent="." index="6"]
+[node name="NextLevel" parent="." index="7"]
 position = Vector2(1635, 568)
 next_level_path = "res://scenes/levels/level_1.tscn"
