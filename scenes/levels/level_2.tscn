@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://dyrtpne8mqm65"]
+[gd_scene load_steps=12 format=4 uid="uid://dyrtpne8mqm65"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_2tvk7"]
 [ext_resource type="Texture2D" uid="uid://cwb2iqs54y2w6" path="res://assets/graphics/backgrounds/BG2.png" id="2_1g53h"]
@@ -15,7 +15,7 @@ texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 2:0/0 = 0
-2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 0, 0, 16, -8, 0, -16, 16, 16, 16)
 3:0/0 = 0
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 4:0/0 = 0
@@ -90,6 +90,15 @@ physics_layer_0/collision_layer = 8
 physics_layer_0/collision_mask = 39
 sources/0 = SubResource("TileSetAtlasSource_4o4na")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1oir"]
+size = Vector2(956, 604.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxevh"]
+size = Vector2(413, 429.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jeg4g"]
+size = Vector2(1143, 491.5)
+
 [node name="Level2" instance=ExtResource("1_2tvk7")]
 
 [node name="TextureRect" type="TextureRect" parent="." index="0"]
@@ -131,8 +140,43 @@ position = Vector2(1327, 907)
 position = Vector2(764, 604)
 
 [node name="Player" parent="." index="5" instance=ExtResource("4_4ginr")]
-position = Vector2(176, 589)
+position = Vector2(180, 586)
+
+[node name="Area1" type="Area2D" parent="CameraAreas" index="0"]
+position = Vector2(480, 352.5)
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraAreas/Area1" index="0"]
+shape = SubResource("RectangleShape2D_j1oir")
+
+[node name="Area2" type="Area2D" parent="CameraAreas" index="1"]
+position = Vector2(1440, 353)
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraAreas/Area2" index="0"]
+shape = SubResource("RectangleShape2D_j1oir")
+
+[node name="Area3" type="Area2D" parent="CameraAreas" index="2"]
+position = Vector2(1229.5, 869.25)
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraAreas/Area3" index="0"]
+shape = SubResource("RectangleShape2D_gxevh")
+
+[node name="Area4" type="Area2D" parent="CameraAreas" index="3"]
+position = Vector2(571.5, 901.25)
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraAreas/Area4" index="0"]
+shape = SubResource("RectangleShape2D_jeg4g")
 
 [node name="NextLevel" parent="." index="7"]
 position = Vector2(1635, 568)
 next_level_path = "res://scenes/levels/level_1.tscn"
+
+[node name="Camera2D" parent="." index="8" node_paths=PackedStringArray("player")]
+player = NodePath("../Player")
