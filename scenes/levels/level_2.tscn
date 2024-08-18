@@ -3,7 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_2tvk7"]
 [ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="2_hh1t6"]
 [ext_resource type="Texture2D" uid="uid://uvhuddlc6csq" path="res://assets/graphics/tilesets/brick_tileset_final.png" id="2_ut722"]
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" path="res://assets/graphics/backgrounds/castle interiror beta.png" id="2_y76eu"]
+=======
+[ext_resource type="Texture2D" uid="uid://bbwnyn4lyj82j" path="res://assets/graphics/backgrounds/castle interiror beta.png" id="2_y76eu"]
+>>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://bqb28c3c0c76j" path="res://scenes/player/player.tscn" id="4_4ginr"]
 [ext_resource type="PackedScene" uid="uid://c2rf2bqmkt8dr" path="res://scenes/enemies/turret.tscn" id="5_glje2"]
 
