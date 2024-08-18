@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=4 uid="uid://b64feohs7ud18"]
+[gd_scene load_steps=9 format=4 uid="uid://b64feohs7ud18"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_xxpsw"]
 [ext_resource type="Texture2D" uid="uid://bx2kuo38pcbh1" path="res://assets/graphics/backgrounds/outside.png" id="2_avu0q"]
 [ext_resource type="Texture2D" uid="uid://uvhuddlc6csq" path="res://assets/graphics/tilesets/brick_tileset_final.png" id="3_3dram"]
 [ext_resource type="PackedScene" uid="uid://bqb28c3c0c76j" path="res://scenes/player/player.tscn" id="3_nynhs"]
 [ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="4_r7reg"]
-[ext_resource type="Texture2D" uid="uid://7a2kmkod0c2w" path="res://assets/graphics/doors/Level_1_Castle_Door.png" id="5_e8wnk"]
 [ext_resource type="PackedScene" uid="uid://c2rf2bqmkt8dr" path="res://scenes/enemies/turret.tscn" id="7_5i8s7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rlcud"]
@@ -96,6 +95,7 @@ texture = ExtResource("3_3dram")
 10:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, 16, 16, -16)
 
 [sub_resource type="TileSet" id="TileSet_a0b3d"]
+tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 8
 physics_layer_0/collision_mask = 39
 sources/0 = SubResource("TileSetAtlasSource_rlcud")
@@ -103,7 +103,6 @@ sources/0 = SubResource("TileSetAtlasSource_rlcud")
 [node name="Level1" instance=ExtResource("1_xxpsw")]
 
 [node name="TextureRect" type="TextureRect" parent="." index="0"]
-visible = false
 offset_left = -502.0
 offset_top = -182.0
 offset_right = 1418.0
@@ -120,29 +119,24 @@ tile_set = SubResource("TileSet_a0b3d")
 [node name="Player" parent="." index="2" instance=ExtResource("3_nynhs")]
 position = Vector2(-220, 715)
 
-[node name="Crate" parent="." index="3" instance=ExtResource("4_r7reg")]
-position = Vector2(-7, 839)
-
-[node name="Camera2D" parent="." index="4"]
+[node name="Camera2D" parent="." index="3"]
 position = Vector2(460, 357)
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="5"]
-position = Vector2(878, 558)
-scale = Vector2(0.53211, 0.53211)
-texture = ExtResource("5_e8wnk")
+[node name="Crate" parent="Objects" index="0" instance=ExtResource("4_r7reg")]
+position = Vector2(-7, 839)
 
-[node name="Turret" parent="." index="6" instance=ExtResource("7_5i8s7")]
-position = Vector2(614, 777)
-
-[node name="NextLevel" parent="." index="7"]
-position = Vector2(835, 599)
-next_level_path = "res://scenes/levels/level_2.tscn"
-
-[node name="Crate2" parent="." index="8" instance=ExtResource("4_r7reg")]
+[node name="Crate2" parent="Objects" index="1" instance=ExtResource("4_r7reg")]
 position = Vector2(605, 553)
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="9"]
+[node name="Turret" parent="Enemies" index="0" instance=ExtResource("7_5i8s7")]
+position = Vector2(614, 777)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Enemies" index="1"]
 energy = 0.3
 blend_mode = 1
+
+[node name="NextLevel" parent="." index="6"]
+position = Vector2(890, 562)
+next_level_path = "res://scenes/levels/level_2.tscn"
