@@ -3,7 +3,7 @@ extends Area2D
 @export var next_level_path: String
 @export var flip_horizontal: bool = false
 
-var level_1_texture = preload("res://assets/graphics/doors/Level_1_Castle_Door.png")
+var level_1_texture = preload("res://assets/graphics/doors/castle_entrance.png")
 
 func _ready():
 	if $".".get_parent().name == "Level1":

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uvhuddlc6csq"
-path="res://.godot/imported/brick_tileset_final.png-7475e742c3f984185821d8921a4672cb.ctex"
+uid="uid://nnpklw3wv2gc"
+path="res://.godot/imported/castle_interior_alpha.png-468cb9c468bb20f36641ff78ad466974.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/tilesets/brick_tileset_final.png"
-dest_files=["res://.godot/imported/brick_tileset_final.png-7475e742c3f984185821d8921a4672cb.ctex"]
+source_file="res://assets/graphics/backgrounds/castle_interior_alpha.png"
+dest_files=["res://.godot/imported/castle_interior_alpha.png-468cb9c468bb20f36641ff78ad466974.ctex"]
 
 [params]
 

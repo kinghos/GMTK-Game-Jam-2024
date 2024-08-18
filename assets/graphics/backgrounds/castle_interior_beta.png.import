@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4vf1thc85311"
-path="res://.godot/imported/title card.png-5318edf80d1e5ff2d3efc068078f373a.ctex"
+uid="uid://bbwnyn4lyj82j"
+path="res://.godot/imported/castle_interior_beta.png-1b78bbea719e741cfab73c0dff1afe6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/backgrounds/title card.png"
-dest_files=["res://.godot/imported/title card.png-5318edf80d1e5ff2d3efc068078f373a.ctex"]
+source_file="res://assets/graphics/backgrounds/castle_interior_beta.png"
+dest_files=["res://.godot/imported/castle_interior_beta.png-1b78bbea719e741cfab73c0dff1afe6c.ctex"]
 
 [params]
 
