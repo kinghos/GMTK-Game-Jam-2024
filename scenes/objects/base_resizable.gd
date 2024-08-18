@@ -41,8 +41,8 @@ func resize(current_scale: Vector2, direction: int):
 	var scale_keys = []
 
 	for key in SCALE_PRESETS.keys():
-		var scale = SCALE_PRESETS[key]["scale"]
-		scales.append(scale)
+		var scale_value = SCALE_PRESETS[key]["scale"]
+		scales.append(scale_value)
 		scale_keys.append(key)
 	
 	if (resize_tween and resize_tween.is_running()) or not hovering or not scales.has(current_scale):
