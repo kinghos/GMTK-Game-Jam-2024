@@ -23,7 +23,7 @@ func _process(_delta):
 		if right_collider and right_collider.get_name() == "Player":
 			collider = right_collider
 	
-	if collider and collider.get_name() == "Player":
+	if collider:
 		if not player_dying:
 			kill.emit(collider, collider.skull_color)
 		player_dying = true
