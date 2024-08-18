@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b6ov1c07brllg"]
 
 [ext_resource type="Script" path="res://scenes/ui/title_screen.gd" id="1_v1y6f"]
-[ext_resource type="Texture2D" uid="uid://jswptmwsfqjo" path="res://assets/graphics/misc/title_card.png" id="2_gn1v6"]
+[ext_resource type="Texture2D" uid="uid://b4vf1thc85311" path="res://assets/graphics/backgrounds/title card.png" id="2_gn1v6"]
 
 [sub_resource type="SystemFont" id="SystemFont_i6skl"]
 font_names = PackedStringArray("Franklin Gothic")
