@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwaecaj5nimj7"]
+[gd_scene load_steps=5 format=3 uid="uid://y08qj51uuc8j"]
 
 [ext_resource type="PackedScene" uid="uid://bwornrfyehb5y" path="res://scenes/objects/base_object.tscn" id="1_o6gk0"]
 [ext_resource type="Texture2D" uid="uid://cr35pm2o2mn7l" path="res://assets/graphics/objects/trapdoor.png" id="2_3o8cf"]

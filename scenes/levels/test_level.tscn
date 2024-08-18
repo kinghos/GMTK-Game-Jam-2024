@@ -1,16 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://eorunkwj36vv"]
+[gd_scene load_steps=11 format=3 uid="uid://eorunkwj36vv"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_84xje"]
 [ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="2_eov0c"]
 [ext_resource type="PackedScene" uid="uid://bqb28c3c0c76j" path="res://scenes/player/player.tscn" id="3_oeujk"]
-[ext_resource type="Script" path="res://scenes/objects/scale/scale.gd" id="4_ang7j"]
 [ext_resource type="PackedScene" uid="uid://c2rf2bqmkt8dr" path="res://scenes/enemies/turret.tscn" id="5_c845s"]
-[ext_resource type="PackedScene" uid="uid://dwaecaj5nimj7" path="res://scenes/objects/trapdoor.tscn" id="6_dcob2"]
+[ext_resource type="PackedScene" uid="uid://y08qj51uuc8j" path="res://scenes/objects/trapdoor.tscn" id="6_dcob2"]
+[ext_resource type="PackedScene" uid="uid://8ugc5pmxilxp" path="res://scenes/objects/button.tscn" id="6_fg616"]
+[ext_resource type="PackedScene" uid="uid://cellt2ya3waj0" path="res://scenes/objects/locked_door.tscn" id="7_anx7r"]
+[ext_resource type="Script" path="res://scenes/objects/scale/scale.gd" id="8_ev7u1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5x20"]
-size = Vector2(494, 20)
+size = Vector2(1919, 20)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_autsf"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xdnf"]
+size = Vector2(72, 26)
 
 [node name="Level" instance=ExtResource("1_84xje")]
 
@@ -18,49 +21,68 @@ size = Vector2(494, 20)
 position = Vector2(493, 485)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="0"]
-position = Vector2(1, -25)
+position = Vector2(49.5, -25)
 shape = SubResource("RectangleShape2D_e5x20")
 
 [node name="Crate" parent="." index="1" instance=ExtResource("2_eov0c")]
-position = Vector2(467, 132)
+position = Vector2(-229, 430)
 inertia = 0.1
 
 [node name="Crate2" parent="." index="2" instance=ExtResource("2_eov0c")]
-position = Vector2(651, 133)
+position = Vector2(67, 427)
 inertia = 0.1
 
-[node name="Player" parent="." index="3" instance=ExtResource("3_oeujk")]
-position = Vector2(304, 297)
-skull_color = Color(0, 0, 0, 1)
+[node name="Crate3" parent="." index="3" instance=ExtResource("2_eov0c")]
+position = Vector2(653, 151)
 
-[node name="Scale" type="Area2D" parent="." index="4"]
-position = Vector2(455, 433)
-collision_mask = 3
-script = ExtResource("4_ang7j")
+[node name="Crate4" parent="." index="4" instance=ExtResource("2_eov0c")]
+position = Vector2(486, 431)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Scale" index="0"]
-shape = SubResource("RectangleShape2D_autsf")
+[node name="Player" parent="." index="5" instance=ExtResource("3_oeujk")]
+position = Vector2(-389, 432)
 
-[node name="Label" type="Label" parent="Scale" index="1"]
-offset_left = -21.0
-offset_top = 18.0
-offset_right = 19.0
-offset_bottom = 41.0
-text = "0"
-
-[node name="Camera2D" parent="." index="5"]
+[node name="Camera2D" parent="." index="6"]
 position = Vector2(545, 337)
 
-[node name="Turret" parent="." index="6" instance=ExtResource("5_c845s")]
+[node name="Turret" parent="." index="7" instance=ExtResource("5_c845s")]
 position = Vector2(647, 450)
 alert_light_color = Color(0.752941, 0, 0, 1)
 
-[node name="Trapdoor" parent="." index="8" instance=ExtResource("6_dcob2")]
+[node name="NextLevel" parent="." index="8"]
+position = Vector2(1467, 427)
+
+[node name="Trapdoor" parent="." index="9" instance=ExtResource("6_dcob2")]
 position = Vector2(650, 180)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="9"]
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="10"]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
-polygon = PackedVector2Array(595, 163, 551, 163, 552, 204, 635, 204, 635, 227, 525, 209, 530, 134, 604, 141, 620, 156, 629, 90, 711, 96, 708, 145, 799, 143, 785, 235, 690, 235, 690, 212, 755, 212, 759, 162, 695, 162, 688, 109, 633, 109, 632, 160)
+polygon = PackedVector2Array(595, 163, 551, 163, 552, 200, 608, 200, 608, 240, 525, 209, 530, 134, 604, 141, 620, 156, 629, 90, 711, 96, 708, 145, 799, 143, 785, 235, 704, 240, 704, 200, 752, 200, 759, 162, 695, 162, 688, 109, 633, 109, 632, 160)
 
-[connection signal="body_entered" from="Scale" to="Scale" method="_on_body_entered"]
+[node name="Button" parent="." index="11" instance=ExtResource("6_fg616")]
+position = Vector2(376, 448)
+
+[node name="LockedDoor" parent="." index="12" node_paths=PackedStringArray("trigger_switch") instance=ExtResource("7_anx7r")]
+position = Vector2(440, 416)
+trigger_switch = NodePath("../Button")
+
+[node name="Area2D" type="Area2D" parent="." index="13"]
+position = Vector2(277, 422)
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("8_ev7u1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(-83, 8)
+shape = SubResource("RectangleShape2D_7xdnf")
+
+[node name="Label" type="Label" parent="Area2D" index="1"]
+texture_filter = 1
+offset_left = -173.0
+offset_top = -108.0
+offset_right = 16.0
+offset_bottom = -85.0
+text = "Current mass on scale: 0"
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
