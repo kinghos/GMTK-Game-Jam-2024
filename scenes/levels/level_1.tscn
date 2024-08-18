@@ -111,7 +111,7 @@ sources/0 = SubResource("TileSetAtlasSource_rlcud")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_capah"]
 size = Vector2(960, 1080)
 
-[node name="Level1" instance=ExtResource("1_xxpsw")]
+[node name="Level 1" instance=ExtResource("1_xxpsw")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 layer = -1
