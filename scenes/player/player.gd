@@ -6,6 +6,7 @@ const JUMP_VELOCITY = -300.0
 @export var skull_color: Color = "#6abe30"
 @export var MAGIC_RADIUS = 300
 @export var push_force = 500
+@export var dead: bool = false
 
 var can_push_switch
 
@@ -17,6 +18,9 @@ var wand_cursor: Resource = load("res://assets/graphics/cursors/wandcursor.png")
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 
 func _physics_process(delta):
+	if dead:
+		return
+		
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -47,6 +51,9 @@ func _physics_process(delta):
 	push_objects()
 
 func _process(_delta: float) -> void:
+	if dead:
+		return
+	
 	# Play animations
 	if is_on_floor():
 		if velocity == Vector2.ZERO:
@@ -54,7 +61,7 @@ func _process(_delta: float) -> void:
 		else:
 			animated_sprite.play("walk")
 			
-	var mouse_pos = to_local(get_viewport().get_camera_2d().get_global_mouse_position())
+	var mouse_pos = to_local($Camera2D.get_global_mouse_position())
 	
 	# Find difference of vectors and see if its less than the max radius
 	var vector_diff = mouse_pos - to_local(position)

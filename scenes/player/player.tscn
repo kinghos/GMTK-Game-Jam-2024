@@ -191,3 +191,5 @@ collision_mask = 14
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_om30a")
+
+[node name="Camera2D" type="Camera2D" parent="."]

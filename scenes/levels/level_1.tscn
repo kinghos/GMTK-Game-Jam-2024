@@ -119,11 +119,6 @@ tile_set = SubResource("TileSet_a0b3d")
 [node name="Player" parent="." index="2" instance=ExtResource("3_nynhs")]
 position = Vector2(-220, 715)
 
-[node name="Camera2D" parent="." index="3"]
-position = Vector2(460, 357)
-limit_smoothed = true
-position_smoothing_enabled = true
-
 [node name="Crate" parent="Objects" index="0" instance=ExtResource("4_r7reg")]
 position = Vector2(-7, 839)
 
@@ -137,6 +132,6 @@ position = Vector2(614, 777)
 energy = 0.3
 blend_mode = 1
 
-[node name="NextLevel" parent="." index="6"]
+[node name="NextLevel" parent="." index="5"]
 position = Vector2(890, 562)
 next_level_path = "res://scenes/levels/level_2.tscn"

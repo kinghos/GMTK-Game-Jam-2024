@@ -24,9 +24,6 @@ shape = SubResource("RectangleShape2D_e5x20")
 [node name="Player" parent="." index="1" instance=ExtResource("3_oeujk")]
 position = Vector2(-389, 432)
 
-[node name="Camera2D" parent="." index="2"]
-position = Vector2(545, 337)
-
 [node name="Crate" parent="Objects" index="0" instance=ExtResource("2_eov0c")]
 position = Vector2(-229, 430)
 inertia = 0.1
@@ -47,6 +44,9 @@ position = Vector2(650, 180)
 [node name="Turret" parent="Enemies" index="0" instance=ExtResource("5_c845s")]
 position = Vector2(647, 450)
 alert_light_color = Color(0.752941, 0, 0, 1)
+
+[node name="NextLevel" parent="." index="4"]
+position = Vector2(1467, 427)
 
 [node name="Button" parent="." index="5" instance=ExtResource("6_fg616")]
 position = Vector2(376, 448)
@@ -82,9 +82,6 @@ polygon = PackedVector2Array(-10, 7, 10, 7, 10, 9, 11, 9, 11, 10, -12, 10, -12, 
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
 polygon = PackedVector2Array(595, 163, 551, 163, 552, 200, 608, 200, 608, 240, 525, 209, 530, 134, 604, 141, 620, 156, 629, 90, 711, 96, 708, 145, 799, 143, 785, 235, 704, 240, 704, 200, 752, 200, 759, 162, 695, 162, 688, 109, 633, 109, 632, 160)
-
-[node name="NextLevel" parent="." index="9"]
-position = Vector2(1467, 427)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
