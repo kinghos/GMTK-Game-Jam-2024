@@ -22,7 +22,6 @@ func set_mass(value: float) -> void:
 		$".".mass = value
 		mass_changed.emit(_mass, self)
 
-
 func _ready():
 	$CollisionShape2D.scale = Vector2(0.2, 0.2)
 	set_mass($".".mass)

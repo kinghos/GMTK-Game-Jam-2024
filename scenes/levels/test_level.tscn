@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://eorunkwj36vv"]
+[gd_scene load_steps=10 format=3 uid="uid://eorunkwj36vv"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_84xje"]
 [ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="2_eov0c"]
@@ -11,9 +11,6 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5x20"]
 size = Vector2(1919, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xdnf"]
-size = Vector2(72, 26)
 
 [node name="Level" instance=ExtResource("1_84xje")]
 
@@ -67,22 +64,23 @@ position = Vector2(440, 416)
 trigger_switch = NodePath("../Button")
 
 [node name="Area2D" type="Area2D" parent="." index="13"]
-position = Vector2(277, 422)
-collision_layer = 16
-collision_mask = 2
+position = Vector2(277, 429)
+collision_layer = 32
+collision_mask = 3
 script = ExtResource("8_ev7u1")
+mass_required = 2.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(-83, 8)
-shape = SubResource("RectangleShape2D_7xdnf")
-
-[node name="Label" type="Label" parent="Area2D" index="1"]
+[node name="Label" type="Label" parent="Area2D" index="0"]
 texture_filter = 1
 offset_left = -173.0
 offset_top = -108.0
 offset_right = 16.0
 offset_bottom = -85.0
 text = "Current mass on scale: 0"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" index="1"]
+position = Vector2(0, 11)
+polygon = PackedVector2Array(-10, 7, 10, 7, 10, 9, 11, 9, 11, 10, -12, 10, -12, 9, -10, 9)
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
