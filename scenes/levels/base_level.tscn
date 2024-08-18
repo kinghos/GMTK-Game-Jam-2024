@@ -9,4 +9,8 @@ script = ExtResource("1_cfftt")
 
 [node name="Camera2D" parent="." instance=ExtResource("2_4ri0m")]
 
+[node name="Objects" type="Node" parent="."]
+
+[node name="Enemies" type="Node" parent="."]
+
 [node name="NextLevel" parent="." instance=ExtResource("3_jfif1")]
