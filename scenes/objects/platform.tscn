@@ -21,6 +21,7 @@ texture = ExtResource("2_j1f05")
 [node name="EditorSprite" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.494118)
 position = Vector2(0, 12)
+scale = Vector2(2, 1)
 texture = ExtResource("2_j1f05")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

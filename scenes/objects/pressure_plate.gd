@@ -1,7 +1,7 @@
 extends Area2D
 
 signal pressed(pressed)
-
+var pressure_plate # Property for locked_door
 @export var mass_required: float
 @export var failure_color: Color = "d11229"
 @export var success_color: Color = "89b361"
@@ -23,9 +23,11 @@ func update_total_mass_applied(value: float) -> void:
 		pressed.emit(true)
 
 func _on_body_entered(body: Node2D) -> void:
+	$Plate.animation = "down"
 	update_body_state(body, "enter")
 
 func _on_body_exited(body: Node2D) -> void:
+	$Plate.animation = "up"
 	update_body_state(body, "exit")
 
 # Called to add/remove bodies from the scale

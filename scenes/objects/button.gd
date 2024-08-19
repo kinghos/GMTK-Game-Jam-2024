@@ -3,6 +3,7 @@ extends Area2D
 @onready var sprite_2d = $Sprite2D
 @export var color: Color
 signal pressed(switch_id)
+var button # Property for locked_door
 
 func _ready():
 	sprite_2d.animation = "up"
