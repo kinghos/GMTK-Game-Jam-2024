@@ -79,16 +79,23 @@ texture_region_size = Vector2i(32, 32)
 1:6/0 = 0
 6:0/0 = 0
 6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, -8, -16, -8)
 7:2/0 = 0
+7:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, -8, -16, -8)
 8:2/0 = 0
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, -8, -16, -8)
 7:0/0 = 0
 8:0/0 = 0
 8:4/0 = 0
 8:5/0 = 0
 4:8/0 = 0
+4:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 5:8/0 = 0
+5:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 6:8/0 = 0
+6:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 7:8/0 = 0
+7:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 8:6/0 = 0
 9:5/0 = 0
 6:4/0 = 0
@@ -140,7 +147,7 @@ position = Vector2(1327, 907)
 position = Vector2(764, 604)
 
 [node name="Player" parent="." index="5" instance=ExtResource("4_4ginr")]
-position = Vector2(1461, 584)
+position = Vector2(202, 591)
 
 [node name="NextLevel" parent="." index="7"]
 position = Vector2(1635, 568)
