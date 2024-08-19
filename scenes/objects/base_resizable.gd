@@ -67,7 +67,9 @@ func resize(current_scale: Vector2, direction: int):
 		resize_tween = null
 
 func _on_mouse_enter(_shape_idx: int):
+	$CollisionShape2D/Sprite2D.material.set_shader_parameter("width", 0.5)
 	hovering = true
 
 func _on_mouse_exit(_shape_idx: int):
+	$CollisionShape2D/Sprite2D.material.set_shader_parameter("width", 0)
 	hovering = false
