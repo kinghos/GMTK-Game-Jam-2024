@@ -57,7 +57,7 @@ collision_layer = 19
 collision_mask = 3
 expanded_scale = 3.0
 
-[node name="Turret" parent="Enemies" index="0" groups=["Enemies"] instance=ExtResource("7_5i8s7")]
+[node name="Turret" parent="Enemies" index="0" instance=ExtResource("7_5i8s7")]
 position = Vector2(2220, 982)
 
 [node name="Grass" type="Sprite2D" parent="Decorations" index="0"]
