@@ -6,6 +6,11 @@ var paused: bool = false
 @onready var camera_2d: Camera2D = $Camera2D
 
 func _ready() -> void:
+	var black_anim = TransitionLayer.get_node("AnimationPlayer")
+	TransitionLayer.get_node("ColorRect").visible = true
+	black_anim.play("fade_from_black")
+	await black_anim.animation_finished
+	TransitionLayer.get_node("ColorRect").visible = false
 	Globals.unlocked_levels.append($".".name)
 	for i in get_tree().get_nodes_in_group("Entities"):
 		i.connect("kill", kill_entity)

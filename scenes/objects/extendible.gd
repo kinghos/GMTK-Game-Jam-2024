@@ -24,6 +24,9 @@ func update_expanded_scale(new_scale):
 func _ready() -> void:
 	if not Engine.is_editor_hint() and has_node("EditorSprite"):
 		$EditorSprite.visible = false
+	else:
+		update_initial_scale(initial_scale)
+		update_expanded_scale(expanded_scale)
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton and event.is_pressed() and not expanded:
@@ -35,7 +38,7 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 func resize(remove_collision: bool = false):
 	var resize_tween = get_tree().create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 	var expanded_scale_vector = Vector2(expanded_scale, 1)
-	resize_tween.tween_property($".", "scale", expanded_scale_vector, tween_duration)
+	resize_tween.tween_property($Sprite2D, "scale", expanded_scale_vector, tween_duration)
 	$Sprite2D.material.set_shader_parameter("width", 0)
 	expanded = true
 	if remove_collision:
