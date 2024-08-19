@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dqdlho6qf10uf" path="res://assets/graphics/objects/button_mask.png" id="4_33f7a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5q1jm"]
-size = Vector2(28, 7)
+size = Vector2(24, 7)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ng0rd"]
 atlas = ExtResource("3_ifqoo")
@@ -62,6 +62,8 @@ animations = [{
 }]
 
 [node name="Button" type="Area2D"]
+collision_layer = 16
+collision_mask = 11
 script = ExtResource("1_40dog")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -74,6 +76,8 @@ sprite_frames = SubResource("SpriteFrames_lh4v0")
 animation = &"up"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(2, -2.5)

@@ -1,13 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://y08qj51uuc8j"]
+[gd_scene load_steps=7 format=3 uid="uid://y08qj51uuc8j"]
 
 [ext_resource type="PackedScene" uid="uid://bwornrfyehb5y" path="res://scenes/objects/base_resizable.tscn" id="1_o6gk0"]
 [ext_resource type="Texture2D" uid="uid://cr35pm2o2mn7l" path="res://assets/graphics/objects/trapdoor.png" id="2_3o8cf"]
+[ext_resource type="Shader" path="res://scenes/objects/resizable.gdshader" id="2_jngfg"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lmj48"]
 friction = 0.4
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dko1k"]
 size = Vector2(800, 32)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cw4v3"]
+resource_local_to_scene = true
+shader = ExtResource("2_jngfg")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
 
 [node name="Trapdoor" instance=ExtResource("1_o6gk0")]
 physics_material_override = SubResource("PhysicsMaterial_lmj48")
@@ -17,5 +24,6 @@ gravity_scale = 1.0
 shape = SubResource("RectangleShape2D_dko1k")
 
 [node name="Sprite2D" parent="CollisionShape2D" index="0"]
+material = SubResource("ShaderMaterial_cw4v3")
 position = Vector2(5.96046e-08, 17)
 texture = ExtResource("2_3o8cf")

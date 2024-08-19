@@ -20,7 +20,6 @@ const SCALE_PRESETS = {
 	"Medium": {"scale": Vector2(0.5, 0.5), "mass": 2.0, "friction": 0.45},
 	"Large": {"scale": Vector2(1.0, 1.0), "mass": 4.0, "friction": 1.0}
 }
-
 func set_mass(value: float) -> void:
 	if _mass != value:
 		_mass = value

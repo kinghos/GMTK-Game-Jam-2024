@@ -64,6 +64,8 @@ func _process(_delta: float) -> void:
 			animated_sprite.play("idle")
 		else:
 			animated_sprite.play("walk")
+	else:
+		animated_sprite.play("jump")
 			
 	var mouse_pos = to_local($Camera2D.get_global_mouse_position())
 	

@@ -41,6 +41,8 @@ size = Vector2(32.5, 19)
 size = Vector2(32, 15)
 
 [node name="LockedDoor" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 15
 script = ExtResource("1_coiu6")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
@@ -53,12 +55,16 @@ shape = SubResource("RectangleShape2D_o01n7")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, -39)
+collision_layer = 2
+collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("RectangleShape2D_e56yt")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(0, 42)
+collision_layer = 2
+collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(0, -1.5)
