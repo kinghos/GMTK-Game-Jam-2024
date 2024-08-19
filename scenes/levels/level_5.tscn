@@ -20,6 +20,7 @@
 offset_left = -132.0
 offset_right = 4278.0
 offset_bottom = 1079.0
+mouse_filter = 2
 color = Color(0.172549, 0.105882, 0.129412, 1)
 
 [node name="Tilemaps" type="Node2D" parent="." index="1"]
