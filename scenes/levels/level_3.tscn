@@ -195,7 +195,7 @@ offset_bottom = 566.0
 text = " "
 
 [node name="Player" parent="." instance=ExtResource("2_678o6")]
-position = Vector2(2443, 486)
+position = Vector2(-46, 306)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(2686, 614)
