@@ -119,8 +119,13 @@ func _on_camera_area_entered(area: Area2D) -> void:
 	cam.limit_right = cam.limit_left + size.x
 
 
-func _on_death_area_body_entered(body: Node2D) -> void:
+func _on_spike(body: Node2D) -> void:
 	if body is TileMapLayer:
-		print(body.tile_set.get_physics_layer_collision_layer(0))
 		if body.tile_set.get_physics_layer_collision_layer(0) == 64:
+			kill.emit(self, skull_color)
+
+func _on_boulder(body: Node2D) -> void:
+	print(body)
+	if body.has_meta("is_boulder"):
+		if body.initial_scale in ["Default", "Medium", "Large"]:
 			kill.emit(self, skull_color)
