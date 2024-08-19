@@ -52,13 +52,7 @@ func _physics_process(delta):
 	var was_on_floor = is_on_floor()
 	move_and_slide()
 	push_objects()
-	for i in get_slide_collision_count():
-		var col = get_slide_collision(i).get_collider()
-		if col is TileMapLayer:
-			if col.tile_set.get_physics_layer_collision_layer(0) == 7:
-				print("hello")
-				kill.emit(self, skull_color)
-	
+
 	if was_on_floor and !is_on_floor():
 		$CoyoteTimer.start()
 
@@ -123,3 +117,10 @@ func _on_camera_area_entered(area: Area2D) -> void:
 	
 	cam.limit_bottom = cam.limit_top + size.y
 	cam.limit_right = cam.limit_left + size.x
+
+
+func _on_death_area_body_entered(body: Node2D) -> void:
+	if body is TileMapLayer:
+		print(body.tile_set.get_physics_layer_collision_layer(0))
+		if body.tile_set.get_physics_layer_collision_layer(0) == 7:
+			print("HAI")

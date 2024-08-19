@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bk6imiduyp00t" path="res://assets/graphics/objects/crate.png" id="2_ktjip"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6xe1a"]
+friction = 0.4
 rough = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wywf6"]
