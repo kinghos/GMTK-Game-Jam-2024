@@ -142,7 +142,7 @@ tile_map_data = PackedByteArray("AADi/wIAAAAAAAAAAADi/wMAAAAAAAAAAADj/wIAAAABAAA
 tile_set = SubResource("TileSet_0u53v")
 
 [node name="Crate" parent="Objects" index="0" instance=ExtResource("2_hh1t6")]
-position = Vector2(50, 311)
+position = Vector2(587, 589)
 
 [node name="Crate3" parent="Objects" index="1" instance=ExtResource("2_hh1t6")]
 position = Vector2(1243, 521)
