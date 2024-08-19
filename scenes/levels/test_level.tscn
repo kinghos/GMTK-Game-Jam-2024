@@ -51,16 +51,27 @@ position = Vector2(-213, 381)
 [node name="Boulder" parent="Objects" index="7" instance=ExtResource("6_vpafa")]
 position = Vector2(12, 292)
 
+[node name="LockedDoor" parent="Objects" index="8" node_paths=PackedStringArray("trigger_switch") instance=ExtResource("7_anx7r")]
+position = Vector2(921, 401)
+trigger_switch = NodePath("../Button")
+colour = Color(0.238808, 0.50367, 0, 1)
+
+[node name="Button" parent="Objects" index="9" instance=ExtResource("6_fg616")]
+position = Vector2(820, 449)
+color = Color(0.239216, 0.501961, 0, 1)
+
 [node name="Turret" parent="Enemies" index="0" instance=ExtResource("5_c845s")]
 position = Vector2(660, 450)
 alert_light_color = Color(0.752941, 0, 0, 1)
 
 [node name="Button" parent="." index="4" instance=ExtResource("6_fg616")]
 position = Vector2(376, 448)
+color = Color(0.396078, 0.333333, 0.823529, 1)
 
 [node name="LockedDoor" parent="." index="5" node_paths=PackedStringArray("trigger_switch") instance=ExtResource("7_anx7r")]
 position = Vector2(436, 401)
 trigger_switch = NodePath("../Button")
+colour = Color(0.398022, 0.334342, 0.82366, 1)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="6"]
 

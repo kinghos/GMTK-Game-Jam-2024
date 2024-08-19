@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://8ugc5pmxilxp"]
+[gd_scene load_steps=12 format=3 uid="uid://8ugc5pmxilxp"]
 
 [ext_resource type="Script" path="res://scenes/objects/button.gd" id="1_40dog"]
 [ext_resource type="Texture2D" uid="uid://b2x7px66dcmyl" path="res://assets/graphics/objects/button_down.png" id="2_4cro6"]
 [ext_resource type="Texture2D" uid="uid://ckq8rxwxfb2iv" path="res://assets/graphics/objects/button_up.png" id="3_ifqoo"]
+[ext_resource type="Texture2D" uid="uid://dqdlho6qf10uf" path="res://assets/graphics/objects/button_mask.png" id="4_33f7a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5q1jm"]
 size = Vector2(28, 7)
@@ -33,6 +34,33 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pi0ly"]
 size = Vector2(28, 5)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_5r47r"]
+atlas = ExtResource("4_33f7a")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18jpj"]
+atlas = ExtResource("4_33f7a")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a85im"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5r47r")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18jpj")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
 [node name="Button" type="Area2D"]
 script = ExtResource("1_40dog")
 
@@ -51,5 +79,10 @@ animation = &"up"
 position = Vector2(2, -2.5)
 shape = SubResource("RectangleShape2D_pi0ly")
 debug_color = Color(0.904642, 0.245813, 0.467424, 0.42)
+
+[node name="ButtonMask" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, -8)
+sprite_frames = SubResource("SpriteFrames_a85im")
+animation = &"down"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
