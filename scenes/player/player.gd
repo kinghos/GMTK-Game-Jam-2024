@@ -110,8 +110,8 @@ func _on_camera_area_entered(area: Area2D) -> void:
 		size.x = view_size.x
 	
 	var cam = $Camera2D
-	cam.limit_top = collision_shape.global_position.y - size.y/2
-	cam.limit_left = collision_shape.global_position.x - size.x/2
+	cam.limit_top = collision_shape.global_position.y - size.y/4
+	cam.limit_left = collision_shape.global_position.x - size.x/4
 	
-	$Camera2D.limit_bottom = cam.limit_top + size.y
-	$Camera2D.limit_right = cam.limit_left + size.x
+	cam.limit_bottom = cam.limit_top + size.y
+	cam.limit_right = cam.limit_left + size.x

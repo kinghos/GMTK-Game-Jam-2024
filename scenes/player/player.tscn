@@ -219,8 +219,8 @@ shape = SubResource("CapsuleShape2D_3mord")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_c72jt")
-animation = &"jump"
-frame_progress = 0.809786
+animation = &"walk"
+frame_progress = 0.42906
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(6, 0)
@@ -232,6 +232,8 @@ occluder = SubResource("OccluderPolygon2D_om30a")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
+limit_smoothed = true
+position_smoothing_enabled = true
 
 [node name="CameraAreaDetector" type="Area2D" parent="."]
 collision_layer = 0
