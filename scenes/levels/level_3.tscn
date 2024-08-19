@@ -170,4 +170,4 @@ collision_mask = 3
 expanded_scale = 4.0
 
 [node name="Player" parent="." instance=ExtResource("2_678o6")]
-position = Vector2(1431, 368)
+position = Vector2(91, 405)
