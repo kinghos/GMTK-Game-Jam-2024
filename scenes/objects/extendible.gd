@@ -1,5 +1,5 @@
 @tool
-extends StaticBody2D
+extends Node
 
 @export var initial_scale: float = 1 :
 	set(value):
