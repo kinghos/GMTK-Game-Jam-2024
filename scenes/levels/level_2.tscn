@@ -186,7 +186,7 @@ initial_scale = "Large"
 position = Vector2(769, 604)
 
 [node name="Player" parent="." index="5" instance=ExtResource("4_4ginr")]
-position = Vector2(1040, 973)
+position = Vector2(132, 591)
 
 [node name="NextLevel" parent="." index="7"]
 position = Vector2(1635, 568)
