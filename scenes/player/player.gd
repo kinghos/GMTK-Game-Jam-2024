@@ -84,7 +84,7 @@ func _process(_delta: float) -> void:
 	if ray_cast_2d.is_colliding():
 		var collider = ray_cast_2d.get_collider()
 		
-		if collider.is_in_group("Resizables"):
+		if collider and collider.is_in_group("Resizables"):
 			var current_scale: Vector2 = collider.get_child(0).scale
 
 			if Input.is_action_pressed("Primary"):

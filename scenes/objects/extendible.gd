@@ -9,6 +9,7 @@ extends Node
 	set(value):
 		expanded_scale = value
 		update_expanded_scale(value)
+@export var tween_duration: float = 1
 
 var hovering: bool = false
 var expanded: bool = false
@@ -34,7 +35,7 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 func resize(remove_collision: bool = false):
 	var resize_tween = get_tree().create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 	var expanded_scale_vector = Vector2(expanded_scale, 1)
-	resize_tween.tween_property($".", "scale", expanded_scale_vector, 1)
+	resize_tween.tween_property($".", "scale", expanded_scale_vector, tween_duration)
 	$Sprite2D.material.set_shader_parameter("width", 0)
 	expanded = true
 	if remove_collision:

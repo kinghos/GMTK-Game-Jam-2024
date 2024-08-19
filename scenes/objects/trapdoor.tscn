@@ -23,6 +23,7 @@ input_pickable = true
 physics_material_override = SubResource("PhysicsMaterial_lmj48")
 script = ExtResource("2_7xp4q")
 expanded_scale = 0.0
+tween_duration = 0.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(0.2, 0.2)
