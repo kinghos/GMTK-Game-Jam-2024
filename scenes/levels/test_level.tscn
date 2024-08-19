@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://eorunkwj36vv"]
+[gd_scene load_steps=15 format=4 uid="uid://eorunkwj36vv"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_84xje"]
 [ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="2_eov0c"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://fp07fue2vml1" path="res://scenes/objects/pressure_plate.tscn" id="9_3e5h6"]
 [ext_resource type="TileSet" uid="uid://dcgci8cyt1jnq" path="res://assets/graphics/tilesets/level1.tres" id="11_qpdgj"]
 [ext_resource type="TileSet" uid="uid://dn64p7d7jg05p" path="res://assets/graphics/tilesets/spikes.tres" id="12_3uuk5"]
+[ext_resource type="PackedScene" uid="uid://cfjgl27uyhycb" path="res://scenes/utilities/camera_bounds.tscn" id="13_r0jjy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5x20"]
 size = Vector2(2962, 20)
@@ -88,3 +89,7 @@ tile_set = ExtResource("11_qpdgj")
 [node name="TileMapLayer2" type="TileMapLayer" parent="." index="8"]
 tile_map_data = PackedByteArray("AADm/w0AAQACAAAAAAA=")
 tile_set = ExtResource("12_3uuk5")
+
+[node name="CameraBound" parent="." index="11" instance=ExtResource("13_r0jjy")]
+position = Vector2(-586, 243)
+size = Vector2(500, 600)

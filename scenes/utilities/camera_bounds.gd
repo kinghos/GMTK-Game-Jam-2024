@@ -3,9 +3,7 @@ extends Node2D
 class_name CameraBounds
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
-
-
-@export var size: Vector2 = Vector2(10, 10) :
+@export var size: Vector2 = Vector2(10, 10):
 	set(new_size):
 		size.x = new_size.x
 		size.y = new_size.y
