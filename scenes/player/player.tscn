@@ -180,13 +180,6 @@ position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_c72jt")
 animation = &"idle"
 
-[node name="Line2D" type="Line2D" parent="."]
-points = PackedVector2Array(7, 0, 8, 0)
-width = 2.0
-default_color = Color(0.284774, 0.60126, 0.759265, 1)
-begin_cap_mode = 2
-end_cap_mode = 2
-
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(6, 0)
 target_position = Vector2(8, 0)
@@ -205,5 +198,16 @@ collision_mask = 128
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraAreaDetector"]
 position = Vector2(0.25, -3)
 shape = SubResource("RectangleShape2D_polw7")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(7, 0, 8, 0)
+width = 2.0
+default_color = Color(0.284774, 0.60126, 0.759265, 1)
+begin_cap_mode = 2
+end_cap_mode = 2
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+wait_time = 0.15
+one_shot = true
 
 [connection signal="area_entered" from="CameraAreaDetector" to="." method="_on_camera_area_entered"]

@@ -26,7 +26,7 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 
 	# Handle Jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and (is_on_floor() or $CoyoteTimer.time_left > 0):
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
@@ -46,9 +46,13 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	
+	var was_on_floor = is_on_floor()
 	move_and_slide()
 	push_objects()
+	
+	if was_on_floor and !is_on_floor():
+		$CoyoteTimer.start()
 
 func _process(_delta: float) -> void:
 	if dead:
