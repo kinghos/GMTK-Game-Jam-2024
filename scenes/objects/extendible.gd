@@ -15,7 +15,7 @@ var hovering: bool = false
 var expanded: bool = false
 
 func update_initial_scale(new_scale):
-	$".".scale.x = new_scale
+	$"Sprite2D".scale.x = new_scale
 
 func update_expanded_scale(new_scale):
 	if has_node("EditorSprite"):
