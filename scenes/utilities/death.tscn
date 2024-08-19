@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbxh2w82ol1o8"]
+[gd_scene load_steps=6 format=3 uid="uid://cbxh2w82ol1o8"]
 
 [ext_resource type="Texture2D" uid="uid://dh41wl7xwtlcx" path="res://assets/graphics/misc/skull.png" id="1_ywjqb"]
 [ext_resource type="Texture2D" uid="uid://b076qafr3p331" path="res://assets/graphics/particles/death_particle.png" id="2_4xgvf"]
@@ -8,7 +8,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("GPUParticles2D:emitting")
+tracks/0/path = NodePath("CPUParticles2D:emitting")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -20,7 +20,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("GPUParticles2D:visible")
+tracks/1/path = NodePath("CPUParticles2D:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -49,7 +49,7 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("GPUParticles2D:emitting")
+tracks/0/path = NodePath("CPUParticles2D:emitting")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -61,7 +61,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("GPUParticles2D:visible")
+tracks/1/path = NodePath("CPUParticles2D:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -113,18 +113,6 @@ _data = {
 "death": SubResource("Animation_twt7j")
 }
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_su747"]
-particle_flag_disable_z = true
-emission_shape = 2
-emission_sphere_radius = 2.0
-angle_min = -720.0
-angle_max = 720.0
-spread = 180.0
-initial_velocity_min = 158.86
-initial_velocity_max = 249.7
-gravity = Vector3(0, 1000, 0)
-scale_min = 0.7
-
 [node name="Death" type="Node2D"]
 position = Vector2(0, -7.6703e-05)
 
@@ -136,13 +124,23 @@ libraries = {
 [node name="Skull" type="Sprite2D" parent="."]
 texture = ExtResource("1_ywjqb")
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 emitting = false
 amount = 50
-process_material = SubResource("ParticleProcessMaterial_su747")
-texture = ExtResource("2_4xgvf")
 lifetime = 0.7
 one_shot = true
 speed_scale = 0.6
 explosiveness = 1.0
 randomness = 0.2
+fixed_fps = 30
+draw_order = 1
+texture = ExtResource("2_4xgvf")
+emission_shape = 2
+emission_sphere_radius = 2.0
+spread = 180.0
+gravity = Vector2(0, 1000)
+initial_velocity_min = 158.86
+initial_velocity_max = 249.7
+angle_min = -720.0
+angle_max = 720.0
+scale_amount_min = 0.7
