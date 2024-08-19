@@ -1,14 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://cellt2ya3waj0"]
+[gd_scene load_steps=9 format=3 uid="uid://cellt2ya3waj0"]
 
 [ext_resource type="Script" path="res://scenes/objects/locked_door.gd" id="1_coiu6"]
-[ext_resource type="Texture2D" uid="uid://dl6gq8bkpvxv2" path="res://assets/graphics/cursors/cross.png" id="2_03nea"]
-[ext_resource type="Texture2D" uid="uid://cxyd6w4amxcjv" path="res://assets/graphics/cursors/wandcursor.png" id="3_64rgs"]
+[ext_resource type="Texture2D" uid="uid://bnlq7xhwvgcjd" path="res://assets/graphics/objects/locked_door.png" id="2_0l4ak"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0se8f"]
+atlas = ExtResource("2_0l4ak")
+region = Rect2(0, 0, 32, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35f0n"]
+atlas = ExtResource("2_0l4ak")
+region = Rect2(32, 0, 32, 96)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nx0s5"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_03nea")
+"texture": SubResource("AtlasTexture_0se8f")
 }],
 "loop": true,
 "name": &"locked",
@@ -16,12 +23,21 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_64rgs")
+"texture": SubResource("AtlasTexture_35f0n")
 }],
 "loop": true,
 "name": &"unlocked",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o01n7"]
+size = Vector2(32, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e56yt"]
+size = Vector2(32.5, 19)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0lv4"]
+size = Vector2(32, 15)
 
 [node name="LockedDoor" type="StaticBody2D"]
 script = ExtResource("1_coiu6")
@@ -31,3 +47,18 @@ sprite_frames = SubResource("SpriteFrames_nx0s5")
 animation = &"locked"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_o01n7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -39)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_e56yt")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(0, 42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_g0lv4")

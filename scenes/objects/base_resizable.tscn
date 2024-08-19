@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwornrfyehb5y"]
+[gd_scene load_steps=3 format=3 uid="uid://bwornrfyehb5y"]
 
 [ext_resource type="Script" path="res://scenes/objects/base_resizable.gd" id="1_u6frm"]
+[ext_resource type="Material" uid="uid://bhrpt2g8vv43i" path="res://scenes/objects/shader_material.tres" id="2_d2p2f"]
 
 [node name="RigidBody2D" type="RigidBody2D" groups=["Resizables"]]
 collision_layer = 2
@@ -10,9 +11,11 @@ gravity_scale = 0.0
 script = ExtResource("1_u6frm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.2, 0.2)
 
 [node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" groups=["Resizables"]]
 texture_filter = 1
+material = ExtResource("2_d2p2f")
 scale = Vector2(5, 5)
 
 [connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_enter"]

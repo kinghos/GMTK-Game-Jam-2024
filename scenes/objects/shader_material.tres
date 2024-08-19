@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bhrpt2g8vv43i"]
+
+[ext_resource type="Shader" path="res://scenes/objects/resizable.gdshader" id="1_6y83k"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_6y83k")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0

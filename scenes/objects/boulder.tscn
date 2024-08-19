@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvh8vwi5ql28a"]
+
+[ext_resource type="PackedScene" uid="uid://bwornrfyehb5y" path="res://scenes/objects/base_resizable.tscn" id="1_2qqmn"]
+[ext_resource type="Texture2D" uid="uid://c7ita4jc85842" path="res://assets/graphics/objects/boulder.png" id="2_e27o2"]
+[ext_resource type="Shader" path="res://scenes/objects/resizable.gdshader" id="2_uwlwy"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lcox0"]
+friction = 0.4
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xjibu"]
+radius = 60.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qbffi"]
+resource_local_to_scene = true
+shader = ExtResource("2_uwlwy")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
+
+[node name="Boulder" instance=ExtResource("1_2qqmn")]
+physics_material_override = SubResource("PhysicsMaterial_lcox0")
+gravity_scale = 1.0
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CircleShape2D_xjibu")
+
+[node name="Sprite2D" parent="CollisionShape2D" index="0"]
+material = SubResource("ShaderMaterial_qbffi")
+position = Vector2(0, 2.98023e-07)
+texture = ExtResource("2_e27o2")
