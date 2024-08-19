@@ -1,12 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bwornrfyehb5y"]
+[gd_scene load_steps=4 format=3 uid="uid://bwornrfyehb5y"]
 
 [ext_resource type="Script" path="res://scenes/objects/base_resizable.gd" id="1_u6frm"]
-[ext_resource type="Material" path="res://scenes/objects/shader_material.tres" id="2_d2p2f"]
+[ext_resource type="Material" uid="uid://bhrpt2g8vv43i" path="res://scenes/objects/shader_material.tres" id="2_d2p2f"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jvgvc"]
+friction = 0.4
 
 [node name="RigidBody2D" type="RigidBody2D" groups=["Resizables"]]
 collision_layer = 2
 collision_mask = 15
 input_pickable = true
+physics_material_override = SubResource("PhysicsMaterial_jvgvc")
 gravity_scale = 0.0
 script = ExtResource("1_u6frm")
 

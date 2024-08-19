@@ -91,9 +91,6 @@ func _process(_delta: float) -> void:
 				collider.resize(current_scale, 1)
 			elif Input.is_action_pressed("Secondary"):
 				collider.resize(current_scale, -1)
-		elif collider.name == "Platform":
-			collider.resize()
-			
 
 func push_objects():
 	for i in get_slide_collision_count():

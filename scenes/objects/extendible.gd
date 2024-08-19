@@ -17,22 +17,29 @@ func update_initial_scale(new_scale):
 	$".".scale.x = new_scale
 
 func update_expanded_scale(new_scale):
-	$EditorSprite.scale.x = new_scale
+	if has_node("EditorSprite"):
+		$EditorSprite.scale.x = new_scale
 
 func _ready() -> void:
-	if not Engine.is_editor_hint():
+	if not Engine.is_editor_hint() and has_node("EditorSprite"):
 		$EditorSprite.visible = false
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT and not expanded:
-		resize()
+	if event is InputEventMouseButton and event.is_pressed() and not expanded:
+		if initial_scale < expanded_scale and event.button_index == MOUSE_BUTTON_LEFT:
+			resize()
+		if initial_scale > expanded_scale and event.button_index == MOUSE_BUTTON_RIGHT:
+			resize(true)
 
-func resize():
+func resize(remove_collision: bool = false):
 	var resize_tween = get_tree().create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 	var expanded_scale_vector = Vector2(expanded_scale, 1)
 	resize_tween.tween_property($".", "scale", expanded_scale_vector, 1)
 	$Sprite2D.material.set_shader_parameter("width", 0)
 	expanded = true
+	if remove_collision:
+		await resize_tween.finished
+		queue_free()
 
 func _on_mouse_entered() -> void:
 	if not expanded:

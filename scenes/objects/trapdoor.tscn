@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=3 uid="uid://y08qj51uuc8j"]
+[gd_scene load_steps=7 format=3 uid="uid://y08qj51uuc8j"]
 
-[ext_resource type="PackedScene" uid="uid://bwornrfyehb5y" path="res://scenes/objects/base_resizable.tscn" id="1_o6gk0"]
 [ext_resource type="Texture2D" uid="uid://cr35pm2o2mn7l" path="res://assets/graphics/objects/trapdoor.png" id="2_3o8cf"]
 [ext_resource type="Script" path="res://scenes/objects/extendible.gd" id="2_7xp4q"]
 [ext_resource type="Shader" path="res://scenes/objects/resizable.gdshader" id="2_jngfg"]
@@ -17,15 +16,24 @@ shader = ExtResource("2_jngfg")
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/width = 0.0
 
-[node name="Trapdoor" instance=ExtResource("1_o6gk0")]
+[node name="Trapdoor" type="StaticBody2D"]
+collision_layer = 2
+collision_mask = 15
+input_pickable = true
 physics_material_override = SubResource("PhysicsMaterial_lmj48")
-gravity_scale = 1.0
 script = ExtResource("2_7xp4q")
+expanded_scale = 0.0
 
-[node name="CollisionShape2D" parent="." index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_dko1k")
 
-[node name="Sprite2D" parent="CollisionShape2D" index="0"]
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Resizables"]]
+texture_filter = 1
 material = SubResource("ShaderMaterial_cw4v3")
-position = Vector2(5.96046e-08, 17)
+position = Vector2(1.19209e-08, 3.4)
 texture = ExtResource("2_3o8cf")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
