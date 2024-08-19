@@ -12,8 +12,8 @@ var can_push_switch
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var cross_cursor: Resource = load("res://assets/cursors/cross.png")
-var wand_cursor: Resource = load("res://assets/cursors/wandcursor.png")
+var cross_cursor: Resource = load("res://assets/graphics/cursors/cross.png")
+var wand_cursor: Resource = load("res://assets/graphics/cursors/wandcursor.png")
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 

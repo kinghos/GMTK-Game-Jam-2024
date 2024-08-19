@@ -1,18 +1,17 @@
-[gd_scene load_steps=16 format=4 uid="uid://dyrtpne8mqm65"]
+[gd_scene load_steps=15 format=4 uid="uid://dyrtpne8mqm65"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_2tvk7"]
-[ext_resource type="Texture2D" path="res://assets/graphics/backgrounds/BG2.png" id="2_1g53h"]
+[ext_resource type="Texture2D" uid="uid://cwb2iqs54y2w6" path="res://assets/graphics/backgrounds/BG2.png" id="2_1g53h"]
 [ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="2_hh1t6"]
-[ext_resource type="Texture2D" path="res://assets/graphics/tilesets/brick_tileset.png" id="2_ut722"]
+[ext_resource type="Texture2D" uid="uid://uvhuddlc6csq" path="res://assets/graphics/tilesets/brick_tileset.png" id="2_ut722"]
 [ext_resource type="PackedScene" uid="uid://bqb28c3c0c76j" path="res://scenes/player/player.tscn" id="4_4ginr"]
-[ext_resource type="TileSet" path="res://assets/graphics/tilesets/spikes.tres" id="4_gf1aa"]
+[ext_resource type="TileSet" uid="uid://dn64p7d7jg05p" path="res://assets/graphics/tilesets/spikes.tres" id="4_gf1aa"]
 [ext_resource type="PackedScene" uid="uid://c2rf2bqmkt8dr" path="res://scenes/enemies/turret.tscn" id="5_glje2"]
 [ext_resource type="PackedScene" uid="uid://dgtuht2c82fww" path="res://scenes/objects/platform.tscn" id="5_rt3by"]
 [ext_resource type="PackedScene" uid="uid://8ugc5pmxilxp" path="res://scenes/objects/button.tscn" id="6_o4wwk"]
 [ext_resource type="PackedScene" uid="uid://cellt2ya3waj0" path="res://scenes/objects/locked_door.tscn" id="7_hu5sg"]
 [ext_resource type="PackedScene" uid="uid://y08qj51uuc8j" path="res://scenes/objects/trapdoor.tscn" id="8_n07vo"]
 [ext_resource type="PackedScene" path="res://scenes/objects/boulder.tscn" id="9_0bpye"]
-[ext_resource type="Texture2D" path="res://assets/graphics/misc/portal.png" id="13_t3l7v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4o4na"]
 texture = ExtResource("2_ut722")
@@ -191,5 +190,4 @@ position = Vector2(132, 591)
 
 [node name="NextLevel" parent="." index="7"]
 position = Vector2(1635, 568)
-texture = ExtResource("13_t3l7v")
 next_level_path = "res://scenes/levels/level_3.tscn"
