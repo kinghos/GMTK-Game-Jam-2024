@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://coajmioma464c"]
+[gd_scene load_steps=14 format=4 uid="uid://6u63lrhdqn6d"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_dvvb2"]
 [ext_resource type="TileSet" uid="uid://nanvlob5un3n" path="res://assets/graphics/tilesets/tileset.tres" id="2_05vel"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://y08qj51uuc8j" path="res://scenes/objects/trapdoor.tscn" id="7_rxk1o"]
 [ext_resource type="PackedScene" uid="uid://dwr3vj83ale81" path="res://scenes/objects/boulder.tscn" id="8_jksud"]
 [ext_resource type="PackedScene" uid="uid://fp07fue2vml1" path="res://scenes/objects/pressure_plate.tscn" id="9_pv42s"]
-[ext_resource type="PackedScene" uid="uid://dgtuht2c82fww" path="res://scenes/objects/platform.tscn" id="10_sb56y"]
+[ext_resource type="PackedScene" uid="uid://dfrnp5hncwka" path="res://scenes/objects/platform.tscn" id="10_sb56y"]
 [ext_resource type="PackedScene" uid="uid://c2rf2bqmkt8dr" path="res://scenes/enemies/turret.tscn" id="11_1jmek"]
 [ext_resource type="PackedScene" uid="uid://ksscipjj6y65" path="res://scenes/decorations/window.tscn" id="12_aehr1"]
 [ext_resource type="PackedScene" uid="uid://bqb28c3c0c76j" path="res://scenes/player/player.tscn" id="13_sl2ye"]

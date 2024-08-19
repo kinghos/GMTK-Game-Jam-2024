@@ -20,6 +20,7 @@ var wand_cursor: Resource = load("res://assets/graphics/cursors/wandcursor.png")
 signal kill(node, colour)
 
 func _physics_process(delta):
+	Globals.player_pos = global_position
 	if dead:
 		return
 		
@@ -100,23 +101,26 @@ func push_objects():
 		if col.get_collider() is RigidBody2D:
 			col.get_collider().apply_central_force(col.get_normal() * -push_force)
 
-func _on_camera_area_entered(area: Area2D) -> void:
-	var collision_shape = area.get_node("CollisionShape2D")
-	var size = collision_shape.shape.size
+#func _on_camera_area_entered(area: Area2D) -> void:
+	#var collision_shape = area.get_node("CollisionShape2D")
+	#var size = collision_shape.shape.size
+	#
 	
-	var view_size = get_viewport_rect().size
-	if size.y < view_size.y:
-		size.y = view_size.y
+	#
+	#var view_size = get_viewport_rect().size
+	#if size.y < view_size.y:
+		#size.y = view_size.y
+	#
+	#if size.x < view_size.x:
+		#size.x = view_size.x
+	#
+	#var cam = $Camera2D
+	#cam.limit_top = collision_shape.global_position.y - size.y/4
+	#cam.limit_left = collision_shape.global_position.x - size.x/4
+	#
+	#cam.limit_bottom = cam.limit_top + size.y
+	#cam.limit_right = cam.limit_left + size.x
 	
-	if size.x < view_size.x:
-		size.x = view_size.x
-	
-	var cam = $Camera2D
-	cam.limit_top = collision_shape.global_position.y - size.y/4
-	cam.limit_left = collision_shape.global_position.x - size.x/4
-	
-	cam.limit_bottom = cam.limit_top + size.y
-	cam.limit_right = cam.limit_left + size.x
 
 
 func _on_spike(body: Node2D) -> void:
