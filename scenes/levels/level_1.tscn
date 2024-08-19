@@ -1,16 +1,23 @@
-[gd_scene load_steps=10 format=4 uid="uid://b64feohs7ud18"]
+[gd_scene load_steps=13 format=4 uid="uid://b64feohs7ud18"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_xxpsw"]
 [ext_resource type="Texture2D" uid="uid://bx2kuo38pcbh1" path="res://assets/graphics/backgrounds/outside.png" id="2_avu0q"]
 [ext_resource type="TileSet" uid="uid://nanvlob5un3n" path="res://assets/graphics/tilesets/tileset.tres" id="3_0t705"]
 [ext_resource type="PackedScene" uid="uid://bqb28c3c0c76j" path="res://scenes/player/player.tscn" id="3_nynhs"]
 [ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="4_r7reg"]
-[ext_resource type="PackedScene" uid="uid://dfrnp5hncwka" path="res://scenes/objects/platform.tscn" id="5_dlxn6"]
+[ext_resource type="PackedScene" uid="uid://dgtuht2c82fww" path="res://scenes/objects/platform.tscn" id="5_dlxn6"]
 [ext_resource type="PackedScene" uid="uid://c2rf2bqmkt8dr" path="res://scenes/enemies/turret.tscn" id="7_5i8s7"]
 [ext_resource type="Texture2D" uid="uid://dmnqrqc7h66qx" path="res://assets/graphics/decorations/grass.png" id="8_334mq"]
+[ext_resource type="Texture2D" uid="uid://7a2kmkod0c2w" path="res://assets/graphics/doors/castle_entrance.png" id="8_ns4mh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_capah"]
 size = Vector2(960, 1080)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ok7t6"]
+size = Vector2(960, 1080)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihsw4"]
+size = Vector2(1173, 1080)
 
 [node name="Level1" instance=ExtResource("1_xxpsw")]
 
@@ -90,7 +97,6 @@ collision_layer = 128
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraAreas/Area1" index="0"]
-visible = false
 shape = SubResource("RectangleShape2D_capah")
 
 [node name="Area2" type="Area2D" parent="CameraAreas" index="1"]
@@ -99,11 +105,21 @@ collision_layer = 128
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraAreas/Area2" index="0"]
-visible = false
-shape = SubResource("RectangleShape2D_capah")
+shape = SubResource("RectangleShape2D_ok7t6")
+
+[node name="Area3" type="Area2D" parent="CameraAreas" index="2"]
+position = Vector2(2401, 540)
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraAreas/Area3" index="0"]
+position = Vector2(107.5, 0)
+shape = SubResource("RectangleShape2D_ihsw4")
 
 [node name="NextLevel" parent="." index="6"]
 position = Vector2(2789, 694)
+texture = ExtResource("8_ns4mh")
+texture_scale = 4.0
 next_level_path = "res://scenes/levels/level_2.tscn"
 
 [node name="Player" parent="." index="7" instance=ExtResource("3_nynhs")]

@@ -1,13 +1,22 @@
+@tool
 extends Area2D
 
+@export var texture: CompressedTexture2D = preload("res://assets/graphics/misc/portal.png") :
+	set(value):
+		texture = value
+		update_texture()
+@export var texture_scale: float = 1.0 :
+	set(value):
+		texture_scale = value
+		update_texture()
 @export var next_level_path: String
 
-var level_1_texture = preload("res://assets/graphics/doors/castle_entrance.png")
+func update_texture():
+	$Sprite2D.texture = texture
+	$Sprite2D.scale = Vector2(texture_scale, texture_scale)
 
 func _ready():
-	if $".".get_parent().name == "Level1":
-		$Sprite2D.texture = level_1_texture
-		$Sprite2D.scale = Vector2(4, 4)
+	update_texture()
 
 func _on_body_entered(body):
 	if body.get_name() == "Player":
