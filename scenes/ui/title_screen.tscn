@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://b6ov1c07brllg"]
+[gd_scene load_steps=12 format=3 uid="uid://b6ov1c07brllg"]
 
 [ext_resource type="Script" path="res://scenes/ui/title_screen.gd" id="1_v1y6f"]
+[ext_resource type="Texture2D" uid="uid://cylwfxrx2sga2" path="res://assets/graphics/backgrounds/title_screen.png" id="2_islxs"]
 [ext_resource type="Texture2D" uid="uid://b3eq0u32uu8lu" path="res://assets/graphics/misc/transparent_menu_thing.png" id="3_0rx5v"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybjn8"]
@@ -91,11 +92,13 @@ anchor_left = 0.5
 anchor_top = 0.1
 anchor_right = 0.5
 anchor_bottom = 0.1
-offset_left = -961.0
+offset_left = -960.0
 offset_top = -108.0
-offset_right = -961.0
-offset_bottom = -108.0
+offset_right = -480.0
+offset_bottom = 162.0
 grow_horizontal = 2
+scale = Vector2(4, 4)
+texture = ExtResource("2_islxs")
 
 [node name="TextureRect2" type="TextureRect" parent="."]
 layout_mode = 0
