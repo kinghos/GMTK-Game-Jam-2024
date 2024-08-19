@@ -12,6 +12,7 @@ var body_masses: Dictionary = {}
 
 func _ready() -> void:
 	$Plate.set_self_modulate(plate_color)
+	$Body/WeightLimit.text = str(mass_required)
 
 func update_total_mass_applied(value: float) -> void:
 	total_mass_applied = value
