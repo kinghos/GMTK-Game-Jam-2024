@@ -14,8 +14,8 @@ func kill_entity(node: Node, color: Color):
 	var track_idx = anim.get_animation("death").find_track("Skull:modulate", Animation.TYPE_VALUE)
 	anim.get_animation("death").track_set_key_value(track_idx, 0, color)
 	
-	var particles: GPUParticles2D = death_anim.get_node("GPUParticles2D")
-	particles.process_material.color = color
+	var particles: CPUParticles2D = death_anim.get_node("CPUParticles2D")
+	particles.color = color
 	
 	color.a = 0
 	
