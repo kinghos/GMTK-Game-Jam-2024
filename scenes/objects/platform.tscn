@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dgtuht2c82fww"]
 
-[ext_resource type="Script" path="res://scenes/objects/platform.gd" id="1_5ampk"]
+[ext_resource type="Script" path="res://scenes/objects/extendible.gd" id="1_5ampk"]
 [ext_resource type="Material" uid="uid://croexh8js0mom" path="res://scenes/objects/shader_material.tres" id="2_740p2"]
 [ext_resource type="Texture2D" uid="uid://chpnwqa163woh" path="res://assets/graphics/objects/platform.png" id="2_j1f05"]
 
