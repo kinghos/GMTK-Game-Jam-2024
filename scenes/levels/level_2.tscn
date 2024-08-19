@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://dyrtpne8mqm65"]
+[gd_scene load_steps=16 format=4 uid="uid://dyrtpne8mqm65"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_2tvk7"]
 [ext_resource type="Texture2D" uid="uid://cwb2iqs54y2w6" path="res://assets/graphics/backgrounds/BG2.png" id="2_1g53h"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cellt2ya3waj0" path="res://scenes/objects/locked_door.tscn" id="7_hu5sg"]
 [ext_resource type="PackedScene" uid="uid://y08qj51uuc8j" path="res://scenes/objects/trapdoor.tscn" id="8_n07vo"]
 [ext_resource type="PackedScene" uid="uid://dwr3vj83ale81" path="res://scenes/objects/boulder.tscn" id="9_0bpye"]
+[ext_resource type="PackedScene" uid="uid://cfjgl27uyhycb" path="res://scenes/utilities/camera_bounds.tscn" id="13_vdgem"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4o4na"]
 texture = ExtResource("2_ut722")
@@ -187,6 +188,14 @@ position = Vector2(769, 604)
 
 [node name="Player" parent="." index="5" instance=ExtResource("4_4ginr")]
 position = Vector2(132, 591)
+
+[node name="CameraBound" parent="CameraBounds" index="0" instance=ExtResource("13_vdgem")]
+position = Vector2(966, 124)
+size = Vector2(1900, 1080)
+
+[node name="CameraBound2" parent="CameraBounds" index="1" instance=ExtResource("13_vdgem")]
+position = Vector2(966, 881)
+size = Vector2(1900, 500)
 
 [node name="NextLevel" parent="." index="7"]
 position = Vector2(1635, 568)

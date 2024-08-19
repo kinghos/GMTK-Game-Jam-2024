@@ -22,12 +22,10 @@ func open_door():
 	lock_colour.hide()
 
 func _on_button_pressed(switch_id):
-	print(switch_id, trigger_switch)
 	if switch_id == trigger_switch:
 		open_door()
 		
 func _on_pressure_plate_pressed(pressed):
-	print("hai")
 	if pressed:
 		open_door()
 	else:

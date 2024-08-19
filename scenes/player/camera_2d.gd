@@ -24,9 +24,10 @@ func get_closest_bounds() -> CameraBounds:
 	
 func _process(_delta: float) -> void:
 	process_bounds()
+	global_position = Globals.player_pos
+
 	
 func set_limit_to_bounds():
-	print("In set_lim_to_bounds!!")
 	limit_bottom = curr_bounds.global_position.y + (curr_bounds.size.y / 2)
 	limit_top = curr_bounds.global_position.y - (curr_bounds.size.y / 2)
 	limit_left = curr_bounds.global_position.x - (curr_bounds.size.x / 2)
@@ -40,7 +41,6 @@ func process_bounds():
 		unlock_limits()
 		
 func unlock_limits():
-	print("In unlock!! %s" % Globals.player_pos)
 	limit_bottom = 10000000.0
 	limit_right = 10000000.0
 	limit_top = -10000000.0

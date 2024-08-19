@@ -26,3 +26,5 @@ zoom = Vector2(2, 2)
 limit_smoothed = true
 position_smoothing_enabled = true
 script = ExtResource("4_83wwq")
+
+[node name="Labels" type="Node" parent="."]

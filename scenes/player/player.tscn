@@ -214,6 +214,7 @@ size = Vector2(2, 5)
 size = Vector2(27.5, 32)
 
 [node name="Player" type="CharacterBody2D" groups=["Entities"]]
+z_index = 100
 collision_mask = 47
 script = ExtResource("1_ro3ok")
 skull_color = Color(0.415686, 0.745098, 0.188235, 1)
@@ -248,7 +249,7 @@ shape = SubResource("RectangleShape2D_sle4j")
 [node name="SpikeKill" type="Area2D" parent="."]
 position = Vector2(0, 12)
 collision_layer = 16
-collision_mask = 74
+collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeKill"]
 shape = SubResource("RectangleShape2D_b5sl0")

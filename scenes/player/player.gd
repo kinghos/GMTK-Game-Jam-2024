@@ -130,7 +130,6 @@ func _on_spike(body: Node2D) -> void:
 			kill.emit(self, skull_color)
 
 func _on_boulder(body: Node2D) -> void:
-	print(body)
 	if body.has_meta("is_boulder"):
 		if body.initial_scale in ["Default", "Medium", "Large"]:
 			kill.emit(self, skull_color)
