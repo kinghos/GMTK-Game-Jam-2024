@@ -149,7 +149,7 @@ position = Vector2(1368, 905)
 position = Vector2(764, 604)
 
 [node name="Player" parent="." index="5" instance=ExtResource("4_4ginr")]
-position = Vector2(1034, 718)
+position = Vector2(139, 590)
 
 [node name="NextLevel" parent="." index="7"]
 position = Vector2(1635, 568)
