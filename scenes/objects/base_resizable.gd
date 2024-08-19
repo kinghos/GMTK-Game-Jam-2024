@@ -2,7 +2,6 @@
 extends Node2D
 
 signal mass_changed(new_mass: float)
-
 @export_enum("Small", "Default", "Medium", "Large") var initial_scale: String = "Default" :
 	set(value):
 		initial_scale = value

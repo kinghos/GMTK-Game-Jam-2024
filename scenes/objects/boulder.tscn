@@ -19,6 +19,7 @@ shader_parameter/width = 0.0
 [node name="Boulder" instance=ExtResource("1_2qqmn")]
 physics_material_override = SubResource("PhysicsMaterial_hgsvg")
 gravity_scale = 1.0
+metadata/is_boulder = true
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource("CircleShape2D_16l7p")

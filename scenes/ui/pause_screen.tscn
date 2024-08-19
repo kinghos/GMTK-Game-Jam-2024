@@ -1,4 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://n8tuo78tbj4s"]
+[gd_scene load_steps=9 format=3 uid="uid://n8tuo78tbj4s"]
+
+[ext_resource type="Script" path="res://scenes/ui/pause_screen.gd" id="1_ic48k"]
+[ext_resource type="Shader" path="res://scenes/ui/pause_screen.gdshader" id="2_1vkkb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybjn8"]
 bg_color = Color(0, 0, 0, 1)
@@ -35,6 +38,10 @@ Button/styles/hover = SubResource("StyleBoxFlat_ybjn8")
 Button/styles/normal = SubResource("StyleBoxFlat_vgio8")
 Button/styles/pressed = SubResource("StyleBoxFlat_u0tsj")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ssph4"]
+shader = ExtResource("2_1vkkb")
+shader_parameter/amount = 2.0
+
 [sub_resource type="Theme" id="Theme_5mbfu"]
 default_font_size = 30
 Button/colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -43,6 +50,8 @@ Button/styles/normal = SubResource("StyleBoxFlat_vgio8")
 Button/styles/pressed = SubResource("StyleBoxFlat_u0tsj")
 
 [node name="PauseScreen" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_ic48k")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -52,6 +61,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_xfq4b")
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+material = SubResource("ShaderMaterial_ssph4")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Control"]
 layout_mode = 1
@@ -69,14 +87,17 @@ grow_vertical = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="StartButton" type="Button" parent="Control/VBoxContainer"]
+[node name="ResumeButton" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_5mbfu")
 text = "RESUME
 "
 
-[node name="ExitButton" type="Button" parent="Control/VBoxContainer"]
+[node name="MenuButton" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 text = "MAIN MENU"
+
+[connection signal="pressed" from="Control/VBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/MenuButton" to="." method="_on_menu_button_pressed"]
