@@ -17,6 +17,8 @@ var wand_cursor: Resource = load("res://assets/graphics/cursors/wandcursor.png")
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 
+signal kill(node, colour)
+
 func _physics_process(delta):
 	if dead:
 		return
@@ -50,7 +52,7 @@ func _physics_process(delta):
 	var was_on_floor = is_on_floor()
 	move_and_slide()
 	push_objects()
-	
+
 	if was_on_floor and !is_on_floor():
 		$CoyoteTimer.start()
 
@@ -115,3 +117,10 @@ func _on_camera_area_entered(area: Area2D) -> void:
 	
 	cam.limit_bottom = cam.limit_top + size.y
 	cam.limit_right = cam.limit_left + size.x
+
+
+func _on_death_area_body_entered(body: Node2D) -> void:
+	if body is TileMapLayer:
+		print(body.tile_set.get_physics_layer_collision_layer(0))
+		if body.tile_set.get_physics_layer_collision_layer(0) == 8:
+			kill.emit(self, skull_color)

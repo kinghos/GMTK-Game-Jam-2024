@@ -13,7 +13,6 @@ collision_layer = 16
 script = ExtResource("1_8xcq1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_1y77f")
 flip_h = true
 

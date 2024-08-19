@@ -28,8 +28,7 @@ func _process(_delta):
 			kill.emit(collider, collider.skull_color)
 		player_dying = true
 		$PointLight2D.color = alert_light_color
-		await get_tree().create_timer(1.4).timeout
-		get_tree().reload_current_scene()
+
 
 func _on_kill_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Resizables"):

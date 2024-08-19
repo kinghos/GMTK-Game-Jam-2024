@@ -4,12 +4,12 @@
 [ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="2_eov0c"]
 [ext_resource type="PackedScene" uid="uid://bqb28c3c0c76j" path="res://scenes/player/player.tscn" id="3_oeujk"]
 [ext_resource type="PackedScene" uid="uid://c2rf2bqmkt8dr" path="res://scenes/enemies/turret.tscn" id="5_c845s"]
-[ext_resource type="PackedScene" uid="uid://dgtuht2c82fww" path="res://scenes/objects/platform.tscn" id="5_q2v6h"]
+[ext_resource type="PackedScene" uid="uid://dfrnp5hncwka" path="res://scenes/objects/platform.tscn" id="5_q2v6h"]
 [ext_resource type="PackedScene" uid="uid://y08qj51uuc8j" path="res://scenes/objects/trapdoor.tscn" id="6_dcob2"]
 [ext_resource type="PackedScene" uid="uid://8ugc5pmxilxp" path="res://scenes/objects/button.tscn" id="6_fg616"]
-[ext_resource type="PackedScene" path="res://scenes/objects/boulder.tscn" id="6_vpafa"]
+[ext_resource type="PackedScene" uid="uid://dwr3vj83ale81" path="res://scenes/objects/boulder.tscn" id="6_vpafa"]
 [ext_resource type="PackedScene" uid="uid://cellt2ya3waj0" path="res://scenes/objects/locked_door.tscn" id="7_anx7r"]
-[ext_resource type="PackedScene" uid="uid://bduw5usetp2dr" path="res://scenes/objects/pressure_plate.tscn" id="9_3e5h6"]
+[ext_resource type="PackedScene" uid="uid://fp07fue2vml1" path="res://scenes/objects/pressure_plate.tscn" id="9_3e5h6"]
 [ext_resource type="TileSet" uid="uid://nanvlob5un3n" path="res://assets/graphics/tilesets/tileset.tres" id="10_blvnl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5x20"]
@@ -25,7 +25,7 @@ position = Vector2(49.5, -25)
 shape = SubResource("RectangleShape2D_e5x20")
 
 [node name="Crate" parent="Objects" index="0" instance=ExtResource("2_eov0c")]
-position = Vector2(-323, 432)
+position = Vector2(-360, 390)
 inertia = 0.1
 
 [node name="Crate2" parent="Objects" index="1" instance=ExtResource("2_eov0c")]
@@ -38,27 +38,31 @@ position = Vector2(4.10498, 237)
 [node name="Crate4" parent="Objects" index="3" instance=ExtResource("2_eov0c")]
 position = Vector2(486, 431)
 
-[node name="PressurePlate" parent="Objects" index="4" instance=ExtResource("9_3e5h6")]
-modulate = Color(0.623529, 0, 0, 1)
-position = Vector2(259, 435)
-
-[node name="Platform" parent="Objects" index="5" instance=ExtResource("5_q2v6h")]
+[node name="Platform" parent="Objects" index="4" instance=ExtResource("5_q2v6h")]
 position = Vector2(-213, 381)
 
-[node name="LockedDoor" parent="Objects" index="6" node_paths=PackedStringArray("trigger_switch") instance=ExtResource("7_anx7r")]
+[node name="LockedDoor" parent="Objects" index="5" node_paths=PackedStringArray("trigger_switch") instance=ExtResource("7_anx7r")]
 position = Vector2(921, 401)
 trigger_switch = NodePath("../Button")
 colour = Color(0.238808, 0.50367, 0, 1)
 
-[node name="Button" parent="Objects" index="7" instance=ExtResource("6_fg616")]
+[node name="Button" parent="Objects" index="6" instance=ExtResource("6_fg616")]
 position = Vector2(820, 449)
 color = Color(0.239216, 0.501961, 0, 1)
 
-[node name="Boulder" parent="Objects" index="8" instance=ExtResource("6_vpafa")]
+[node name="Boulder" parent="Objects" index="7" instance=ExtResource("6_vpafa")]
 position = Vector2(-397, 330)
+
+[node name="LockedDoor2" parent="Objects" index="8" node_paths=PackedStringArray("trigger_switch") instance=ExtResource("7_anx7r")]
+position = Vector2(-397, 401)
+trigger_switch = NodePath("../PressurePlate2")
+colour = Color(0.398022, 0.334342, 0.82366, 1)
 
 [node name="Trapdoor" parent="Objects" index="9" instance=ExtResource("6_dcob2")]
 position = Vector2(1, 257.496)
+
+[node name="PressurePlate2" parent="Objects" index="10" instance=ExtResource("9_3e5h6")]
+position = Vector2(-360, 430)
 
 [node name="Turret" parent="Enemies" index="0" instance=ExtResource("5_c845s")]
 position = Vector2(660, 450)
@@ -67,21 +71,12 @@ alert_light_color = Color(0.752941, 0, 0, 1)
 [node name="Turret2" parent="Enemies" index="1" instance=ExtResource("5_c845s")]
 position = Vector2(0, 353)
 
-[node name="Button" parent="." index="4" instance=ExtResource("6_fg616")]
-position = Vector2(-368, 449)
-color = Color(0.396078, 0.333333, 0.823529, 1)
-
-[node name="LockedDoor" parent="." index="5" node_paths=PackedStringArray("trigger_switch") instance=ExtResource("7_anx7r")]
-position = Vector2(-397, 401)
-trigger_switch = NodePath("../Button")
-colour = Color(0.398022, 0.334342, 0.82366, 1)
-
-[node name="Player" parent="." index="6" instance=ExtResource("3_oeujk")]
+[node name="Player" parent="." index="4" instance=ExtResource("3_oeujk")]
 position = Vector2(-273, 435)
 
-[node name="NextLevel" parent="." index="8"]
+[node name="NextLevel" parent="." index="6"]
 position = Vector2(1467, 427)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." index="9"]
+[node name="TileMapLayer" type="TileMapLayer" parent="." index="7"]
 tile_map_data = PackedByteArray("AAD8/w0AAAAEAAIAAAD9/wwAAAAEAAIAAAD+/wsAAAAEAAIAAAD+/w0AAAAAAAAAAAD+/wwAAAAAAAAAAAD9/w0AAAAAAAAAAAD//wsAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA0AAAAAAAAAAAD//w0AAAAAAAAAAAD//wwAAAAAAAAAAAABAAsAAAAIAAgAAAACAAwAAAAIAAgAAAADAA0AAAAIAAgAAAABAA0AAAAAAAAAAAABAAwAAAAAAAAAAAACAA0AAAAAAAAAAAA=")
 tile_set = ExtResource("10_blvnl")
