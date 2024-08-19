@@ -1,7 +1,42 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccbhtu6e61a5y"]
+[gd_scene load_steps=9 format=3 uid="uid://ccbhtu6e61a5y"]
 
 [ext_resource type="Script" path="res://scenes/ui/level_select.gd" id="1_d41ka"]
 [ext_resource type="Texture2D" uid="uid://cf6qqo3nxar2k" path="res://assets/graphics/backgrounds/temp_menu_background.png" id="2_tdjt6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybjn8"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+shadow_color = Color(1, 1, 1, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgio8"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u0tsj"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_loue4"]
+default_font_size = 30
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_ybjn8")
+Button/styles/normal = SubResource("StyleBoxFlat_vgio8")
+Button/styles/pressed = SubResource("StyleBoxFlat_u0tsj")
 
 [sub_resource type="SystemFont" id="SystemFont_awfm6"]
 font_names = PackedStringArray("Franklin Gothic")
@@ -16,9 +51,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_loue4")
 script = ExtResource("1_d41ka")
 
 [node name="ColorBackground" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -35,9 +72,9 @@ texture = ExtResource("2_tdjt6")
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.4
-anchor_top = 0.4
-anchor_right = 0.6
+anchor_left = 0.3
+anchor_top = 0.3
+anchor_right = 0.7
 anchor_bottom = 0.6
 offset_left = -73.0
 offset_top = -45.0
@@ -45,6 +82,8 @@ offset_right = 73.0
 offset_bottom = 45.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
 columns = 5
 
 [node name="Level1" type="Button" parent="GridContainer"]

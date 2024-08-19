@@ -1,11 +1,80 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6ov1c07brllg"]
+[gd_scene load_steps=13 format=3 uid="uid://b6ov1c07brllg"]
 
 [ext_resource type="Script" path="res://scenes/ui/title_screen.gd" id="1_v1y6f"]
 [ext_resource type="Texture2D" uid="uid://cf6qqo3nxar2k" path="res://assets/graphics/backgrounds/temp_menu_background.png" id="2_1f3hk"]
 [ext_resource type="Texture2D" uid="uid://b4vf1thc85311" path="res://assets/graphics/backgrounds/title_card.png" id="2_gn1v6"]
+[ext_resource type="Texture2D" uid="uid://b3eq0u32uu8lu" path="res://assets/graphics/misc/transparent_menu_thing.png" id="3_0rx5v"]
 
-[sub_resource type="SystemFont" id="SystemFont_i6skl"]
-font_names = PackedStringArray("Franklin Gothic")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybjn8"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+shadow_color = Color(1, 1, 1, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vgio8"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u0tsj"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_1tync"]
+default_font_size = 30
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_ybjn8")
+Button/styles/normal = SubResource("StyleBoxFlat_vgio8")
+Button/styles/pressed = SubResource("StyleBoxFlat_u0tsj")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cybkc"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+shadow_color = Color(1, 1, 1, 1)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rtsid"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 1, 1, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dy071"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 10
+
+[sub_resource type="Theme" id="Theme_j1u01"]
+default_font_size = 30
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/styles/hover = SubResource("StyleBoxFlat_cybkc")
+Button/styles/normal = SubResource("StyleBoxFlat_rtsid")
+Button/styles/pressed = SubResource("StyleBoxFlat_dy071")
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -14,77 +83,83 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_1tync")
 script = ExtResource("1_v1y6f")
 
 [node name="ColorBackground" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_top = 0.1
 anchor_right = 0.5
 anchor_bottom = 0.1
-offset_left = -960.0
+offset_left = -961.0
 offset_top = -108.0
-offset_right = 960.0
+offset_right = 959.0
 offset_bottom = 972.0
 grow_horizontal = 2
 texture = ExtResource("2_1f3hk")
 
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_0rx5v")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 0.5
+anchor_left = 0.11
+anchor_top = 0.2
+anchor_right = 0.174
 anchor_bottom = 0.8
 offset_left = -95.0
 offset_right = 95.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 30
-alignment = 2
+alignment = 1
 
 [node name="StartButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_i6skl")
-theme_override_font_sizes/font_size = 30
+size_flags_vertical = 3
+theme = SubResource("Theme_j1u01")
 text = "NEW GAME"
 
 [node name="LevelButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_i6skl")
-theme_override_font_sizes/font_size = 30
+size_flags_vertical = 3
 text = "LEVEL SELECT"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_i6skl")
-theme_override_font_sizes/font_size = 30
+size_flags_vertical = 3
 text = "OPTIONS"
 
 [node name="CreditsButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_i6skl")
-theme_override_font_sizes/font_size = 30
+size_flags_vertical = 3
 text = "CREDITS"
 
 [node name="ExitButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_i6skl")
-theme_override_font_sizes/font_size = 30
-text = "BYE BYE"
+size_flags_vertical = 3
+text = "EXIT"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.1
-anchor_right = 0.5
-anchor_bottom = 0.1
+anchor_left = 0.677
+anchor_top = 0.053
+anchor_right = 0.696
+anchor_bottom = 0.128
 offset_left = -322.5
 offset_right = 322.5
 offset_bottom = 278.0
 grow_horizontal = 2
 texture = ExtResource("2_gn1v6")
+stretch_mode = 2
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/LevelButton" to="." method="_on_level_button_pressed"]
