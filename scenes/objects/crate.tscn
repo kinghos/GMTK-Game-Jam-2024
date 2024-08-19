@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://beswcdd2gg8gg"]
+[gd_scene load_steps=8 format=3 uid="uid://beswcdd2gg8gg"]
 
 [ext_resource type="PackedScene" uid="uid://bwornrfyehb5y" path="res://scenes/objects/base_resizable.tscn" id="1_ja3bh"]
+[ext_resource type="Shader" path="res://scenes/objects/resizable.gdshader" id="2_0gp53"]
 [ext_resource type="Texture2D" uid="uid://bk6imiduyp00t" path="res://assets/graphics/objects/crate.png" id="2_ktjip"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6xe1a"]
@@ -9,6 +10,12 @@ rough = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wywf6"]
 size = Vector2(157, 161)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vved8"]
+resource_local_to_scene = true
+shader = ExtResource("2_0gp53")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/width = 0.0
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_sq7x7"]
 polygon = PackedVector2Array(-14, -16, 14, -16, 14, -14, 16, -14, 16, 14, 14, 14, 14, 16, -14, 16, -14, 14, -16, 14, -16, -14, -14, -14)
@@ -25,6 +32,7 @@ scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_wywf6")
 
 [node name="Sprite2D" parent="CollisionShape2D" index="0"]
+material = SubResource("ShaderMaterial_vved8")
 texture = ExtResource("2_ktjip")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." index="1"]
