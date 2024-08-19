@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dmaa3e1bibn7v"]
+[gd_scene load_steps=9 format=3 uid="uid://dmaa3e1bibn7v"]
 
 [ext_resource type="Script" path="res://scenes/ui/opening_cutscene.gd" id="1_w77wd"]
 [ext_resource type="Texture2D" uid="uid://dcf42nio4n3p5" path="res://assets/graphics/cutscenes/opening_2.png" id="2_xqax5"]
+[ext_resource type="Texture2D" uid="uid://bod8hx08pcx6o" path="res://assets/graphics/misc/skip_button.png" id="5_kxtwf"]
 [ext_resource type="Texture2D" uid="uid://bmedgvtk57bd1" path="res://assets/graphics/misc/menu_arrow.png" id="6_i6l33"]
+[ext_resource type="Texture2D" uid="uid://bjs68gomtnud5" path="res://assets/graphics/misc/skip_button_hovering.png" id="6_t833o"]
+[ext_resource type="Texture2D" uid="uid://bi8b1jcrnm3rg" path="res://assets/graphics/misc/play_button.png" id="7_4gvit"]
 [ext_resource type="Texture2D" uid="uid://bqf5igwj6eaec" path="res://assets/graphics/misc/menu_arrow_hovering.png" id="8_f418f"]
+[ext_resource type="Texture2D" uid="uid://dhnrehrn5o57n" path="res://assets/graphics/misc/play_button_hovering.png" id="8_no587"]
 
 [node name="OpeningCutscene" type="CanvasLayer"]
 script = ExtResource("1_w77wd")
@@ -55,6 +59,32 @@ scale = Vector2(4, 4)
 texture_normal = ExtResource("6_i6l33")
 texture_hover = ExtResource("8_f418f")
 flip_h = true
+
+[node name="SkipButton" type="TextureButton" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_top = 20.0
+offset_right = -140.0
+grow_horizontal = 0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("5_kxtwf")
+texture_hover = ExtResource("6_t833o")
+
+[node name="PlayButton" type="TextureButton" parent="."]
+visible = false
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -140.0
+offset_bottom = -120.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("7_4gvit")
+texture_hover = ExtResource("8_no587")
 
 [connection signal="pressed" from="NextArrow" to="." method="_on_next_arrow_pressed"]
 [connection signal="pressed" from="BackArrow" to="." method="_on_back_arrow_pressed"]

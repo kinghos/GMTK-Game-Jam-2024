@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhnrehrn5o57n"
-path="res://.godot/imported/play_button_hovering.png-50a45c41412ea4f8f69abe6520d8b52a.ctex"
+uid="uid://bod8hx08pcx6o"
+path="res://.godot/imported/skip_button.png-df2500a3a00a62a010818740ffeebd16.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/misc/play_button_hovering.png"
-dest_files=["res://.godot/imported/play_button_hovering.png-50a45c41412ea4f8f69abe6520d8b52a.ctex"]
+source_file="res://assets/graphics/misc/skip_button.png"
+dest_files=["res://.godot/imported/skip_button.png-df2500a3a00a62a010818740ffeebd16.ctex"]
 
 [params]
 

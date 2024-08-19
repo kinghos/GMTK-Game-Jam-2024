@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4vf1thc85311"
-path="res://.godot/imported/title_card.png-1ca027be172d81ee87d31613931328f0.ctex"
+uid="uid://bjs68gomtnud5"
+path="res://.godot/imported/skip_button_hovering.png-45acb9301fad6510ed8ba301a318c3a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/backgrounds/title_card.png"
-dest_files=["res://.godot/imported/title_card.png-1ca027be172d81ee87d31613931328f0.ctex"]
+source_file="res://assets/graphics/misc/skip_button_hovering.png"
+dest_files=["res://.godot/imported/skip_button_hovering.png-45acb9301fad6510ed8ba301a318c3a7.ctex"]
 
 [params]
 
