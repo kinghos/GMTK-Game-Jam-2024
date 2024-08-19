@@ -25,7 +25,7 @@ position = Vector2(49.5, -25)
 shape = SubResource("RectangleShape2D_e5x20")
 
 [node name="Crate" parent="Objects" index="0" instance=ExtResource("2_eov0c")]
-position = Vector2(-229, 430)
+position = Vector2(-323, 432)
 inertia = 0.1
 
 [node name="Crate2" parent="Objects" index="1" instance=ExtResource("2_eov0c")]
@@ -33,7 +33,7 @@ position = Vector2(320, 365)
 inertia = 0.1
 
 [node name="Crate3" parent="Objects" index="2" instance=ExtResource("2_eov0c")]
-position = Vector2(653.105, 159.504)
+position = Vector2(4.10498, 237)
 
 [node name="Crate4" parent="Objects" index="3" instance=ExtResource("2_eov0c")]
 position = Vector2(486, 431)
@@ -55,17 +55,20 @@ position = Vector2(820, 449)
 color = Color(0.239216, 0.501961, 0, 1)
 
 [node name="Boulder" parent="Objects" index="8" instance=ExtResource("6_vpafa")]
-position = Vector2(-287, 405)
+position = Vector2(-397, 330)
 
 [node name="Trapdoor" parent="Objects" index="9" instance=ExtResource("6_dcob2")]
-position = Vector2(650, 180)
+position = Vector2(1, 257.496)
 
 [node name="Turret" parent="Enemies" index="0" instance=ExtResource("5_c845s")]
 position = Vector2(660, 450)
 alert_light_color = Color(0.752941, 0, 0, 1)
 
+[node name="Turret2" parent="Enemies" index="1" instance=ExtResource("5_c845s")]
+position = Vector2(0, 353)
+
 [node name="Button" parent="." index="4" instance=ExtResource("6_fg616")]
-position = Vector2(-290, 449)
+position = Vector2(-368, 449)
 color = Color(0.396078, 0.333333, 0.823529, 1)
 
 [node name="LockedDoor" parent="." index="5" node_paths=PackedStringArray("trigger_switch") instance=ExtResource("7_anx7r")]
@@ -73,17 +76,12 @@ position = Vector2(-397, 401)
 trigger_switch = NodePath("../Button")
 colour = Color(0.398022, 0.334342, 0.82366, 1)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="6"]
+[node name="Player" parent="." index="6" instance=ExtResource("3_oeujk")]
+position = Vector2(-273, 435)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0"]
-polygon = PackedVector2Array(670, 176, 670, 143, 636, 143, 636, 176, 569, 176, 569, 184, 613, 184, 613, 187, 569, 187, 564, 187, 564, 173, 633, 173, 633, 140, 673, 140, 673, 173, 733, 173, 733, 188, 690, 188, 690, 184, 731, 184, 731, 176)
-
-[node name="Player" parent="." index="7" instance=ExtResource("3_oeujk")]
-position = Vector2(-328, 434)
-
-[node name="NextLevel" parent="." index="9"]
+[node name="NextLevel" parent="." index="8"]
 position = Vector2(1467, 427)
 
-[node name="TileMapLayer" type="TileMapLayer" parent="." index="10"]
+[node name="TileMapLayer" type="TileMapLayer" parent="." index="9"]
 tile_map_data = PackedByteArray("AAD8/w0AAAAEAAIAAAD9/wwAAAAEAAIAAAD+/wsAAAAEAAIAAAD+/w0AAAAAAAAAAAD+/wwAAAAAAAAAAAD9/w0AAAAAAAAAAAD//wsAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA0AAAAAAAAAAAD//w0AAAAAAAAAAAD//wwAAAAAAAAAAAABAAsAAAAIAAgAAAACAAwAAAAIAAgAAAADAA0AAAAIAAgAAAABAA0AAAAAAAAAAAABAAwAAAAAAAAAAAACAA0AAAAAAAAAAAA=")
 tile_set = ExtResource("10_blvnl")
