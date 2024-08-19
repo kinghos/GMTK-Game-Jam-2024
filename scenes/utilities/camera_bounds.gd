@@ -2,18 +2,22 @@
 extends Node2D
 class_name CameraBounds
 
-@onready var sprite_2d: Sprite2D = $Sprite2D
 @export var size: Vector2 = Vector2(10, 10):
 	set(new_size):
 		size.x = new_size.x
 		size.y = new_size.y
-		if Engine.is_editor_hint():
+		if Engine.is_editor_hint() and is_node_ready():
 			update_editor_size(size/4)
 @export var priority: int = 0
 
 func update_editor_size(value):
-	sprite_2d.scale = value
+	$Sprite2D.scale = value
 
+func _ready() -> void:
+	if not Engine.is_editor_hint():
+		$Sprite2D.visible = false
+	else:
+		update_editor_size(size/4)
 
 func player_in_bounds() -> bool:
 	var player_pos = Globals.player_pos

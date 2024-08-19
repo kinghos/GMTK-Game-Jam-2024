@@ -22,7 +22,7 @@ func get_closest_bounds() -> CameraBounds:
 			
 	return closest
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	process_bounds()
 	
 func set_limit_to_bounds():
