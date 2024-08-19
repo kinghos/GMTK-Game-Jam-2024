@@ -5,6 +5,7 @@
 [ext_resource type="Shader" path="res://scenes/objects/resizable.gdshader" id="2_uwlwy"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_hgsvg"]
+friction = 0.4
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_16l7p"]
 radius = 80.1561

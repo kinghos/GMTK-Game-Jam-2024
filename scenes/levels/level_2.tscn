@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="2_hh1t6"]
 [ext_resource type="Texture2D" uid="uid://uvhuddlc6csq" path="res://assets/graphics/tilesets/brick_tileset.png" id="2_ut722"]
 [ext_resource type="PackedScene" uid="uid://bqb28c3c0c76j" path="res://scenes/player/player.tscn" id="4_4ginr"]
-[ext_resource type="TileSet" uid="uid://nanvlob5un3n" path="res://assets/graphics/tilesets/tileset.tres" id="4_wdjnd"]
+[ext_resource type="TileSet" uid="uid://dn64p7d7jg05p" path="res://assets/graphics/tilesets/spikes.tres" id="4_gf1aa"]
 [ext_resource type="PackedScene" uid="uid://c2rf2bqmkt8dr" path="res://scenes/enemies/turret.tscn" id="5_glje2"]
 [ext_resource type="PackedScene" uid="uid://dfrnp5hncwka" path="res://scenes/objects/platform.tscn" id="5_rt3by"]
 [ext_resource type="PackedScene" uid="uid://8ugc5pmxilxp" path="res://scenes/objects/button.tscn" id="6_o4wwk"]
@@ -143,8 +143,8 @@ tile_map_data = PackedByteArray("AADi/wIAAAAAAAAAAADi/wMAAAAAAAAAAADj/wIAAAABAAA
 tile_set = SubResource("TileSet_0u53v")
 
 [node name="Spikes" type="TileMapLayer" parent="Tilemaps" index="1"]
-tile_map_data = PackedByteArray("AAD1/xEAAAAEAAAAAAD0/xEAAAAEAAAAAADz/xEAAAAEAAAAAADy/xEAAAAEAAAAAADx/xEAAAAEAAAAAADw/xEAAAAEAAAAAADv/xEAAAAEAAAAAADu/xEAAAAEAAAAAADt/xEAAAAEAAAAAADs/xEAAAAEAAAAAADr/xEAAAAEAAAAAADq/xEAAAAEAAAAAADp/xEAAAAEAAAAAADo/xEAAAAEAAAAAADn/xEAAAAEAAAAAAD3/xEAAAAEAAAAAAD2/xEAAAAEAAAAAAD4/xEAAAAEAAAAAAD5/xEAAAAEAAAAAAD6/xEAAAAEAAAAAAD7/xEAAAAEAAAAAAD8/xEAAAAEAAAAAAD9/xEAAAAEAAAAAAD+/xEAAAAEAAAAAAD//xEAAAAEAAAAAAAAABEAAAAEAAAAAAABABEAAAAEAAAAAAA=")
-tile_set = ExtResource("4_wdjnd")
+tile_map_data = PackedByteArray("AAABABEAAQACAAAAAAAAABEAAQACAAAAAAD//xEAAQACAAAAAAD+/xEAAQACAAAAAAD9/xEAAQACAAAAAAD8/xEAAQACAAAAAAD7/xEAAQACAAAAAAD6/xEAAQACAAAAAAD5/xEAAQACAAAAAAD4/xEAAQACAAAAAAD3/xEAAQACAAAAAAD2/xEAAQACAAAAAAD1/xEAAQACAAAAAAD0/xEAAQACAAAAAADz/xEAAQACAAAAAADy/xEAAQACAAAAAADx/xEAAQACAAAAAADw/xEAAQACAAAAAADv/xEAAQACAAAAAADu/xEAAQACAAAAAADt/xEAAQACAAAAAADs/xEAAQACAAAAAADr/xEAAQACAAAAAADq/xEAAQACAAAAAADp/xEAAQACAAAAAADo/xEAAQACAAAAAADn/xEAAQACAAAAAAA=")
+tile_set = ExtResource("4_gf1aa")
 
 [node name="Crate" parent="Objects" index="0" instance=ExtResource("2_hh1t6")]
 position = Vector2(587, 589)

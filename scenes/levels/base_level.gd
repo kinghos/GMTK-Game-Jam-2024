@@ -21,13 +21,14 @@ func kill_entity(node: Node, color: Color):
 	
 	var key = anim.get_animation("death").track_find_key(track_idx, 1.4)
 	anim.get_animation("death").track_set_key_value(track_idx, key, color)
-	if node.has_node("AnimatedSprite2D"):
+	if node.name == "Player":
 		node.dead = true
 		for child in node.get_children():
 			node.visible = false
 		anim.play("death")
 		await anim.animation_finished
-		node.queue_free()
+		get_tree().reload_current_scene()
 	else:
 		anim.play("death")
 		node.queue_free()
+	
