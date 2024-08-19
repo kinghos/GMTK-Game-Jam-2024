@@ -14,7 +14,6 @@ physics_material_override = SubResource("PhysicsMaterial_lmj48")
 gravity_scale = 1.0
 
 [node name="CollisionShape2D" parent="." index="0"]
-scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_dko1k")
 
 [node name="Sprite2D" parent="CollisionShape2D" index="0"]
