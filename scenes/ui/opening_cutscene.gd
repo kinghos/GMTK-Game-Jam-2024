@@ -32,9 +32,8 @@ func update_current_frame():
 	transitioning = false
 
 func fade_to_black() -> void:
-		tween = get_tree().create_tween()
-		tween.tween_property($Frame, "modulate", Color.BLACK, 1)
-		await tween.finished
+	tween = get_tree().create_tween()
+	tween.tween_property($Frame, "modulate", Color.BLACK, 1)
 
 func _on_next_arrow_pressed() -> void:
 	if not transitioning:
@@ -44,6 +43,7 @@ func _on_next_arrow_pressed() -> void:
 			current_frame += 1
 		
 		fade_to_black()
+		await tween.finished
 		update_current_frame()
 
 func _on_back_arrow_pressed() -> void:
@@ -54,4 +54,5 @@ func _on_back_arrow_pressed() -> void:
 			current_frame -= 1
 		
 		fade_to_black()
+		await tween.finished
 		update_current_frame()
