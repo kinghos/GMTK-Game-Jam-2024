@@ -1,5 +1,12 @@
 extends Control
 
+func _ready() -> void:
+	var container = $GridContainer
+	for level in Globals.unlocked_levels:
+		for child in container.get_children():
+			if child.name == level:
+				child.disabled = false
+
 func _on_level_1_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")
 

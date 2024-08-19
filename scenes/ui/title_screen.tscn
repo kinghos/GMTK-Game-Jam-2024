@@ -87,7 +87,6 @@ theme = SubResource("Theme_1tync")
 script = ExtResource("1_v1y6f")
 
 [node name="ColorBackground" type="TextureRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -125,7 +124,7 @@ alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_j1u01")
-text = "NEW GAME"
+text = "PLAY"
 
 [node name="LevelButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
