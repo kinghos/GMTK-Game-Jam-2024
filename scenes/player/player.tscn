@@ -255,6 +255,7 @@ collision_mask = 74
 shape = SubResource("RectangleShape2D_b5sl0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+z_index = 100
 limit_smoothed = true
 position_smoothing_enabled = true
 script = ExtResource("5_416gg")
