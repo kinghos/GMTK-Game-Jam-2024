@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://fp07fue2vml1"]
+[gd_scene load_steps=14 format=3 uid="uid://fp07fue2vml1"]
 
 [ext_resource type="Script" path="res://scenes/objects/pressure_plate.gd" id="1_f7dfk"]
 [ext_resource type="Texture2D" uid="uid://dfe43836557ka" path="res://assets/graphics/objects/pressure_plate.png" id="2_kvqkh"]
+[ext_resource type="FontFile" uid="uid://7ffjc71micvx" path="res://assets/fonts/Tiny5-Regular.ttf" id="3_d5jtx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kyg0i"]
 atlas = ExtResource("2_kvqkh")
@@ -106,6 +107,15 @@ collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
 shape = SubResource("RectangleShape2D_7rpiu")
+
+[node name="WeightLimit" type="Label" parent="Body"]
+offset_left = 7.0
+offset_top = -14.0
+offset_right = 11.0
+offset_bottom = -5.0
+theme_override_fonts/font = ExtResource("3_d5jtx")
+theme_override_font_sizes/font_size = 8
+text = "2"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
