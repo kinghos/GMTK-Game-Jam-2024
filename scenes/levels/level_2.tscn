@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://uvhuddlc6csq" path="res://assets/graphics/tilesets/brick_tileset.png" id="2_ut722"]
 [ext_resource type="PackedScene" uid="uid://bqb28c3c0c76j" path="res://scenes/player/player.tscn" id="4_4ginr"]
 [ext_resource type="PackedScene" uid="uid://c2rf2bqmkt8dr" path="res://scenes/enemies/turret.tscn" id="5_glje2"]
-[ext_resource type="PackedScene" path="res://scenes/objects/platform.tscn" id="5_rt3by"]
+[ext_resource type="PackedScene" uid="uid://dgtuht2c82fww" path="res://scenes/objects/platform.tscn" id="5_rt3by"]
 [ext_resource type="PackedScene" uid="uid://8ugc5pmxilxp" path="res://scenes/objects/button.tscn" id="6_o4wwk"]
 [ext_resource type="PackedScene" uid="uid://cellt2ya3waj0" path="res://scenes/objects/locked_door.tscn" id="7_hu5sg"]
 [ext_resource type="PackedScene" uid="uid://y08qj51uuc8j" path="res://scenes/objects/trapdoor.tscn" id="8_n07vo"]
@@ -168,7 +168,7 @@ trigger_switch = NodePath("../Button")
 colour = Color(1, 0, 0, 1)
 
 [node name="Trapdoor" parent="Objects" index="6" instance=ExtResource("8_n07vo")]
-position = Vector2(768, 345)
+position = Vector2(768, 343)
 scale = Vector2(1.2, 1)
 initial_scale = 1.2
 
@@ -185,4 +185,4 @@ position = Vector2(154, 589)
 
 [node name="NextLevel" parent="." index="7"]
 position = Vector2(1635, 568)
-next_level_path = "res://scenes/levels/level_1.tscn"
+next_level_path = "res://scenes/levels/level_3.tscn"
