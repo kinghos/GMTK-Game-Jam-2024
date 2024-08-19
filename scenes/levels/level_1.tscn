@@ -85,12 +85,12 @@ position = Vector2(1529, 977)
 texture = ExtResource("8_334mq")
 
 [node name="CameraBound" parent="CameraBounds" index="0" instance=ExtResource("8_l471g")]
-position = Vector2(600, 735)
-size = Vector2(551.88, 199.03)
+position = Vector2(621, 688)
+size = Vector2(500, 600)
 
 [node name="CameraBound2" parent="CameraBounds" index="1" instance=ExtResource("8_l471g")]
-position = Vector2(1786, 701)
-size = Vector2(100, 316)
+position = Vector2(1495, 719)
+size = Vector2(360, 600)
 
 [node name="NextLevel" parent="." index="6"]
 position = Vector2(2789, 694)

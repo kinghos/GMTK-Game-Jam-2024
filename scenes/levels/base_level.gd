@@ -10,7 +10,6 @@ func _ready() -> void:
 		i.connect("kill", kill_entity)
 
 func _process(_delta) -> void:
-	print(Globals.player_pos)
 	camera_2d.global_position = Globals.player_pos
 	if Input.is_action_just_pressed("Pause"):
 		$PauseScreen.show()
