@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgtuht2c82fww"]
+[gd_scene load_steps=5 format=3 uid="uid://dfrnp5hncwka"]
 
 [ext_resource type="Script" path="res://scenes/objects/extendible.gd" id="1_5ampk"]
-[ext_resource type="Material" uid="uid://bhrpt2g8vv43i" path="res://scenes/objects/shader_material.tres" id="2_740p2"]
+[ext_resource type="Material" path="res://scenes/objects/shader_material.tres" id="2_740p2"]
 [ext_resource type="Texture2D" uid="uid://chpnwqa163woh" path="res://assets/graphics/objects/platform.png" id="2_j1f05"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ynbds"]
@@ -26,6 +26,7 @@ texture = ExtResource("2_j1f05")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ynbds")
+one_way_collision = true
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
