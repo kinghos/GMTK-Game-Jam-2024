@@ -1,12 +1,20 @@
 extends Node2D
 
 var death: PackedScene = preload("res://scenes/utilities/death.tscn")
+var paused: bool = false
 
 func _ready() -> void:
 	for i in get_tree().get_nodes_in_group("Entities"):
 		i.connect("kill", kill_entity)
 
-func kill_entity(node: Node, color: Color):
+func _process(_delta) -> void:
+	if Input.is_action_just_pressed("Pause"):
+		$PauseScreen.show()
+		get_tree().paused = not get_tree().paused
+
+
+
+func kill_entity(node: Node, color: Color) -> void:
 	var death_anim = death.instantiate()
 	add_child(death_anim)
 	death_anim.global_position = node.global_position

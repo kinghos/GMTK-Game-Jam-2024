@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://5w74eu3bsjko"]
+[gd_scene load_steps=4 format=3 uid="uid://5w74eu3bsjko"]
 
 [ext_resource type="Script" path="res://scenes/levels/base_level.gd" id="1_cfftt"]
+[ext_resource type="PackedScene" uid="uid://n8tuo78tbj4s" path="res://scenes/ui/pause_screen.tscn" id="3_5fi32"]
 [ext_resource type="PackedScene" uid="uid://dbifvccr5x412" path="res://scenes/levels/next_level_warp/next_level.tscn" id="3_jfif1"]
 
 [node name="Level" type="Node2D"]
@@ -15,3 +16,6 @@ script = ExtResource("1_cfftt")
 [node name="CameraAreas" type="Node" parent="."]
 
 [node name="NextLevel" parent="." instance=ExtResource("3_jfif1")]
+
+[node name="PauseScreen" parent="." instance=ExtResource("3_5fi32")]
+visible = false
