@@ -75,3 +75,5 @@ grow_vertical = 0
 scale = Vector2(4, 4)
 texture_normal = ExtResource("6_i6l33")
 texture_hover = ExtResource("8_f418f")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

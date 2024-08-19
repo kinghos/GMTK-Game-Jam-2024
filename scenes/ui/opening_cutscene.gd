@@ -1,12 +1,16 @@
 extends CanvasLayer
 
 var frames = ["Frame1", "Frame2", "Frame3", "Frame4", "Frame5"]
+var current_frame: int = 3
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	update_current_frame()
 
+func update_current_frame():
+	get_node(frames[current_frame]).visible = true
+	for i in range(current_frame+1, frames.size()):
+		get_node(frames[i]).visible = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_texture_button_pressed() -> void:
+	current_frame += 1
+	update_current_frame()
