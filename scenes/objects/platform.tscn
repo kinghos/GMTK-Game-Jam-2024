@@ -1,16 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://dfrnp5hncwka"]
+[gd_scene load_steps=5 format=3 uid="uid://dgtuht2c82fww"]
 
-[ext_resource type="Texture2D" uid="uid://cr35pm2o2mn7l" path="res://assets/graphics/objects/trapdoor.png" id="2_yxua3"]
+[ext_resource type="Script" path="res://scenes/objects/platform.gd" id="1_5ampk"]
+[ext_resource type="Material" uid="uid://croexh8js0mom" path="res://scenes/objects/shader_material.tres" id="2_740p2"]
+[ext_resource type="Texture2D" uid="uid://chpnwqa163woh" path="res://assets/graphics/objects/platform.png" id="2_j1f05"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ynbds"]
-size = Vector2(159, 6)
+size = Vector2(96, 8)
 
 [node name="Platform" type="StaticBody2D"]
+script = ExtResource("1_5ampk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_ynbds")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 4)
-texture = ExtResource("2_yxua3")
+material = ExtResource("2_740p2")
+position = Vector2(0, 12)
+texture = ExtResource("2_j1f05")
+
+[node name="EditorSprite" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.494118)
+position = Vector2(0, 12)
+texture = ExtResource("2_j1f05")
+
+[connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_enter"]
+[connection signal="mouse_shape_exited" from="." to="." method="_on_mouse_exit"]
