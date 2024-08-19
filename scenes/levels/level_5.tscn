@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://y08qj51uuc8j" path="res://scenes/objects/trapdoor.tscn" id="7_rxk1o"]
 [ext_resource type="PackedScene" uid="uid://dwr3vj83ale81" path="res://scenes/objects/boulder.tscn" id="8_jksud"]
 [ext_resource type="PackedScene" uid="uid://fp07fue2vml1" path="res://scenes/objects/pressure_plate.tscn" id="9_pv42s"]
-[ext_resource type="PackedScene" path="res://scenes/objects/platform.tscn" id="10_sb56y"]
+[ext_resource type="PackedScene" uid="uid://dgtuht2c82fww" path="res://scenes/objects/platform.tscn" id="10_sb56y"]
 [ext_resource type="PackedScene" uid="uid://c2rf2bqmkt8dr" path="res://scenes/enemies/turret.tscn" id="11_1jmek"]
 [ext_resource type="PackedScene" uid="uid://ksscipjj6y65" path="res://scenes/decorations/window.tscn" id="12_aehr1"]
 [ext_resource type="PackedScene" uid="uid://bqb28c3c0c76j" path="res://scenes/player/player.tscn" id="13_sl2ye"]
@@ -54,28 +54,27 @@ position = Vector2(975, 241)
 mass = 4.0
 initial_scale = "Large"
 
-[node name="PressurePlate" parent="Objects" index="5" instance=ExtResource("9_pv42s")]
-position = Vector2(1264, 528)
-plate_color = Color(0.258824, 0.298039, 1, 1)
-
-[node name="LockedDoor2" parent="Objects" index="6" node_paths=PackedStringArray("trigger_switch") instance=ExtResource("5_x1cj3")]
+[node name="LockedDoor2" parent="Objects" index="5" node_paths=PackedStringArray("trigger_switch") instance=ExtResource("5_x1cj3")]
 position = Vector2(1392, 480)
 trigger_switch = NodePath("../PressurePlate")
 colour = Color(0.25863, 0.296281, 1, 1)
 
-[node name="Crate2" parent="Objects" index="7" instance=ExtResource("4_lfmcs")]
+[node name="Crate2" parent="Objects" index="6" instance=ExtResource("4_lfmcs")]
 position = Vector2(1871, 464)
 
-[node name="Crate3" parent="Objects" index="8" instance=ExtResource("4_lfmcs")]
+[node name="Crate3" parent="Objects" index="7" instance=ExtResource("4_lfmcs")]
 position = Vector2(2145, 526)
 
-[node name="Crate4" parent="Objects" index="9" instance=ExtResource("4_lfmcs")]
+[node name="Crate4" parent="Objects" index="8" instance=ExtResource("4_lfmcs")]
 position = Vector2(2363, 432)
 
-[node name="Platform" parent="Objects" index="10" instance=ExtResource("10_sb56y")]
+[node name="Platform" parent="Objects" index="9" instance=ExtResource("10_sb56y")]
 position = Vector2(3120, 708)
 expanded_scale = 6.0
 tween_duration = 3.0
+
+[node name="PressurePlate" parent="Objects" index="10" instance=ExtResource("9_pv42s")]
+position = Vector2(1264, 528)
 
 [node name="Turret" parent="Enemies" index="0" instance=ExtResource("11_1jmek")]
 position = Vector2(975, 512)
