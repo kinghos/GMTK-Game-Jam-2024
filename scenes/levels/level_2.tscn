@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://uvhuddlc6csq" path="res://assets/graphics/tilesets/brick_tileset.png" id="2_ut722"]
 [ext_resource type="PackedScene" uid="uid://bqb28c3c0c76j" path="res://scenes/player/player.tscn" id="4_4ginr"]
 [ext_resource type="PackedScene" uid="uid://c2rf2bqmkt8dr" path="res://scenes/enemies/turret.tscn" id="5_glje2"]
-[ext_resource type="PackedScene" path="res://scenes/objects/platform.tscn" id="5_rt3by"]
+[ext_resource type="PackedScene" uid="uid://dgtuht2c82fww" path="res://scenes/objects/platform.tscn" id="5_rt3by"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4o4na"]
 texture = ExtResource("2_ut722")
