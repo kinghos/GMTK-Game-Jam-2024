@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" path="res://scenes/objects/boulder.tscn" id="6_vpafa"]
 [ext_resource type="PackedScene" uid="uid://cellt2ya3waj0" path="res://scenes/objects/locked_door.tscn" id="7_anx7r"]
 [ext_resource type="PackedScene" uid="uid://fp07fue2vml1" path="res://scenes/objects/pressure_plate.tscn" id="9_3e5h6"]
-[ext_resource type="TileSet" uid="uid://nanvlob5un3n" path="res://assets/graphics/tilesets/tileset.tres" id="10_blvnl"]
+[ext_resource type="TileSet" path="res://assets/graphics/tilesets/tileset.tres" id="10_blvnl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5x20"]
 size = Vector2(2962, 20)
