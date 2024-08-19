@@ -31,6 +31,7 @@ func update_initial_state():
 	var initial_preset = SCALE_PRESETS.get(initial_scale)
 	$CollisionShape2D.scale = initial_preset["scale"]
 	set_mass(initial_preset["mass"])
+	$".".physics_material_override.set_friction(initial_preset["friction"])
 
 func _ready():
 	add_to_group("Resizables") # make sure it's in Resizables
