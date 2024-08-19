@@ -84,12 +84,12 @@ position = Vector2(1529, 977)
 texture = ExtResource("8_334mq")
 
 [node name="CameraBound" parent="CameraBounds" index="0" instance=ExtResource("8_l471g")]
-position = Vector2(621, 688)
-size = Vector2(500, 600)
+position = Vector2(1052, 764)
+size = Vector2(2000, 1080)
 
 [node name="CameraBound2" parent="CameraBounds" index="1" instance=ExtResource("8_l471g")]
-position = Vector2(1495, 719)
-size = Vector2(360, 600)
+position = Vector2(2607, 763)
+size = Vector2(1200, 1080)
 
 [node name="NextLevel" parent="." index="6"]
 position = Vector2(2789, 694)
@@ -98,7 +98,7 @@ texture_scale = 4.0
 next_level_path = "res://scenes/levels/level_2.tscn"
 
 [node name="Player" parent="." index="7" instance=ExtResource("3_nynhs")]
-position = Vector2(395, 898)
+position = Vector2(348, 905)
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="8"]
 position = Vector2(502, 182)

@@ -1,11 +1,10 @@
 extends Camera2D
 
-var curr_bounds = get_closest_bounds()
+@onready var curr_bounds = get_closest_bounds()
 
 
 func get_closest_bounds() -> CameraBounds:
 	var candidates = []
-	print(get_tree())
 	for b in get_tree().get_nodes_in_group("CameraBounds"):
 		if b.player_in_bounds():
 			candidates.append(b)
@@ -24,14 +23,14 @@ func get_closest_bounds() -> CameraBounds:
 	return closest
 	
 func _process(delta: float) -> void:
-	set_limit_to_bounds()
+	process_bounds()
 	
 func set_limit_to_bounds():
-	if curr_bounds:
-		limit_bottom = curr_bounds.global_position.y + (curr_bounds.size.y / 2)
-		limit_top = curr_bounds.global_position.y - (curr_bounds.size.y / 2)
-		limit_left = curr_bounds.global_position.x - (curr_bounds.size.x / 2)
-		limit_right = curr_bounds.global_position.x + (curr_bounds.size.x / 2)
+	print("In set_lim_to_bounds!!")
+	limit_bottom = curr_bounds.global_position.y + (curr_bounds.size.y / 2)
+	limit_top = curr_bounds.global_position.y - (curr_bounds.size.y / 2)
+	limit_left = curr_bounds.global_position.x - (curr_bounds.size.x / 2)
+	limit_right = curr_bounds.global_position.x + (curr_bounds.size.x / 2)
 
 func process_bounds():
 	curr_bounds = get_closest_bounds()
@@ -41,6 +40,7 @@ func process_bounds():
 		unlock_limits()
 		
 func unlock_limits():
+	print("In unlock!! %s" % Globals.player_pos)
 	limit_bottom = 10000000.0
 	limit_right = 10000000.0
 	limit_top = -10000000.0

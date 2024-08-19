@@ -22,4 +22,7 @@ script = ExtResource("1_cfftt")
 visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
+limit_smoothed = true
+position_smoothing_enabled = true
 script = ExtResource("4_83wwq")

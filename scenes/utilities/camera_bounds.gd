@@ -8,7 +8,7 @@ class_name CameraBounds
 		size.x = new_size.x
 		size.y = new_size.y
 		if Engine.is_editor_hint():
-			update_editor_size(size/2)
+			update_editor_size(size/4)
 @export var priority: int = 0
 
 func update_editor_size(value):
@@ -17,8 +17,6 @@ func update_editor_size(value):
 
 func player_in_bounds() -> bool:
 	var player_pos = Globals.player_pos
-	print("X: %s" % (abs(player_pos.x - global_position.x) < (size.x/2))) 
-	print("Y: %s" % abs(player_pos.y - global_position.y))
 	if abs(player_pos.x - global_position.x) < (size.x / 2) and abs(player_pos.y - global_position.y) < (size.y / 2):
 		return true
 	return false
