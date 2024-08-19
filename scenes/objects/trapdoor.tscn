@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cr35pm2o2mn7l" path="res://assets/graphics/objects/trapdoor.png" id="2_3o8cf"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lmj48"]
+friction = 0.4
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dko1k"]
 size = Vector2(800, 32)

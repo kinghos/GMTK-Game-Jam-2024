@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfrnp5hncwka"]
+
+[ext_resource type="Texture2D" uid="uid://cr35pm2o2mn7l" path="res://assets/graphics/objects/trapdoor.png" id="2_yxua3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ynbds"]
+size = Vector2(159, 6)
+
+[node name="Platform" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_ynbds")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 4)
+texture = ExtResource("2_yxua3")
