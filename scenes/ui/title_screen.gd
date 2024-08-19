@@ -2,7 +2,7 @@ extends Control
 
 
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")
+	get_tree().change_scene_to_file("res://scenes/ui/opening_cutscene.tscn")
 
 
 func _on_level_button_pressed() -> void:
