@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=4 uid="uid://bfxj2hn65yllm"]
+[gd_scene load_steps=11 format=4 uid="uid://bfxj2hn65yllm"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_e4y2d"]
 [ext_resource type="Texture2D" uid="uid://cwb2iqs54y2w6" path="res://assets/graphics/backgrounds/BG2.png" id="1_i625q"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c2rf2bqmkt8dr" path="res://scenes/enemies/turret.tscn" id="3_ffbsa"]
 [ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="4_cbin0"]
 [ext_resource type="PackedScene" uid="uid://ksscipjj6y65" path="res://scenes/decorations/window.tscn" id="5_6htpq"]
+[ext_resource type="PackedScene" uid="uid://dgtuht2c82fww" path="res://scenes/objects/platform.tscn" id="6_h17ib"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_llket"]
 texture = ExtResource("1_ldeii")
@@ -141,6 +142,10 @@ position = Vector2(-79, 304)
 position = Vector2(3120, 784)
 mass = 4.0
 initial_scale = "Large"
+
+[node name="Platform" parent="Objects" index="2" instance=ExtResource("6_h17ib")]
+position = Vector2(1839, 423)
+expanded_scale = 4.0
 
 [node name="Turret" parent="Enemies" index="0" instance=ExtResource("3_ffbsa")]
 position = Vector2(785, 352)
