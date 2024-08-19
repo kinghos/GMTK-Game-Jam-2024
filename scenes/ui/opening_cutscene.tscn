@@ -1,58 +1,26 @@
-[gd_scene load_steps=9 format=3 uid="uid://dmaa3e1bibn7v"]
+[gd_scene load_steps=5 format=3 uid="uid://dmaa3e1bibn7v"]
 
 [ext_resource type="Script" path="res://scenes/ui/opening_cutscene.gd" id="1_w77wd"]
-[ext_resource type="Texture2D" uid="uid://ckvhcgw7ikel2" path="res://assets/graphics/cutscenes/opening_1.png" id="1_wxx83"]
 [ext_resource type="Texture2D" uid="uid://dcf42nio4n3p5" path="res://assets/graphics/cutscenes/opening_2.png" id="2_xqax5"]
-[ext_resource type="Texture2D" uid="uid://c8hkqg4a4ofcg" path="res://assets/graphics/cutscenes/opening_3.png" id="3_722e6"]
-[ext_resource type="Texture2D" uid="uid://bak1vg6lxkcwg" path="res://assets/graphics/cutscenes/opening_4.png" id="4_2yxju"]
-[ext_resource type="Texture2D" uid="uid://doxrspl5v1r0h" path="res://assets/graphics/cutscenes/opening_5.png" id="5_5ry6k"]
 [ext_resource type="Texture2D" uid="uid://bmedgvtk57bd1" path="res://assets/graphics/misc/menu_arrow.png" id="6_i6l33"]
 [ext_resource type="Texture2D" uid="uid://bqf5igwj6eaec" path="res://assets/graphics/misc/menu_arrow_hovering.png" id="8_f418f"]
 
 [node name="OpeningCutscene" type="CanvasLayer"]
 script = ExtResource("1_w77wd")
 
-[node name="Frame1" type="TextureRect" parent="."]
-offset_left = 2218.0
-offset_top = -99.0
-offset_right = 4185.0
-offset_bottom = 671.0
-texture = ExtResource("1_wxx83")
-
-[node name="Frame2" type="TextureRect" parent="."]
-offset_left = 2676.0
-offset_top = -707.0
-offset_right = 3700.0
-offset_bottom = -314.0
+[node name="Frame" type="TextureRect" parent="."]
+offset_top = 180.0
+offset_right = 480.0
+offset_bottom = 360.0
+scale = Vector2(4, 4)
 texture = ExtResource("2_xqax5")
 
-[node name="Frame3" type="TextureRect" parent="."]
-offset_left = 1110.0
-offset_top = -913.0
-offset_right = 2485.0
-offset_bottom = -327.0
-texture = ExtResource("3_722e6")
-
-[node name="Frame4" type="TextureRect" parent="."]
-offset_top = 180.0
-offset_right = 480.0
-offset_bottom = 360.0
-scale = Vector2(4, 4)
-texture = ExtResource("4_2yxju")
-
-[node name="Frame5" type="TextureRect" parent="."]
-offset_top = 180.0
-offset_right = 480.0
-offset_bottom = 360.0
-scale = Vector2(4, 4)
-texture = ExtResource("5_5ry6k")
-
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="BlackBar1" type="ColorRect" parent="."]
 offset_right = 1920.0
 offset_bottom = 180.0
 color = Color(0, 0, 0, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="."]
+[node name="BlackBar2" type="ColorRect" parent="."]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -62,8 +30,8 @@ grow_horizontal = 2
 grow_vertical = 0
 color = Color(0, 0, 0, 1)
 
-[node name="TextureButton" type="TextureButton" parent="."]
-anchors_preset = -1
+[node name="NextArrow" type="TextureButton" parent="."]
+anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -76,4 +44,17 @@ scale = Vector2(4, 4)
 texture_normal = ExtResource("6_i6l33")
 texture_hover = ExtResource("8_f418f")
 
-[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[node name="BackArrow" type="TextureButton" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 44.0
+offset_bottom = -120.0
+grow_vertical = 0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("6_i6l33")
+texture_hover = ExtResource("8_f418f")
+flip_h = true
+
+[connection signal="pressed" from="NextArrow" to="." method="_on_next_arrow_pressed"]
+[connection signal="pressed" from="BackArrow" to="." method="_on_back_arrow_pressed"]
