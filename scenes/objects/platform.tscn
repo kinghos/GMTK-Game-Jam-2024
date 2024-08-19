@@ -8,10 +8,10 @@
 size = Vector2(96, 8)
 
 [node name="Platform" type="StaticBody2D"]
+collision_layer = 16
+collision_mask = 0
+input_pickable = true
 script = ExtResource("1_5ampk")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_ynbds")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = ExtResource("2_740p2")
@@ -23,5 +23,9 @@ modulate = Color(1, 1, 1, 0.494118)
 position = Vector2(0, 12)
 texture = ExtResource("2_j1f05")
 
-[connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_enter"]
-[connection signal="mouse_shape_exited" from="." to="." method="_on_mouse_exit"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ynbds")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
