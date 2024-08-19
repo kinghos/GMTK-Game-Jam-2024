@@ -24,9 +24,13 @@ func update_current_frame():
 	else:
 		$BackArrow.visible = true
 	if current_frame == frames.size() - 1:
+		$SkipButton.visible = false
 		$NextArrow.visible = false
+		$PlayButton.visible = true
 	else:
+		$SkipButton.visible = true
 		$NextArrow.visible = true
+		$PlayButton.visible = false
 	
 	await tween.finished
 	transitioning = false
@@ -56,3 +60,6 @@ func _on_back_arrow_pressed() -> void:
 		fade_to_black()
 		await tween.finished
 		update_current_frame()
+
+func _go_to_level_1() -> void:
+	get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")
