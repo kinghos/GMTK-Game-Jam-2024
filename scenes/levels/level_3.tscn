@@ -6,11 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c2rf2bqmkt8dr" path="res://scenes/enemies/turret.tscn" id="3_ffbsa"]
 [ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="4_cbin0"]
 [ext_resource type="PackedScene" uid="uid://ksscipjj6y65" path="res://scenes/decorations/window.tscn" id="5_6htpq"]
-<<<<<<< Updated upstream
 [ext_resource type="PackedScene" uid="uid://dgtuht2c82fww" path="res://scenes/objects/platform.tscn" id="6_h17ib"]
-=======
-[ext_resource type="PackedScene" path="res://scenes/objects/platform.tscn" id="6_h17ib"]
->>>>>>> Stashed changes
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_42wun"]
 texture = ExtResource("1_ldeii")
