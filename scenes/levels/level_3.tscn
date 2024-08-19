@@ -142,7 +142,7 @@ tile_set = SubResource("TileSet_xuwjy")
 
 [node name="Enemies" type="Node" parent="."]
 
-[node name="Turret" parent="Enemies" groups=["Enemies"] instance=ExtResource("3_ffbsa")]
+[node name="Turret" parent="Enemies" instance=ExtResource("3_ffbsa")]
 position = Vector2(781, 352)
 
 [node name="Objects" type="Node" parent="."]

@@ -182,7 +182,7 @@ position = Vector2(768, 261)
 mass = 4.0
 initial_scale = "Large"
 
-[node name="Turret" parent="Enemies" index="0" groups=["Enemies"] instance=ExtResource("5_glje2")]
+[node name="Turret" parent="Enemies" index="0" instance=ExtResource("5_glje2")]
 position = Vector2(769, 604)
 
 [node name="Player" parent="." index="5" instance=ExtResource("4_4ginr")]
