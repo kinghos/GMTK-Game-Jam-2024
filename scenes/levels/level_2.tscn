@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://8ugc5pmxilxp" path="res://scenes/objects/button.tscn" id="6_o4wwk"]
 [ext_resource type="PackedScene" uid="uid://cellt2ya3waj0" path="res://scenes/objects/locked_door.tscn" id="7_hu5sg"]
 [ext_resource type="PackedScene" uid="uid://y08qj51uuc8j" path="res://scenes/objects/trapdoor.tscn" id="8_n07vo"]
-[ext_resource type="PackedScene" path="res://scenes/objects/boulder.tscn" id="9_0bpye"]
+[ext_resource type="PackedScene" uid="uid://dwr3vj83ale81" path="res://scenes/objects/boulder.tscn" id="9_0bpye"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4o4na"]
 texture = ExtResource("2_ut722")
@@ -142,7 +142,7 @@ tile_map_data = PackedByteArray("AADi/wIAAAAAAAAAAADi/wMAAAAAAAAAAADj/wIAAAABAAA
 tile_set = SubResource("TileSet_0u53v")
 
 [node name="Crate" parent="Objects" index="0" instance=ExtResource("2_hh1t6")]
-position = Vector2(50, 311)
+position = Vector2(587, 589)
 
 [node name="Crate3" parent="Objects" index="1" instance=ExtResource("2_hh1t6")]
 position = Vector2(1243, 521)
@@ -178,7 +178,7 @@ mass = 4.0
 initial_scale = "Large"
 
 [node name="Turret" parent="Enemies" index="0" instance=ExtResource("5_glje2")]
-position = Vector2(769, 603)
+position = Vector2(769, 604)
 
 [node name="Player" parent="." index="5" instance=ExtResource("4_4ginr")]
 position = Vector2(154, 589)
