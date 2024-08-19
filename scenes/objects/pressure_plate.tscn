@@ -1,55 +1,111 @@
-[gd_scene load_steps=6 format=3 uid="uid://bduw5usetp2dr"]
+[gd_scene load_steps=13 format=3 uid="uid://fp07fue2vml1"]
 
 [ext_resource type="Script" path="res://scenes/objects/pressure_plate.gd" id="1_f7dfk"]
 [ext_resource type="Texture2D" uid="uid://dfe43836557ka" path="res://assets/graphics/objects/pressure_plate.png" id="2_kvqkh"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1slhv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyg0i"]
 atlas = ExtResource("2_kvqkh")
-region = Rect2(0, 0, 32, 16)
+region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vq664"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4cdu"]
 atlas = ExtResource("2_kvqkh")
-region = Rect2(32, 0, 32, 16)
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nq80y"]
+atlas = ExtResource("2_kvqkh")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_085xr"]
+atlas = ExtResource("2_kvqkh")
+region = Rect2(96, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7lff2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1slhv")
+"texture": SubResource("AtlasTexture_kyg0i")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vq664")
+"texture": SubResource("AtlasTexture_p4cdu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nq80y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_085xr")
 }],
-"loop": false,
-"name": &"pressing",
+"loop": true,
+"name": &"cog_turn",
+"speed": 8.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhskg"]
+atlas = ExtResource("2_kvqkh")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pc1yy"]
+atlas = ExtResource("2_kvqkh")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qb6w4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhskg")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pc1yy")
+}],
+"loop": true,
+"name": &"up",
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dcdnp"]
+size = Vector2(32, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rpiu"]
+size = Vector2(32, 31)
+
 [node name="PressurePlate" type="Area2D"]
-scale = Vector2(2, 2)
 collision_layer = 32
 collision_mask = 3
 script = ExtResource("1_f7dfk")
 mass_required = 2.0
-color = Color(0.594596, 0.438064, 0.166431, 1)
 
-[node name="Label" type="Label" parent="."]
-texture_filter = 1
-offset_left = -105.0
-offset_top = -35.0
-offset_right = 84.0
-offset_bottom = -12.0
-scale = Vector2(1.12, 1)
-theme_override_colors/font_color = Color(1, 0, 0, 1)
-text = "0/2"
-horizontal_alignment = 1
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-16, 8, -16, 6, -15, 6, -15, 5, 15, 5, 15, 6, 16, 6, 16, 8)
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Block" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7lff2")
-animation = &"pressing"
+animation = &"cog_turn"
+autoplay = "cog_turn"
+frame_progress = 0.743457
+
+[node name="ColorMask" type="ColorRect" parent="Block"]
+offset_left = 3.0
+offset_top = -13.0
+offset_right = 13.0
+offset_bottom = -7.0
+color = Color(0.819608, 0.0705882, 0.160784, 1)
+
+[node name="Plate" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_qb6w4")
+animation = &"up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -17.5)
+shape = SubResource("RectangleShape2D_dcdnp")
+
+[node name="Body" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+shape = SubResource("RectangleShape2D_7rpiu")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -3,22 +3,23 @@ extends Area2D
 signal pressed(pressed)
 
 @export var mass_required: float
-@export var color: Color = "#98702a"
+@export var failure_color: Color = "d11229"
+@export var success_color: Color = "89b361"
+@export var plate_color: Color
 
 var total_mass_applied: float = 0.0 : set = update_total_mass_applied
 var body_masses: Dictionary = {}
 
 func _ready() -> void:
-	$".".modulate = color
+	$Plate.set_self_modulate(plate_color)
 
 func update_total_mass_applied(value: float) -> void:
 	total_mass_applied = value
-	$Label.text = str(snapped(total_mass_applied, 0.1)) + "/" + str(mass_required)
 	if total_mass_applied < mass_required:
-		$Label.set("theme_override_colors/font_color", Color("red"))
+		$Block/ColorMask.color = failure_color
 		pressed.emit(false)
 	else:
-		$Label.set("theme_override_colors/font_color", Color("green"))
+		$Block/ColorMask.color = success_color
 		pressed.emit(true)
 
 func _on_body_entered(body: Node2D) -> void:
