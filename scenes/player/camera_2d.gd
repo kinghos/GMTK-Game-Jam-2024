@@ -41,8 +41,8 @@ func process_bounds():
 		unlock_limits()
 		
 func unlock_limits():
-	limit_bottom = 10000000.0
-	limit_right = 10000000.0
-	limit_top = -10000000.0
-	limit_left = -10000000.0
+	limit_bottom = 10000000
+	limit_right = 10000000
+	limit_top = -10000000
+	limit_left = -10000000
 	
