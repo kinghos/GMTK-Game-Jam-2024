@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dwr3vj83ale81" path="res://scenes/objects/boulder.tscn" id="6_vpafa"]
 [ext_resource type="PackedScene" uid="uid://cellt2ya3waj0" path="res://scenes/objects/locked_door.tscn" id="7_anx7r"]
 [ext_resource type="PackedScene" uid="uid://fp07fue2vml1" path="res://scenes/objects/pressure_plate.tscn" id="9_3e5h6"]
-[ext_resource type="TileSet" uid="uid://nanvlob5un3n" path="res://assets/graphics/tilesets/tileset.tres" id="10_blvnl"]
+[ext_resource type="TileSet" uid="uid://dcgci8cyt1jnq" path="res://assets/graphics/tilesets/level1.tres" id="11_qpdgj"]
 [ext_resource type="TileSet" uid="uid://dn64p7d7jg05p" path="res://assets/graphics/tilesets/spikes.tres" id="12_3uuk5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e5x20"]
@@ -83,7 +83,7 @@ position = Vector2(1467, 427)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." index="7"]
 tile_map_data = PackedByteArray("AAD8/w0AAAAEAAIAAAD9/wwAAAAEAAIAAAD+/wsAAAAEAAIAAAD+/w0AAAAAAAAAAAD+/wwAAAAAAAAAAAD9/w0AAAAAAAAAAAD//wsAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA0AAAAAAAAAAAD//w0AAAAAAAAAAAD//wwAAAAAAAAAAAABAAsAAAAIAAgAAAACAAwAAAAIAAgAAAADAA0AAAAIAAgAAAABAA0AAAAAAAAAAAABAAwAAAAAAAAAAAACAA0AAAAAAAAAAAA=")
-tile_set = ExtResource("10_blvnl")
+tile_set = ExtResource("11_qpdgj")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." index="8"]
 tile_map_data = PackedByteArray("AADm/w0AAQACAAAAAAA=")

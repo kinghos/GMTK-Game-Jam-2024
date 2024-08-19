@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://n8tuo78tbj4s" path="res://scenes/ui/pause_screen.tscn" id="3_5fi32"]
 [ext_resource type="PackedScene" uid="uid://dbifvccr5x412" path="res://scenes/levels/next_level_warp/next_level.tscn" id="3_jfif1"]
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" groups=["Levels"]]
 script = ExtResource("1_cfftt")
 
 [node name="Objects" type="Node" parent="."]

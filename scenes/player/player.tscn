@@ -1,9 +1,10 @@
-[gd_scene load_steps=36 format=3 uid="uid://bqb28c3c0c76j"]
+[gd_scene load_steps=37 format=3 uid="uid://bqb28c3c0c76j"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_ro3ok"]
 [ext_resource type="Texture2D" uid="uid://nmnip41ehyje" path="res://assets/graphics/player/lizard_walk.png" id="2_4g4ha"]
 [ext_resource type="Texture2D" uid="uid://b6wvdmtv3xirc" path="res://assets/graphics/player/lizard_idle.png" id="2_oiitm"]
 [ext_resource type="Texture2D" uid="uid://cqcm0lrg5154l" path="res://assets/graphics/player/lizard_jump.png" id="3_4mxpv"]
+[ext_resource type="Script" path="res://scenes/player/camera_2d.gd" id="5_416gg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3mord"]
 radius = 11.0
@@ -256,6 +257,7 @@ shape = SubResource("RectangleShape2D_b5sl0")
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_smoothed = true
 position_smoothing_enabled = true
+script = ExtResource("5_416gg")
 
 [node name="CameraAreaDetector" type="Area2D" parent="."]
 collision_layer = 0
