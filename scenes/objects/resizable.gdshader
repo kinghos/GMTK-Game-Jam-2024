@@ -20,7 +20,7 @@ void vertex() {
 void fragment() {
     // Sample the color from the original texture
     vec4 color = texture(TEXTURE, UV);
-	
+
     if (width > 0.0) {
         // Calculate the real texture size from the texture pixel size
         vec2 real_texture_size = 1.0 / TEXTURE_PIXEL_SIZE;
