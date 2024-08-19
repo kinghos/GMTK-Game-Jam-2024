@@ -23,9 +23,11 @@ func update_total_mass_applied(value: float) -> void:
 		pressed.emit(true)
 
 func _on_body_entered(body: Node2D) -> void:
+	$Plate.animation = "down"
 	update_body_state(body, "enter")
 
 func _on_body_exited(body: Node2D) -> void:
+	$Plate.animation = "up"
 	update_body_state(body, "exit")
 
 # Called to add/remove bodies from the scale
