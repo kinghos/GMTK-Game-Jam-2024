@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://b64feohs7ud18"]
+[gd_scene load_steps=11 format=4 uid="uid://b64feohs7ud18"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_xxpsw"]
 [ext_resource type="Texture2D" uid="uid://bx2kuo38pcbh1" path="res://assets/graphics/backgrounds/outside.png" id="2_avu0q"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://bqb28c3c0c76j" path="res://scenes/player/player.tscn" id="3_nynhs"]
 [ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="4_r7reg"]
 [ext_resource type="PackedScene" uid="uid://c2rf2bqmkt8dr" path="res://scenes/enemies/turret.tscn" id="7_5i8s7"]
-[ext_resource type="Texture2D" uid="uid://7a2kmkod0c2w" path="res://assets/graphics/doors/castle_entrance.png" id="8_4wxsp"]
 [ext_resource type="Texture2D" uid="uid://dmnqrqc7h66qx" path="res://assets/graphics/decorations/grass.png" id="8_334mq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rlcud"]
@@ -138,7 +137,7 @@ sources/0 = SubResource("TileSetAtlasSource_rlcud")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_capah"]
 size = Vector2(960, 1080)
 
-[node name="Level 1" instance=ExtResource("1_xxpsw")]
+[node name="Level1" instance=ExtResource("1_xxpsw")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 layer = -1
@@ -225,13 +224,8 @@ visible = false
 shape = SubResource("RectangleShape2D_capah")
 
 [node name="NextLevel" parent="." index="6"]
-position = Vector2(1434, 441)
+position = Vector2(2789, 694)
 next_level_path = "res://scenes/levels/level_2.tscn"
 
 [node name="Player" parent="." index="7" instance=ExtResource("3_nynhs")]
 position = Vector2(395, 898)
-
-[node name="CastleEntrance" type="Sprite2D" parent="." index="8"]
-position = Vector2(2791, 678)
-scale = Vector2(5, 5)
-texture = ExtResource("8_4wxsp")
