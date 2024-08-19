@@ -9,14 +9,13 @@ class_name CameraBounds
 	set(new_size):
 		size.x = new_size.x
 		size.y = new_size.y
-		#update_size(size/2)
+		if Engine.is_editor_hint():
+			update_editor_size(size/2)
 @export var priority: int = 0
 
-func update_size(value):
+func update_editor_size(value):
 	sprite_2d.scale = value
 
-func _ready() -> void:
-	update_size(size)
 
 func player_in_bounds() -> bool:
 	var player_pos = Globals.player_pos

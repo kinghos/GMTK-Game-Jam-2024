@@ -71,7 +71,7 @@ func _process(_delta: float) -> void:
 	else:
 		animated_sprite.play("jump")
 			
-	var mouse_pos = to_local($Camera2D.get_global_mouse_position())
+	var mouse_pos = to_local(get_viewport().get_camera_2d().get_global_mouse_position())
 	
 	# Find difference of vectors and see if its less than the max radius
 	var vector_diff = mouse_pos - to_local(position)

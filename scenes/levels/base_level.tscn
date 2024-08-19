@@ -21,3 +21,4 @@ script = ExtResource("1_cfftt")
 visible = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
