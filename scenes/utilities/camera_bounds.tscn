@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://dw5xuu2nwmflu"]
+[gd_scene load_steps=3 format=3 uid="uid://cfjgl27uyhycb"]
 
 [ext_resource type="Script" path="res://scenes/utilities/camera_bounds.gd" id="1_rd7x1"]
-[ext_resource type="Texture2D" uid="uid://c2l7k8jm50wd6" path="res://assets/graphics/misc/yellow.png" id="2_68v8h"]
+[ext_resource type="Texture2D" uid="uid://bb8asj8gxbmw" path="res://assets/graphics/misc/yellow.png" id="2_68v8h"]
 
-[node name="CameraBound" type="Node2D"]
+[node name="CameraBound" type="Node2D" groups=["CameraBounds"]]
 script = ExtResource("1_rd7x1")
+size = Vector2(1, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_68v8h")

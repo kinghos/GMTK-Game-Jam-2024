@@ -2,6 +2,7 @@ extends Node2D
 
 var death: PackedScene = preload("res://scenes/utilities/death.tscn")
 var paused: bool = false
+@onready var camera_2d: Camera2D = $Camera2D
 
 func _ready() -> void:
 	Globals.unlocked_levels.append($".".name)
@@ -9,6 +10,8 @@ func _ready() -> void:
 		i.connect("kill", kill_entity)
 
 func _process(_delta) -> void:
+	print(Globals.player_pos)
+	camera_2d.global_position = Globals.player_pos
 	if Input.is_action_just_pressed("Pause"):
 		$PauseScreen.show()
 		get_tree().paused = not get_tree().paused

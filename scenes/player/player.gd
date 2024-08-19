@@ -20,7 +20,6 @@ var wand_cursor: Resource = load("res://assets/graphics/cursors/wandcursor.png")
 signal kill(node, colour)
 
 func _physics_process(delta):
-	Globals.player_pos = global_position
 	if dead:
 		return
 		
@@ -58,6 +57,8 @@ func _physics_process(delta):
 		$CoyoteTimer.start()
 
 func _process(_delta: float) -> void:
+	Globals.player_pos = global_position
+	
 	if dead:
 		return
 	

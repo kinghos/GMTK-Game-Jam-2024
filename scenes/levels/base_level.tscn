@@ -13,9 +13,11 @@ script = ExtResource("1_cfftt")
 
 [node name="Decorations" type="Node" parent="."]
 
-[node name="CameraAreas" type="Node" parent="."]
+[node name="CameraBounds" type="Node" parent="."]
 
 [node name="NextLevel" parent="." instance=ExtResource("3_jfif1")]
 
 [node name="PauseScreen" parent="." instance=ExtResource("3_5fi32")]
 visible = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
