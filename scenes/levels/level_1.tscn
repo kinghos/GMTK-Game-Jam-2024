@@ -1,15 +1,16 @@
-[gd_scene load_steps=11 format=4 uid="uid://b64feohs7ud18"]
+[gd_scene load_steps=12 format=4 uid="uid://b64feohs7ud18"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_xxpsw"]
 [ext_resource type="Texture2D" uid="uid://bx2kuo38pcbh1" path="res://assets/graphics/backgrounds/outside.png" id="2_avu0q"]
 [ext_resource type="PackedScene" uid="uid://bqb28c3c0c76j" path="res://scenes/player/player.tscn" id="3_nynhs"]
-[ext_resource type="TileSet" uid="uid://dcgci8cyt1jnq" path="res://assets/graphics/tilesets/level1.tres" id="3_sfhsj"]
+[ext_resource type="TileSet" uid="uid://y3k2gebgctba" path="res://assets/graphics/tilesets/level1.tres" id="3_sfhsj"]
 [ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="4_r7reg"]
-[ext_resource type="PackedScene" uid="uid://dfrnp5hncwka" path="res://scenes/objects/platform.tscn" id="5_dlxn6"]
+[ext_resource type="PackedScene" uid="uid://dgtuht2c82fww" path="res://scenes/objects/platform.tscn" id="5_dlxn6"]
 [ext_resource type="PackedScene" uid="uid://c2rf2bqmkt8dr" path="res://scenes/enemies/turret.tscn" id="7_5i8s7"]
 [ext_resource type="Texture2D" uid="uid://dmnqrqc7h66qx" path="res://assets/graphics/decorations/grass.png" id="8_334mq"]
 [ext_resource type="PackedScene" uid="uid://cfjgl27uyhycb" path="res://scenes/utilities/camera_bounds.tscn" id="8_l471g"]
 [ext_resource type="Texture2D" uid="uid://7a2kmkod0c2w" path="res://assets/graphics/doors/castle_entrance.png" id="8_ns4mh"]
+[ext_resource type="Script" path="res://scenes/player/camera_2d.gd" id="11_ku1jw"]
 
 [node name="Level1" instance=ExtResource("1_xxpsw")]
 
@@ -104,3 +105,6 @@ position = Vector2(348, 905)
 position = Vector2(502, 182)
 energy = 0.1
 blend_mode = 1
+
+[node name="Camera2D" parent="." index="10"]
+script = ExtResource("11_ku1jw")
