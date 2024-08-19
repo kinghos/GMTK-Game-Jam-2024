@@ -8,9 +8,10 @@ extends StaticBody2D
 
 func _ready():
 	sprite_2d.animation = "locked"
-	if trigger_switch.name == "PressurePlate":
+	# "x" in y is a way to check properties in a file.
+	if "pressure_plate" in trigger_switch:
 		trigger_switch.pressed.connect(_on_pressure_plate_pressed)
-	elif trigger_switch.name == "Button":
+	elif "button" in trigger_switch: 
 		trigger_switch.pressed.connect(_on_button_pressed)
 	lock_colour.set_self_modulate(colour)
 	lock_colour.show()

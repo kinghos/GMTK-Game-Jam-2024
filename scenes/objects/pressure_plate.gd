@@ -1,7 +1,7 @@
 extends Area2D
 
 signal pressed(pressed)
-
+var pressure_plate # Property for locked_door
 @export var mass_required: float
 @export var failure_color: Color = "d11229"
 @export var success_color: Color = "89b361"
