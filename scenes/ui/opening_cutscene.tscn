@@ -88,3 +88,5 @@ texture_hover = ExtResource("8_no587")
 
 [connection signal="pressed" from="NextArrow" to="." method="_on_next_arrow_pressed"]
 [connection signal="pressed" from="BackArrow" to="." method="_on_back_arrow_pressed"]
+[connection signal="pressed" from="SkipButton" to="." method="_go_to_level_1"]
+[connection signal="pressed" from="PlayButton" to="." method="_go_to_level_1"]
