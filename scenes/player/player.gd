@@ -17,6 +17,8 @@ var wand_cursor: Resource = load("res://assets/graphics/cursors/wandcursor.png")
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 
+signal kill(node, colour)
+
 func _physics_process(delta):
 	if dead:
 		return
@@ -50,6 +52,12 @@ func _physics_process(delta):
 	var was_on_floor = is_on_floor()
 	move_and_slide()
 	push_objects()
+	for i in get_slide_collision_count():
+		var col = get_slide_collision(i).get_collider()
+		if col is TileMapLayer:
+			if col.tile_set.get_physics_layer_collision_layer(0) == 7:
+				print("hello")
+				kill.emit(self, skull_color)
 	
 	if was_on_floor and !is_on_floor():
 		$CoyoteTimer.start()

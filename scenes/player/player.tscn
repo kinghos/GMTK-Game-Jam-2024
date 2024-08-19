@@ -219,7 +219,8 @@ shape = SubResource("CapsuleShape2D_3mord")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_c72jt")
-animation = &"walk"
+animation = &"idle"
+frame_progress = 0.43325
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(6, 0)

@@ -3,7 +3,7 @@ extends Node2D
 var death: PackedScene = preload("res://scenes/utilities/death.tscn")
 
 func _ready() -> void:
-	for i in get_tree().get_nodes_in_group("Enemies"):
+	for i in get_tree().get_nodes_in_group("Entities"):
 		i.connect("kill", kill_entity)
 
 func kill_entity(node: Node, color: Color):
