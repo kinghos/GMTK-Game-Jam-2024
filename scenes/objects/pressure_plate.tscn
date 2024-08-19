@@ -82,7 +82,7 @@ mass_required = 2.0
 sprite_frames = SubResource("SpriteFrames_7lff2")
 animation = &"cog_turn"
 autoplay = "cog_turn"
-frame_progress = 0.743457
+frame_progress = 0.457041
 
 [node name="ColorMask" type="ColorRect" parent="Block"]
 offset_left = 3.0
