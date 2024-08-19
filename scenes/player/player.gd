@@ -122,5 +122,5 @@ func _on_camera_area_entered(area: Area2D) -> void:
 func _on_death_area_body_entered(body: Node2D) -> void:
 	if body is TileMapLayer:
 		print(body.tile_set.get_physics_layer_collision_layer(0))
-		if body.tile_set.get_physics_layer_collision_layer(0) == 8:
+		if body.tile_set.get_physics_layer_collision_layer(0) == 64:
 			kill.emit(self, skull_color)
