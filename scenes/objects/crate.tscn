@@ -35,6 +35,7 @@ material = SubResource("ShaderMaterial_iyfts")
 texture = ExtResource("2_ktjip")
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="CollisionShape2D" index="1"]
+visible = false
 position = Vector2(4.76837e-06, 2.38418e-06)
 scale = Vector2(5, 5)
 occluder = SubResource("OccluderPolygon2D_sq7x7")
