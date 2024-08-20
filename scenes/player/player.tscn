@@ -235,6 +235,7 @@ target_position = Vector2(8, 0)
 collision_mask = 14
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+visible = false
 occluder = SubResource("OccluderPolygon2D_om30a")
 
 [node name="BoulderKill" type="Area2D" parent="."]
