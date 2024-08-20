@@ -143,6 +143,7 @@ text = "Level 4
 Boulder Buddy"
 
 [node name="Label2" type="Label" parent="Labels" index="1"]
+layout_mode = 0
 offset_left = 97.0
 offset_top = 514.0
 offset_right = 542.0
@@ -164,7 +165,7 @@ offset_left = 1258.0
 offset_top = 563.0
 offset_right = 2071.0
 offset_bottom = 604.0
-text = "Dont lose ur buddy, or ur life.."
+text = "Dont lose your buddy, or your life.."
 
 [node name="Label5" type="Label" parent="Labels" index="4"]
 layout_mode = 0
