@@ -101,6 +101,9 @@ func push_objects():
 		var col = get_slide_collision(i)
 		if col.get_collider() is RigidBody2D:
 			col.get_collider().apply_central_force(col.get_normal() * -push_force)
+			if col.get_collider().get_velo() == Vector2.ZERO:
+				col.get_collider().apply_central_force(Vector2.UP * 2000)
+
 
 #func _on_camera_area_entered(area: Area2D) -> void:
 	#var collision_shape = area.get_node("CollisionShape2D")
