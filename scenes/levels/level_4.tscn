@@ -76,6 +76,7 @@ position = Vector2(3632, 707)
 [node name="Trapdoor3" parent="Objects" index="7" instance=ExtResource("5_j75su")]
 position = Vector2(3568, 899)
 initial_scale = 1.8
+tween_duration = 1.0
 
 [node name="Button" parent="Objects" index="8" instance=ExtResource("7_0apm8")]
 position = Vector2(3279, 705)
@@ -176,7 +177,7 @@ offset_bottom = 1003.0
 text = "goodbye boulder :("
 
 [node name="Player" parent="." index="14" instance=ExtResource("14_g3f8b")]
-position = Vector2(188, 466)
+position = Vector2(183, 467)
 
 [node name="Lights" type="Node" parent="." index="15"]
 
