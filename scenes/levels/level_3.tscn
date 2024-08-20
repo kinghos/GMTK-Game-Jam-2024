@@ -177,160 +177,140 @@ shadow_color = Color(0, 1, 1, 1)
 [node name="PointLight2D" type="PointLight2D" parent="Lights" index="1"]
 position = Vector2(185, 297)
 color = Color(1, 0.580392, 0.286275, 1)
-energy = 3.0
-shadow_enabled = true
+energy = 2.5
 texture = ExtResource("16_yk3dh")
 texture_scale = 0.6
 
 [node name="PointLight2D8" type="PointLight2D" parent="Lights" index="2"]
 position = Vector2(68, 130)
 color = Color(1, 0.580392, 0.286275, 1)
-energy = 4.0
-shadow_enabled = true
+energy = 3.0
 texture = ExtResource("16_yk3dh")
 texture_scale = 0.25
 
 [node name="PointLight2D13" type="PointLight2D" parent="Lights" index="3"]
 position = Vector2(-108, 211)
 color = Color(1, 0.580392, 0.286275, 1)
-energy = 4.0
-shadow_enabled = true
+energy = 3.0
 texture = ExtResource("16_yk3dh")
 texture_scale = 0.25
 
 [node name="PointLight2D14" type="PointLight2D" parent="Lights" index="4"]
 position = Vector2(596, 371)
 color = Color(1, 0.580392, 0.286275, 1)
-energy = 4.0
-shadow_enabled = true
+energy = 3.0
 texture = ExtResource("16_yk3dh")
 texture_scale = 0.25
 
 [node name="PointLight2D15" type="PointLight2D" parent="Lights" index="5"]
 position = Vector2(980, 371)
 color = Color(1, 0.580392, 0.286275, 1)
-energy = 4.0
-shadow_enabled = true
+energy = 3.0
 texture = ExtResource("16_yk3dh")
 texture_scale = 0.25
 
 [node name="PointLight2D17" type="PointLight2D" parent="Lights" index="6"]
 position = Vector2(1524, -45)
 color = Color(1, 0.580392, 0.286275, 1)
-energy = 4.0
-shadow_enabled = true
+energy = 3.0
 texture = ExtResource("16_yk3dh")
 texture_scale = 0.25
 
 [node name="PointLight2D19" type="PointLight2D" parent="Lights" index="7"]
 position = Vector2(2260, 499)
 color = Color(1, 0.580392, 0.286275, 1)
-energy = 4.0
-shadow_enabled = true
+energy = 3.0
 texture = ExtResource("16_yk3dh")
 texture_scale = 0.25
 
 [node name="PointLight2D18" type="PointLight2D" parent="Lights" index="8"]
 position = Vector2(2324, -45)
 color = Color(1, 0.580392, 0.286275, 1)
-energy = 4.0
-shadow_enabled = true
+energy = 3.0
 texture = ExtResource("16_yk3dh")
 texture_scale = 0.25
 
 [node name="PointLight2D20" type="PointLight2D" parent="Lights" index="9"]
 position = Vector2(2932, 436)
 color = Color(1, 0.580392, 0.286275, 1)
-energy = 4.0
-shadow_enabled = true
+energy = 3.0
 texture = ExtResource("16_yk3dh")
 texture_scale = 0.25
 
 [node name="PointLight2D21" type="PointLight2D" parent="Lights" index="10"]
 position = Vector2(3412, 468)
 color = Color(1, 0.580392, 0.286275, 1)
-energy = 4.0
-shadow_enabled = true
+energy = 3.0
 texture = ExtResource("16_yk3dh")
 texture_scale = 0.25
 
 [node name="PointLight2D9" type="PointLight2D" parent="Lights" index="11"]
 position = Vector2(300, 130)
 color = Color(1, 0.580392, 0.286275, 1)
-energy = 4.0
-shadow_enabled = true
+energy = 3.0
 texture = ExtResource("16_yk3dh")
 texture_scale = 0.25
 
 [node name="PointLight2D10" type="PointLight2D" parent="Lights" index="12"]
 position = Vector2(532, 130)
 color = Color(1, 0.580392, 0.286275, 1)
-energy = 4.0
-shadow_enabled = true
+energy = 3.0
 texture = ExtResource("16_yk3dh")
 texture_scale = 0.25
 
 [node name="PointLight2D11" type="PointLight2D" parent="Lights" index="13"]
 position = Vector2(996, 130)
 color = Color(1, 0.580392, 0.286275, 1)
-energy = 4.0
-shadow_enabled = true
+energy = 3.0
 texture = ExtResource("16_yk3dh")
 texture_scale = 0.25
 
 [node name="PointLight2D12" type="PointLight2D" parent="Lights" index="14"]
 position = Vector2(1224, 130)
 color = Color(1, 0.580392, 0.286275, 1)
-energy = 4.0
-shadow_enabled = true
+energy = 3.0
 texture = ExtResource("16_yk3dh")
 texture_scale = 0.25
 
 [node name="PointLight2D2" type="PointLight2D" parent="Lights" index="15"]
 position = Vector2(-47, 298)
 color = Color(1, 0.580392, 0.286275, 1)
-energy = 3.0
-shadow_enabled = true
+energy = 2.5
 texture = ExtResource("16_yk3dh")
 texture_scale = 0.6
 
 [node name="PointLight2D3" type="PointLight2D" parent="Lights" index="16"]
 position = Vector2(417, 297)
 color = Color(1, 0.580392, 0.286275, 1)
-energy = 3.0
-shadow_enabled = true
+energy = 2.5
 texture = ExtResource("16_yk3dh")
 texture_scale = 0.6
 
 [node name="PointLight2D4" type="PointLight2D" parent="Lights" index="17"]
 position = Vector2(651, 296)
 color = Color(1, 0.580392, 0.286275, 1)
-energy = 3.0
-shadow_enabled = true
+energy = 2.5
 texture = ExtResource("16_yk3dh")
 texture_scale = 0.6
 
 [node name="PointLight2D5" type="PointLight2D" parent="Lights" index="18"]
 position = Vector2(881, 297)
 color = Color(1, 0.580392, 0.286275, 1)
-energy = 3.0
-shadow_enabled = true
+energy = 2.5
 texture = ExtResource("16_yk3dh")
 texture_scale = 0.6
 
 [node name="PointLight2D6" type="PointLight2D" parent="Lights" index="19"]
 position = Vector2(1108, 297)
 color = Color(1, 0.580392, 0.286275, 1)
-energy = 3.0
-shadow_enabled = true
+energy = 2.5
 texture = ExtResource("16_yk3dh")
 texture_scale = 0.6
 
 [node name="PointLight2D7" type="PointLight2D" parent="Lights" index="20"]
 position = Vector2(1341, 298)
 color = Color(1, 0.580392, 0.286275, 1)
-energy = 3.0
-shadow_enabled = true
+energy = 2.5
 texture = ExtResource("16_yk3dh")
 texture_scale = 0.6
 
