@@ -1,4 +1,11 @@
-[gd_scene format=3 uid="uid://8puka7exwhg6"]
+[gd_scene load_steps=7 format=3 uid="uid://8puka7exwhg6"]
+
+[ext_resource type="Theme" uid="uid://188b0mpq0nv5" path="res://globals/font.tres" id="1_agse4"]
+[ext_resource type="Texture2D" uid="uid://cylwfxrx2sga2" path="res://assets/graphics/backgrounds/title_screen.png" id="1_jqmx1"]
+[ext_resource type="Script" path="res://scenes/ui/back_to_title.gd" id="2_qdbfn"]
+[ext_resource type="Texture2D" uid="uid://bmedgvtk57bd1" path="res://assets/graphics/misc/menu_arrow.png" id="3_04uxm"]
+[ext_resource type="Texture2D" uid="uid://bqf5igwj6eaec" path="res://assets/graphics/misc/menu_arrow_hovering.png" id="4_sbi17"]
+[ext_resource type="Script" path="res://scenes/ui/volume_control.gd" id="6_tkkup"]
 
 [node name="Options" type="Control"]
 layout_mode = 3
@@ -7,31 +14,103 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_agse4")
+script = ExtResource("2_qdbfn")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.1
+anchor_right = 0.5
+anchor_bottom = 0.1
+offset_left = -960.0
+offset_top = -108.0
+offset_right = 960.0
+offset_bottom = 972.0
 grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.197937, 0.197937, 0.197937, 1)
+texture = ExtResource("1_jqmx1")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="BackArrow" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1720.0
+offset_top = 916.0
+offset_right = 1760.0
+offset_bottom = 956.0
+scale = Vector2(5, 5)
+texture_normal = ExtResource("3_04uxm")
+texture_hover = ExtResource("4_sbi17")
+flip_h = true
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="."]
 layout_mode = 2
-size_flags_vertical = 3
+offset_left = 63.0
+offset_top = 533.0
+offset_right = 460.0
+offset_bottom = 574.0
+text = "Master Volume"
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+[node name="MasterVolumeSlider" type="HSlider" parent="."]
 layout_mode = 2
-text = "Volume"
-
-[node name="HSlider" type="HSlider" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
+offset_left = 56.0
+offset_top = 521.0
+offset_right = 536.0
+offset_bottom = 698.0
 size_flags_horizontal = 8
-max_value = 100.81
+max_value = 1.0
+step = 0.01
+value = 1.0
 tick_count = 10
+script = ExtResource("6_tkkup")
+bus_name = "Master"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+offset_left = 63.0
+offset_top = 633.0
+offset_right = 460.0
+offset_bottom = 674.0
+text = "Music"
+
+[node name="MusicSlider" type="HSlider" parent="."]
+layout_mode = 2
+offset_left = 56.0
+offset_top = 633.0
+offset_right = 536.0
+offset_bottom = 810.0
+size_flags_horizontal = 8
+max_value = 1.0
+step = 0.01
+value = 1.0
+tick_count = 10
+script = ExtResource("6_tkkup")
+bus_name = "Music"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 2
+offset_left = 63.0
+offset_top = 733.0
+offset_right = 460.0
+offset_bottom = 774.0
+text = "SFX"
+
+[node name="SFXSlider" type="HSlider" parent="."]
+layout_mode = 2
+offset_left = 56.0
+offset_top = 733.0
+offset_right = 536.0
+offset_bottom = 910.0
+size_flags_horizontal = 8
+max_value = 1.0
+step = 0.01
+value = 1.0
+tick_count = 10
+script = ExtResource("6_tkkup")
+bus_name = "Sound Effects"
+
+[connection signal="pressed" from="BackArrow" to="." method="_on_back_arrow_pressed"]

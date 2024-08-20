@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://ksscipjj6y65"]
+[gd_scene load_steps=13 format=3 uid="uid://ksscipjj6y65"]
 
 [ext_resource type="Texture2D" uid="uid://d16gafbe8degu" path="res://assets/graphics/decorations/window_rain.png" id="1_dew4c"]
+[ext_resource type="Texture2D" uid="uid://dbad4kau4kgp5" path="res://assets/graphics/lights/circle.png" id="2_ql4q0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lvvua"]
 atlas = ExtResource("1_dew4c")
@@ -78,3 +79,8 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_x5588")
 animation = &"raining"
 autoplay = "raining"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.215686, 0.376471, 1, 1)
+shadow_enabled = true
+texture = ExtResource("2_ql4q0")
