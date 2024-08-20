@@ -126,7 +126,7 @@ tile_map_data = PackedByteArray("AAAOACcAAQACAAAAAAAPACcAAQACAAAAAAAQACcAAQACAAA
 tile_set = ExtResource("11_8pagl")
 
 [node name="Player" parent="." index="9" instance=ExtResource("9_g233q")]
-position = Vector2(778, 251)
+position = Vector2(227, 976)
 
 [node name="TransitionLayer" parent="." index="12"]
 visible = false
