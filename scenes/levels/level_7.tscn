@@ -139,6 +139,14 @@ offset_bottom = 901.0
 text = "Level 7
 UP, down and around"
 
+[node name="Label2" type="Label" parent="Labels" index="1"]
+layout_mode = 0
+offset_left = 1384.0
+offset_top = 1031.0
+offset_right = 2318.0
+offset_bottom = 1072.0
+text = "You need the boulder to come down"
+
 [node name="Lights" type="Node" parent="." index="13"]
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Lights" index="0"]
