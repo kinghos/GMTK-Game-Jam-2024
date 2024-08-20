@@ -22,5 +22,7 @@ texture_filter = 1
 material = ExtResource("2_d2p2f")
 scale = Vector2(5, 5)
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_enter"]
 [connection signal="mouse_shape_exited" from="." to="." method="_on_mouse_exit"]

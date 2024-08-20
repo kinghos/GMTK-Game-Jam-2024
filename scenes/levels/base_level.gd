@@ -8,7 +8,7 @@ const MANSION = preload("res://assets/audio/Mansion.mp3")
 
 func _ready() -> void:
 	Globals.unlocked_levels.append($".".name)
-	Music._play_music_level(MANSION, -10)
+	Music._play_music_level(MANSION, -15)
 	for i in get_tree().get_nodes_in_group("Entities"):
 		i.connect("kill", kill_entity)
 	$TransitionLayer/AnimationPlayer.play("fade_in")
