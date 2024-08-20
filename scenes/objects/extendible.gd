@@ -53,6 +53,8 @@ func resize(remove_collision: bool = false):
 	asp.stream = GROW
 	add_child(asp)
 	asp.play()
+	await asp.finished
+	asp.queue_free()
 	
 func _on_mouse_entered() -> void:
 	if not expanded:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://crrtck0tesyll"]
+[gd_scene load_steps=18 format=4 uid="uid://crrtck0tesyll"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_e4y2d"]
 [ext_resource type="Texture2D" uid="uid://cwb2iqs54y2w6" path="res://assets/graphics/backgrounds/BG2.png" id="1_i625q"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cellt2ya3waj0" path="res://scenes/objects/locked_door.tscn" id="9_yijcl"]
 [ext_resource type="TileSet" uid="uid://nanvlob5un3n" path="res://assets/graphics/tilesets/tileset.tres" id="11_bgpte"]
 [ext_resource type="TileSet" uid="uid://dn64p7d7jg05p" path="res://assets/graphics/tilesets/spikes.tres" id="12_wsccu"]
+[ext_resource type="Texture2D" uid="uid://dbad4kau4kgp5" path="res://assets/graphics/lights/circle.png" id="16_yk3dh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ve6mn"]
 size = Vector2(29, 364)
@@ -108,6 +109,7 @@ position = Vector2(1872, 21)
 scale = Vector2(2, 2)
 
 [node name="CameraBound" parent="CameraBounds" index="0" instance=ExtResource("9_hbrm2")]
+visible = false
 position = Vector2(251, 258)
 size = Vector2(1200, 600)
 
@@ -153,5 +155,109 @@ offset_left = 2687.0
 offset_top = 539.0
 offset_right = 2727.0
 offset_bottom = 562.0
+
+[node name="Lights" type="Node" parent="." index="15"]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Lights" index="0"]
+color = Color(0.627451, 1, 1, 1)
+energy = 0.7
+blend_mode = 1
+shadow_color = Color(0, 1, 1, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="Lights" index="1"]
+position = Vector2(185, 297)
+color = Color(1, 0.580392, 0.286275, 1)
+energy = 3.0
+shadow_enabled = true
+texture = ExtResource("16_yk3dh")
+texture_scale = 0.6
+
+[node name="PointLight2D8" type="PointLight2D" parent="Lights" index="2"]
+position = Vector2(68, 130)
+color = Color(1, 0.580392, 0.286275, 1)
+energy = 4.0
+shadow_enabled = true
+texture = ExtResource("16_yk3dh")
+texture_scale = 0.25
+
+[node name="PointLight2D9" type="PointLight2D" parent="Lights" index="3"]
+position = Vector2(300, 130)
+color = Color(1, 0.580392, 0.286275, 1)
+energy = 4.0
+shadow_enabled = true
+texture = ExtResource("16_yk3dh")
+texture_scale = 0.25
+
+[node name="PointLight2D10" type="PointLight2D" parent="Lights" index="4"]
+position = Vector2(532, 130)
+color = Color(1, 0.580392, 0.286275, 1)
+energy = 4.0
+shadow_enabled = true
+texture = ExtResource("16_yk3dh")
+texture_scale = 0.25
+
+[node name="PointLight2D11" type="PointLight2D" parent="Lights" index="5"]
+position = Vector2(996, 130)
+color = Color(1, 0.580392, 0.286275, 1)
+energy = 4.0
+shadow_enabled = true
+texture = ExtResource("16_yk3dh")
+texture_scale = 0.25
+
+[node name="PointLight2D12" type="PointLight2D" parent="Lights" index="6"]
+position = Vector2(1224, 130)
+color = Color(1, 0.580392, 0.286275, 1)
+energy = 4.0
+shadow_enabled = true
+texture = ExtResource("16_yk3dh")
+texture_scale = 0.25
+
+[node name="PointLight2D2" type="PointLight2D" parent="Lights" index="7"]
+position = Vector2(-47, 298)
+color = Color(1, 0.580392, 0.286275, 1)
+energy = 3.0
+shadow_enabled = true
+texture = ExtResource("16_yk3dh")
+texture_scale = 0.6
+
+[node name="PointLight2D3" type="PointLight2D" parent="Lights" index="8"]
+position = Vector2(417, 297)
+color = Color(1, 0.580392, 0.286275, 1)
+energy = 3.0
+shadow_enabled = true
+texture = ExtResource("16_yk3dh")
+texture_scale = 0.6
+
+[node name="PointLight2D4" type="PointLight2D" parent="Lights" index="9"]
+position = Vector2(651, 296)
+color = Color(1, 0.580392, 0.286275, 1)
+energy = 3.0
+shadow_enabled = true
+texture = ExtResource("16_yk3dh")
+texture_scale = 0.6
+
+[node name="PointLight2D5" type="PointLight2D" parent="Lights" index="10"]
+position = Vector2(881, 297)
+color = Color(1, 0.580392, 0.286275, 1)
+energy = 3.0
+shadow_enabled = true
+texture = ExtResource("16_yk3dh")
+texture_scale = 0.6
+
+[node name="PointLight2D6" type="PointLight2D" parent="Lights" index="11"]
+position = Vector2(1108, 297)
+color = Color(1, 0.580392, 0.286275, 1)
+energy = 3.0
+shadow_enabled = true
+texture = ExtResource("16_yk3dh")
+texture_scale = 0.6
+
+[node name="PointLight2D7" type="PointLight2D" parent="Lights" index="12"]
+position = Vector2(1341, 298)
+color = Color(1, 0.580392, 0.286275, 1)
+energy = 3.0
+shadow_enabled = true
+texture = ExtResource("16_yk3dh")
+texture_scale = 0.6
 
 [connection signal="body_entered" from="Objects/BoulderArea" to="." method="_on_boulder_area_body_entered"]

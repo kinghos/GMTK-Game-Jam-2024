@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbxh2w82ol1o8"]
+[gd_scene load_steps=7 format=3 uid="uid://cbxh2w82ol1o8"]
 
+[ext_resource type="AudioStream" uid="uid://derwlwys05syh" path="res://assets/audio/sfx/death.ogg" id="1_xhck6"]
 [ext_resource type="Texture2D" uid="uid://dh41wl7xwtlcx" path="res://assets/graphics/misc/skull.png" id="1_ywjqb"]
 [ext_resource type="Texture2D" uid="uid://b076qafr3p331" path="res://assets/graphics/particles/death_particle.png" id="2_4xgvf"]
 
@@ -106,6 +107,21 @@ tracks/4/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer2D")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("1_xhck6")
+}],
+"times": PackedFloat32Array(0)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7fk6a"]
 _data = {
@@ -122,6 +138,8 @@ libraries = {
 }
 
 [node name="Skull" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(0, -60)
 texture = ExtResource("1_ywjqb")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
@@ -144,3 +162,5 @@ initial_velocity_max = 249.7
 angle_min = -720.0
 angle_max = 720.0
 scale_amount_min = 0.7
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
