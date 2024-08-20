@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bqb28c3c0c76j" path="res://scenes/player/player.tscn" id="4_4ginr"]
 [ext_resource type="TileSet" uid="uid://dn64p7d7jg05p" path="res://assets/graphics/tilesets/spikes.tres" id="4_gf1aa"]
 [ext_resource type="PackedScene" uid="uid://c2rf2bqmkt8dr" path="res://scenes/enemies/turret.tscn" id="5_glje2"]
-[ext_resource type="PackedScene" uid="uid://dgtuht2c82fww" path="res://scenes/objects/platform.tscn" id="5_rt3by"]
+[ext_resource type="PackedScene" uid="uid://dfrnp5hncwka" path="res://scenes/objects/platform.tscn" id="5_rt3by"]
 [ext_resource type="PackedScene" uid="uid://8ugc5pmxilxp" path="res://scenes/objects/button.tscn" id="6_o4wwk"]
 [ext_resource type="PackedScene" uid="uid://cellt2ya3waj0" path="res://scenes/objects/locked_door.tscn" id="7_hu5sg"]
 [ext_resource type="PackedScene" uid="uid://y08qj51uuc8j" path="res://scenes/objects/trapdoor.tscn" id="8_n07vo"]
@@ -96,13 +96,9 @@ texture_region_size = Vector2i(32, 32)
 8:4/0 = 0
 8:5/0 = 0
 4:8/0 = 0
-4:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 5:8/0 = 0
-5:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 6:8/0 = 0
-6:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 7:8/0 = 0
-7:8/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 8:6/0 = 0
 9:5/0 = 0
 6:4/0 = 0
