@@ -28,7 +28,7 @@ func _ready():
 func open_door():
 	sprite_2d.animation = "unlocked"
 	collision_shape_2d.set_deferred("disabled", true)
-	if $"../..".name == "Level5" or $"../..".name == "Level6":
+	if $"../..".name == "Level5":
 		queue_free()
 	lock_colour.hide()
 
