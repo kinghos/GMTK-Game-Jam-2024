@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jhj1e"]
 radius = 20.5
-height = 56.0
+height = 82.0
 
 [node name="NextLevel" type="Area2D"]
 texture_filter = 1

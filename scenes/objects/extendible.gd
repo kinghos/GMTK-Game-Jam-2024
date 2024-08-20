@@ -1,6 +1,9 @@
 @tool
 extends Node
 
+const GROW = preload("res://assets/audio/sfx/grow.ogg")
+const SHRINK = preload("res://assets/audio/sfx/shrink.ogg")
+
 @export var initial_scale: float = 1 :
 	set(value):
 		initial_scale = value
@@ -41,10 +44,17 @@ func resize(remove_collision: bool = false):
 	resize_tween.tween_property($".", "scale", expanded_scale_vector, tween_duration)
 	$Sprite2D.material.set_shader_parameter("width", 0)
 	expanded = true
+	var asp: AudioStreamPlayer2D = AudioStreamPlayer2D.new()
 	if remove_collision:
+		asp.stream = SHRINK
+		add_child(asp)
+		asp.play()
 		await resize_tween.finished
 		queue_free()
-
+	asp.stream = GROW
+	add_child(asp)
+	asp.play()
+	
 func _on_mouse_entered() -> void:
 	if not expanded:
 		$Sprite2D.material.set_shader_parameter("width", 0.5)

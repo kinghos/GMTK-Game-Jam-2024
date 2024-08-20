@@ -1,6 +1,10 @@
 @tool
 extends Node2D
 
+const SHRINK = preload("res://assets/audio/sfx/shrink.ogg")
+const GROW = preload("res://assets/audio/sfx/grow.ogg")
+@onready var asp: AudioStreamPlayer2D = $AudioStreamPlayer
+
 signal mass_changed(new_mass: float)
 @export_enum("Small", "Default", "Medium", "Large") var initial_scale: String = "Default" :
 	set(value):
@@ -46,6 +50,11 @@ func resize(current_scale: Vector2, direction: int):
 	
 	if (resize_tween and resize_tween.is_running()) or not hovering or not scales.has(current_scale):
 		return
+	
+	if direction == 1:
+		play_size_sound("Grow")
+	else:
+		play_size_sound("Shrink")
 
 	var index = scales.find(current_scale)
 	index += direction
@@ -71,3 +80,10 @@ func _on_mouse_enter(_shape_idx: int):
 func _on_mouse_exit(_shape_idx: int):
 	$CollisionShape2D/Sprite2D.material.set_shader_parameter("width", 0)
 	hovering = false
+
+func play_size_sound(change):
+	if change == "Grow":
+		asp.stream = GROW
+	elif change == "Shrink":
+		asp.stream = SHRINK
+	asp.play()
