@@ -1,7 +1,8 @@
-[gd_scene load_steps=55 format=4 uid="uid://c5khlcjgtm8er"]
+[gd_scene load_steps=57 format=4 uid="uid://c5khlcjgtm8er"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_dvvb2"]
 [ext_resource type="Texture2D" uid="uid://cwb2iqs54y2w6" path="res://assets/graphics/backgrounds/BG2.png" id="2_8ywna"]
+[ext_resource type="Script" path="res://scenes/levels/level_6.gd" id="2_i0xqx"]
 [ext_resource type="TileSet" uid="uid://nanvlob5un3n" path="res://assets/graphics/tilesets/tileset.tres" id="3_kkayg"]
 [ext_resource type="PackedScene" uid="uid://cellt2ya3waj0" path="res://scenes/objects/locked_door.tscn" id="3_rta56"]
 [ext_resource type="PackedScene" uid="uid://y08qj51uuc8j" path="res://scenes/objects/trapdoor.tscn" id="4_kjk67"]
@@ -12,6 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://uvhuddlc6csq" path="res://assets/graphics/tilesets/brick_tileset.png" id="8_k3wv2"]
 [ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="9_hlxgx"]
 [ext_resource type="Theme" uid="uid://188b0mpq0nv5" path="res://globals/font.tres" id="10_g4k7e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t31e8"]
+size = Vector2(24, 9.5)
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_u6ph5"]
 polygon = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -309,6 +313,7 @@ physics_layer_0/collision_mask = 39
 sources/0 = SubResource("TileSetAtlasSource_pe61s")
 
 [node name="Level5" instance=ExtResource("1_dvvb2")]
+script = ExtResource("2_i0xqx")
 
 [node name="TextureRect" type="TextureRect" parent="." index="0"]
 offset_left = -26.0
@@ -370,12 +375,24 @@ mass = 4.0
 initial_scale = "Large"
 
 [node name="Button" parent="Objects" index="11" instance=ExtResource("7_0wr3s")]
-position = Vector2(298, 779)
+position = Vector2(384, 780)
 color = Color(1, 1, 0, 1)
+
+[node name="Area2D" type="Area2D" parent="Objects/Button" index="4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Button/Area2D" index="0"]
+position = Vector2(2, -6.75)
+shape = SubResource("RectangleShape2D_t31e8")
 
 [node name="Button2" parent="Objects" index="12" instance=ExtResource("7_0wr3s")]
 position = Vector2(1056, 779)
 color = Color(0, 1, 0, 1)
+
+[node name="Area2D" type="Area2D" parent="Objects/Button2" index="4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/Button2/Area2D" index="0"]
+position = Vector2(2, -5.5)
+shape = SubResource("RectangleShape2D_t31e8")
 
 [node name="LockedDoor3" parent="Objects" index="13" node_paths=PackedStringArray("trigger_switch") instance=ExtResource("3_rta56")]
 position = Vector2(611, 263)
@@ -453,7 +470,7 @@ tile_set = SubResource("TileSet_8hxm2")
 
 [node name="NextLevel" parent="." index="6"]
 position = Vector2(722, 649)
-next_level_path = "res://scenes/levels/level_6.gd"
+next_level_path = "res://scenes/levels/level_6.tscn"
 
 [node name="Camera2D" parent="." index="8"]
 position = Vector2(17, 397)
@@ -479,3 +496,6 @@ Trouble"
 
 [node name="Player" parent="." index="11" instance=ExtResource("4_vhdi0")]
 position = Vector2(721, 507)
+
+[connection signal="body_entered" from="Objects/Button/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Objects/Button2/Area2D" to="." method="_on_area_2d_body_entered"]
