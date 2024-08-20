@@ -88,7 +88,7 @@ trigger_switch = NodePath("../PressurePlate2")
 colour = Color(0.207843, 0.843137, 1, 1)
 
 [node name="Turret2" parent="Enemies" index="0" instance=ExtResource("11_1jmek")]
-position = Vector2(305, 704)
+position = Vector2(368, 704)
 
 [node name="CameraBound" parent="CameraBounds" index="0" instance=ExtResource("13_s818e")]
 position = Vector2(694, 993)
