@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://dyrtpne8mqm65"]
+[gd_scene load_steps=18 format=4 uid="uid://dyrtpne8mqm65"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_2tvk7"]
 [ext_resource type="Texture2D" uid="uid://cwb2iqs54y2w6" path="res://assets/graphics/backgrounds/BG2.png" id="2_1g53h"]
@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://y08qj51uuc8j" path="res://scenes/objects/trapdoor.tscn" id="8_n07vo"]
 [ext_resource type="PackedScene" uid="uid://dwr3vj83ale81" path="res://scenes/objects/boulder.tscn" id="9_0bpye"]
 [ext_resource type="PackedScene" uid="uid://cfjgl27uyhycb" path="res://scenes/utilities/camera_bounds.tscn" id="13_vdgem"]
-[ext_resource type="Texture2D" uid="uid://b1xanlb78wt7y" path="res://assets/graphics/misc/level_warp.png" id="14_2i7nq"]
+[ext_resource type="FontFile" uid="uid://b4ac3jt34k6a" path="res://assets/fonts/Daydream.ttf" id="14_w5oly"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4o4na"]
 texture = ExtResource("2_ut722")
@@ -116,6 +116,10 @@ physics_layer_0/collision_layer = 8
 physics_layer_0/collision_mask = 39
 sources/0 = SubResource("TileSetAtlasSource_4o4na")
 
+[sub_resource type="LabelSettings" id="LabelSettings_jvlgj"]
+font = ExtResource("14_w5oly")
+font_size = 10
+
 [node name="Level2" instance=ExtResource("1_2tvk7")]
 
 [node name="TextureRect" type="TextureRect" parent="." index="0"]
@@ -196,6 +200,15 @@ size = Vector2(1900, 500)
 
 [node name="NextLevel" parent="." index="7"]
 position = Vector2(1635, 568)
-texture = ExtResource("14_2i7nq")
-texture_scale = 1.0
 next_level_path = "res://scenes/levels/level_3.tscn"
+
+[node name="Label" type="Label" parent="Labels" index="0"]
+layout_mode = 0
+offset_left = 581.0
+offset_top = 373.0
+offset_right = 953.0
+offset_bottom = 420.0
+text = "Click trapdoors to shrink
+them out of existence"
+label_settings = SubResource("LabelSettings_jvlgj")
+horizontal_alignment = 1
