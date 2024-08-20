@@ -27,15 +27,16 @@ offset_bottom = 360.0
 scale = Vector2(4, 4)
 texture = ExtResource("1_v2c6w")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Tail" type="Area2D" parent="."]
 position = Vector2(300, 1026)
 scale = Vector2(0.5, 0.5)
+collision_layer = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tail"]
 scale = Vector2(1, 1.4)
 shape = SubResource("CapsuleShape2D_85rio")
 
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+[node name="Sprite2D" type="Sprite2D" parent="Tail"]
 texture = ExtResource("6_3cmj8")
 
 [node name="Tilemaps" type="Node" parent="."]
@@ -53,3 +54,5 @@ zoom = Vector2(2, 2)
 limit_smoothed = true
 position_smoothing_enabled = true
 script = ExtResource("5_2p2r7")
+
+[connection signal="body_entered" from="Tail" to="." method="_on_tail_entered"]
