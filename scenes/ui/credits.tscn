@@ -80,6 +80,10 @@ text = "aspectduck"
 layout_mode = 2
 text = "dogthegoose"
 
+[node name="TheCurryDealer" type="Label" parent="ArtContainer"]
+layout_mode = 2
+text = "TheCurryDealer"
+
 [node name="LevelDesignContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1

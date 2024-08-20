@@ -88,11 +88,11 @@ trigger_switch = NodePath("../PressurePlate2")
 colour = Color(0.207843, 0.843137, 1, 1)
 
 [node name="Turret2" parent="Enemies" index="0" instance=ExtResource("11_1jmek")]
-position = Vector2(305, 704)
+position = Vector2(368, 704)
 
 [node name="CameraBound" parent="CameraBounds" index="0" instance=ExtResource("13_s818e")]
-position = Vector2(571, 1021)
-size = Vector2(1100, 600)
+position = Vector2(694, 993)
+size = Vector2(1300, 600)
 
 [node name="CameraBound2" parent="CameraBounds" index="1" instance=ExtResource("13_s818e")]
 position = Vector2(1784, 818)
@@ -146,6 +146,14 @@ offset_top = 1031.0
 offset_right = 2318.0
 offset_bottom = 1072.0
 text = "You need the boulder to come down"
+
+[node name="Label3" type="Label" parent="Labels" index="2"]
+layout_mode = 0
+offset_left = 989.0
+offset_top = 70.0
+offset_right = 1805.0
+offset_bottom = 111.0
+text = "Remember to grow the boulder"
 
 [node name="Lights" type="Node" parent="." index="13"]
 
