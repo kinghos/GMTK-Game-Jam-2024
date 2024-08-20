@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bk6imiduyp00t" path="res://assets/graphics/objects/crate.png" id="2_ktjip"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6xe1a"]
-friction = 0.45
+friction = 0.4
 rough = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wywf6"]
@@ -34,5 +34,7 @@ shape = SubResource("RectangleShape2D_wywf6")
 material = SubResource("ShaderMaterial_iyfts")
 texture = ExtResource("2_ktjip")
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="." index="1"]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="CollisionShape2D" index="1"]
+position = Vector2(4.76837e-06, 2.38418e-06)
+scale = Vector2(5, 5)
 occluder = SubResource("OccluderPolygon2D_sq7x7")
