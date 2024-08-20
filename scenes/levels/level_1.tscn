@@ -83,10 +83,10 @@ mass = 4.0
 initial_scale = "Large"
 
 [node name="Crate3" parent="Objects" index="4" instance=ExtResource("4_r7reg")]
-position = Vector2(1488, 805)
+position = Vector2(1488, 801)
 
 [node name="Crate4" parent="Objects" index="5" instance=ExtResource("4_r7reg")]
-position = Vector2(2676, 710)
+position = Vector2(2676, 706)
 
 [node name="Platform" parent="Objects" index="6" instance=ExtResource("5_dlxn6")]
 position = Vector2(1477, 826)

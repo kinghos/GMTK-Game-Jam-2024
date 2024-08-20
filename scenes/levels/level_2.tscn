@@ -193,7 +193,7 @@ position = Vector2(769, 604)
 position = Vector2(132, 591)
 
 [node name="CameraBound" parent="CameraBounds" index="0" instance=ExtResource("13_vdgem")]
-position = Vector2(862, 318)
+position = Vector2(867, 152)
 size = Vector2(1900, 1000)
 priority = 1
 
