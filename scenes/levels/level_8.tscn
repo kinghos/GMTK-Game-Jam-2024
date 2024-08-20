@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bhi4e8ckchwjf"]
+[gd_scene load_steps=14 format=4 uid="uid://blbrdd6kk8avu"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_54he0"]
 [ext_resource type="TileSet" uid="uid://nanvlob5un3n" path="res://assets/graphics/tilesets/tileset.tres" id="2_wqrj8"]
@@ -116,6 +116,7 @@ size = Vector2(2500, 1000)
 
 [node name="NextLevel" parent="." index="6"]
 position = Vector2(3918, 700)
+next_level_path = "res://scenes/ui/ending_cutscene.tscn"
 
 [node name="Player" parent="." index="7" instance=ExtResource("14_nkoa2")]
 position = Vector2(1865, 467)
