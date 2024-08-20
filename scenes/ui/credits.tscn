@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://c2mf2amsripfd"]
+[gd_scene load_steps=2 format=3 uid="uid://c2mf2amsripfd"]
+
+[ext_resource type="Theme" uid="uid://188b0mpq0nv5" path="res://globals/font.tres" id="1_h37er"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -7,3 +9,84 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_h37er")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.162066, 0.162066, 0.162066, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/GridContainer"]
+layout_mode = 2
+text = "Programming"
+
+[node name="Label2" type="Label" parent="HBoxContainer/GridContainer"]
+layout_mode = 2
+text = "MTOnline"
+
+[node name="Label3" type="Label" parent="HBoxContainer/GridContainer"]
+layout_mode = 2
+text = "peepschilli"
+
+[node name="Label4" type="Label" parent="HBoxContainer/GridContainer"]
+layout_mode = 2
+text = "briggles3"
+
+[node name="GridContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Art"
+
+[node name="Label2" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+text = "fishmommy"
+
+[node name="Label3" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+text = "au_hermit"
+
+[node name="Label4" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+text = "aspectduck"
+
+[node name="Label5" type="Label" parent="HBoxContainer/GridContainer2"]
+layout_mode = 2
+text = "dogthegoose"
+
+[node name="GridContainer3" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/GridContainer3"]
+layout_mode = 2
+text = "Level Design"
+
+[node name="Label2" type="Label" parent="HBoxContainer/GridContainer3"]
+layout_mode = 2
+text = "mtonline"
+
+[node name="Label3" type="Label" parent="HBoxContainer/GridContainer3"]
+layout_mode = 2
+text = "peepschilli"
+
+[node name="Label4" type="Label" parent="HBoxContainer/GridContainer3"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "thecurrydealer"

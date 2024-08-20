@@ -76,6 +76,9 @@ alert_light_color = Color(0.752941, 0, 0, 1)
 [node name="Turret2" parent="Enemies" index="1" instance=ExtResource("5_c845s")]
 position = Vector2(0, 353)
 
+[node name="Turret3" parent="Enemies" index="2" instance=ExtResource("5_c845s")]
+position = Vector2(-736, -268)
+
 [node name="Player" parent="." index="4" instance=ExtResource("3_oeujk")]
 position = Vector2(-897, 437)
 
