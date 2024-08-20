@@ -1,5 +1,5 @@
 @tool
-extends Node2D
+extends RigidBody2D
 
 const SHRINK = preload("res://assets/audio/sfx/shrink.ogg")
 const GROW = preload("res://assets/audio/sfx/grow.ogg")
@@ -15,7 +15,7 @@ var resize_tween: Tween = null
 var hovering: bool = false
 var can_push_switch
 
-var _mass: float = 1.0 : set = set_mass
+var _mass: float = 1.0 : set = _set_mass
 
 const SCALE_PRESETS = {
 	"Small": {"scale": Vector2(0.1, 0.1), "mass": 0.5, "friction": 0.4},
@@ -23,7 +23,8 @@ const SCALE_PRESETS = {
 	"Medium": {"scale": Vector2(0.5, 0.5), "mass": 2.0, "friction": 0.45},
 	"Large": {"scale": Vector2(1.0, 1.0), "mass": 4.0, "friction": 1.0}
 }
-func set_mass(value: float) -> void:
+
+func _set_mass(value: float) -> void:
 	if _mass != value:
 		_mass = value
 		$".".mass = value
@@ -87,3 +88,6 @@ func play_size_sound(change):
 	elif change == "Shrink":
 		asp.stream = SHRINK
 	asp.play()
+
+func get_velo():
+	return linear_velocity

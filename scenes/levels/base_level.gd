@@ -17,6 +17,8 @@ func _process(_delta) -> void:
 	if Input.is_action_just_pressed("Pause"):
 		$PauseScreen.show()
 		get_tree().paused = not get_tree().paused
+	elif Input.is_action_just_pressed("Reset"):
+		get_tree().reload_current_scene()
 
 func kill_entity(node: Node, color: Color) -> void:
 	var death_anim = death.instantiate()

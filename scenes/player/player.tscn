@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://bqb28c3c0c76j"]
+[gd_scene load_steps=35 format=3 uid="uid://bqb28c3c0c76j"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_ro3ok"]
 [ext_resource type="Texture2D" uid="uid://nmnip41ehyje" path="res://assets/graphics/player/lizard_walk.png" id="2_4g4ha"]
@@ -210,9 +210,6 @@ size = Vector2(8, 7)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5sl0"]
 size = Vector2(2, 5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_polw7"]
-size = Vector2(27.5, 32)
-
 [node name="Player" type="CharacterBody2D" groups=["Entities"]]
 z_index = 100
 collision_mask = 47
@@ -255,14 +252,6 @@ collision_mask = 64
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpikeKill"]
 shape = SubResource("RectangleShape2D_b5sl0")
 
-[node name="CameraAreaDetector" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 128
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraAreaDetector"]
-position = Vector2(0.25, -3)
-shape = SubResource("RectangleShape2D_polw7")
-
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(7, 0, 8, 0)
 width = 2.0
@@ -276,4 +265,3 @@ one_shot = true
 
 [connection signal="body_entered" from="BoulderKill" to="." method="_on_boulder"]
 [connection signal="body_entered" from="SpikeKill" to="." method="_on_spike"]
-[connection signal="area_entered" from="CameraAreaDetector" to="." method="_on_camera_area_entered"]

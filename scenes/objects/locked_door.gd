@@ -1,20 +1,29 @@
+@tool
 extends StaticBody2D
 
 @onready var sprite_2d = $Sprite2D
 @onready var collision_shape_2d = $CollisionShape2D
 @onready var lock_colour = $LockColour
 @export var trigger_switch: Node
-@export var colour: Color = Color("#bd314b")
+@export var colour: Color = Color("#bd314b") :
+	set(value):
+		colour = value
+		update_colour()
+
+func update_colour():
+	if not lock_colour:
+		await self.ready
+	lock_colour.set_self_modulate(colour)
+	lock_colour.show()
 
 func _ready():
+	update_colour()
 	sprite_2d.animation = "locked"
 	# "x" in y is a way to check properties in a file.
 	if "pressure_plate" in trigger_switch:
 		trigger_switch.pressed.connect(_on_pressure_plate_pressed)
 	elif "button" in trigger_switch: 
 		trigger_switch.pressed.connect(_on_button_pressed)
-	lock_colour.set_self_modulate(colour)
-	lock_colour.show()
 
 func open_door():
 	sprite_2d.animation = "unlocked"
