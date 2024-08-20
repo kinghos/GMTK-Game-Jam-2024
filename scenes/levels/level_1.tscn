@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://b64feohs7ud18"]
+[gd_scene load_steps=22 format=4 uid="uid://b64feohs7ud18"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_xxpsw"]
 [ext_resource type="Texture2D" uid="uid://bx2kuo38pcbh1" path="res://assets/graphics/backgrounds/outside.png" id="2_avu0q"]
@@ -21,9 +21,23 @@
 font = ExtResource("16_3d3u0")
 font_size = 10
 
+[sub_resource type="LabelSettings" id="LabelSettings_q5uyx"]
+font = ExtResource("16_3d3u0")
+font_size = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_ql6qm"]
+font = ExtResource("16_3d3u0")
+font_size = 10
+
 [sub_resource type="LabelSettings" id="LabelSettings_5nkal"]
 font = ExtResource("16_3d3u0")
 font_size = 10
+font_color = Color(0, 1, 1, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_w04xy"]
+font = ExtResource("16_3d3u0")
+font_size = 10
+font_color = Color(0, 1, 0, 1)
 
 [node name="Level1" instance=ExtResource("1_xxpsw")]
 
@@ -164,12 +178,23 @@ offset_left = 370.0
 offset_top = 948.0
 offset_right = 573.0
 offset_bottom = 985.0
-text = "You can't push objects
+text = "You can't push crates
 larger than you!"
 label_settings = SubResource("LabelSettings_00ob4")
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="Labels" index="2"]
+layout_mode = 0
+offset_left = 786.0
+offset_top = 948.0
+offset_right = 1076.0
+offset_bottom = 985.0
+text = "If you ever get
+stuck, press R!"
+label_settings = SubResource("LabelSettings_q5uyx")
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Labels" index="3"]
 layout_mode = 0
 offset_left = 1281.0
 offset_top = 776.0
@@ -180,7 +205,7 @@ certain platforms"
 label_settings = SubResource("LabelSettings_00ob4")
 horizontal_alignment = 1
 
-[node name="Label4" type="Label" parent="Labels" index="3"]
+[node name="Label5" type="Label" parent="Labels" index="4"]
 layout_mode = 0
 offset_left = 1776.0
 offset_top = 630.0
@@ -188,16 +213,27 @@ offset_right = 2066.0
 offset_bottom = 667.0
 text = "Maybe you can crush the
 turret with this boulder?"
+label_settings = SubResource("LabelSettings_ql6qm")
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="Labels" index="5"]
+layout_mode = 0
+offset_left = 2578.0
+offset_top = 772.0
+offset_right = 2868.0
+offset_bottom = 809.0
+text = "This pressure plate
+needs 2KG"
 label_settings = SubResource("LabelSettings_5nkal")
 horizontal_alignment = 1
 
-[node name="Label5" type="Label" parent="Labels" index="4"]
+[node name="Label7" type="Label" parent="Labels" index="6"]
 layout_mode = 0
-offset_left = 786.0
-offset_top = 948.0
-offset_right = 1076.0
-offset_bottom = 985.0
-text = "If you ever get
-stuck, press R!"
-label_settings = SubResource("LabelSettings_5nkal")
+offset_left = 2592.0
+offset_top = 553.0
+offset_right = 2882.0
+offset_bottom = 590.0
+text = "Buttons are hidden
+within levels"
+label_settings = SubResource("LabelSettings_w04xy")
 horizontal_alignment = 1
