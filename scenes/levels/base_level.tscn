@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://5w74eu3bsjko"]
+[gd_scene load_steps=7 format=3 uid="uid://5w74eu3bsjko"]
 
 [ext_resource type="Script" path="res://scenes/levels/base_level.gd" id="1_cfftt"]
 [ext_resource type="PackedScene" uid="uid://n8tuo78tbj4s" path="res://scenes/ui/pause_screen.tscn" id="3_5fi32"]
 [ext_resource type="PackedScene" uid="uid://dbifvccr5x412" path="res://scenes/levels/next_level_warp/next_level.tscn" id="3_jfif1"]
 [ext_resource type="Script" path="res://scenes/player/camera_2d.gd" id="4_83wwq"]
-[ext_resource type="PackedScene" uid="uid://e1vl7t8chqeg" path="res://scenes/ui/transition_layer.tscn" id="5_0rvuu"]
+[ext_resource type="PackedScene" path="res://scenes/ui/transition_layer.tscn" id="5_0rvuu"]
+[ext_resource type="Theme" uid="uid://domrbrbbs7i22" path="res://globals/font.tres" id="5_yyqta"]
 
 [node name="Level" type="Node2D" groups=["Levels"]]
 script = ExtResource("1_cfftt")
@@ -28,6 +29,10 @@ limit_smoothed = true
 position_smoothing_enabled = true
 script = ExtResource("4_83wwq")
 
-[node name="Labels" type="Node" parent="."]
+[node name="Labels" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("5_yyqta")
 
 [node name="TransitionLayer" parent="." instance=ExtResource("5_0rvuu")]
+visible = false
