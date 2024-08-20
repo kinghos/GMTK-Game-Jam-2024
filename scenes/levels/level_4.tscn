@@ -94,7 +94,7 @@ colour = Color(0.741176, 0.192157, 1, 1)
 position = Vector2(720, 608)
 
 [node name="Turret2" parent="Enemies" index="1" instance=ExtResource("9_8lcxe")]
-position = Vector2(3056, 1248)
+position = Vector2(3291, 1248)
 
 [node name="CameraBound" parent="CameraBounds" index="0" instance=ExtResource("11_qe6uo")]
 position = Vector2(581, 418)
