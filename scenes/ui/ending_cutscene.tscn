@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=4 uid="uid://d18u5covyljbq"]
+[gd_scene load_steps=8 format=4 uid="uid://d18u5covyljbq"]
 
 [ext_resource type="Script" path="res://scenes/ui/ending_cutscene.gd" id="1_amu2v"]
 [ext_resource type="Texture2D" uid="uid://bqpfxwlavti6b" path="res://assets/graphics/cutscenes/ending_skeleton.png" id="1_v2c6w"]
@@ -7,13 +7,17 @@
 [ext_resource type="Script" path="res://scenes/player/camera_2d.gd" id="5_2p2r7"]
 [ext_resource type="Texture2D" uid="uid://diylp04xmsnlv" path="res://assets/graphics/misc/tail.png" id="6_3cmj8"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_85rio"]
+radius = 54.0
+height = 124.0
+
 [node name="EndingCutscene" type="Node"]
 script = ExtResource("1_amu2v")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
-offset = Vector2(0, -314)
-transform = Transform2D(1, 0, 0, 1, 0, -314)
+offset = Vector2(0, -257)
+transform = Transform2D(1, 0, 0, 1, 0, -257)
 follow_viewport_scale = 0.6
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
@@ -23,6 +27,17 @@ offset_bottom = 360.0
 scale = Vector2(4, 4)
 texture = ExtResource("1_v2c6w")
 
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(300, 1026)
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1, 1.4)
+shape = SubResource("CapsuleShape2D_85rio")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("6_3cmj8")
+
 [node name="Tilemaps" type="Node" parent="."]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Tilemaps"]
@@ -30,7 +45,7 @@ tile_map_data = PackedByteArray("AAAAACEAAAAAAAAAAAABACEAAAAAAAAAAAACACEAAAAAAAA
 tile_set = ExtResource("2_hnwfx")
 
 [node name="Player" parent="." instance=ExtResource("4_ejaox")]
-position = Vector2(76, 1040)
+position = Vector2(-89, 1041)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(75, 1037)
@@ -38,10 +53,3 @@ zoom = Vector2(2, 2)
 limit_smoothed = true
 position_smoothing_enabled = true
 script = ExtResource("5_2p2r7")
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-texture = ExtResource("6_3cmj8")
