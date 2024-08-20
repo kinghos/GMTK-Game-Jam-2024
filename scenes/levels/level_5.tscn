@@ -1,8 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://c5khlcjgtm8er"]
+[gd_scene load_steps=4 format=3 uid="uid://c5khlcjgtm8er"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_dvvb2"]
+[ext_resource type="Texture2D" uid="uid://cwb2iqs54y2w6" path="res://assets/graphics/backgrounds/BG2.png" id="2_8ywna"]
+[ext_resource type="TileSet" uid="uid://nanvlob5un3n" path="res://assets/graphics/tilesets/tileset.tres" id="3_kkayg"]
 
-[node name="Level" instance=ExtResource("1_dvvb2")]
+[node name="Level5" instance=ExtResource("1_dvvb2")]
 
-[node name="NextLevel" parent="." index="4"]
+[node name="TextureRect" type="TextureRect" parent="." index="0"]
+offset_right = 1389.0
+offset_bottom = 781.0
+texture = ExtResource("2_8ywna")
+metadata/_edit_lock_ = true
+
+[node name="Tilemaps" type="Node2D" parent="." index="5"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Tilemaps" index="0"]
+tile_map_data = PackedByteArray(0, 0, 2, 0, 13, 0, 0, 0, 1, 0, 0, 0, 0, 0)
+tile_set = ExtResource("3_kkayg")
+
+[node name="NextLevel" parent="." index="6"]
+position = Vector2(1190, 445)
 next_level_path = "res://scenes/levels/level_6.gd"

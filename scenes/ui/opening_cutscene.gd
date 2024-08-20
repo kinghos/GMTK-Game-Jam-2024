@@ -7,7 +7,7 @@ var frames = [
 	preload("res://assets/graphics/cutscenes/opening_4.png"),
 	preload("res://assets/graphics/cutscenes/opening_5.png")
 ]
-const CUTSCENE = preload("res://assets/audio/Cutscene.mp3")
+const CUTSCENE = preload("res://assets/audio/Opening Cutscene.mp3")
 var current_frame: int = 0
 var tween: Tween
 var transitioning: bool = false
