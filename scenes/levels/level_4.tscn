@@ -46,7 +46,7 @@ offset_bottom = 957.0
 texture = ExtResource("2_2hcqo")
 
 [node name="Boulder" parent="Objects" index="0" instance=ExtResource("7_oll35")]
-position = Vector2(2237, 675)
+position = Vector2(2345, 685)
 
 [node name="Platform" parent="Objects" index="1" instance=ExtResource("3_v35bi")]
 position = Vector2(1552, 673)
