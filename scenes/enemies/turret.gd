@@ -6,11 +6,12 @@ signal kill(node, color)
 @export var alert_light_color: Color = Color("c00000")
 
 var player_dying: bool = false
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready():
 	$AnimationPlayer.play("eyeball bob")
 
-func _process(_delta):
+func _process(delta):
 	var collider: CollisionObject2D = null
 	
 	if $LeftCast.is_colliding():
@@ -28,6 +29,10 @@ func _process(_delta):
 			kill.emit(collider, collider.skull_color)
 		player_dying = true
 		$PointLight2D.color = alert_light_color
+	
+	if not is_on_floor():
+		velocity.y += gravity * delta
+	move_and_slide()
 
 
 func _on_kill_area_body_entered(body: Node2D) -> void:
