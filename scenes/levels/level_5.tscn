@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://c5khlcjgtm8er"]
+[gd_scene load_steps=57 format=4 uid="uid://c5khlcjgtm8er"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_dvvb2"]
 [ext_resource type="Script" path="res://scenes/levels/level_6.gd" id="2_i0xqx"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://uvhuddlc6csq" path="res://assets/graphics/tilesets/brick_tileset.png" id="8_k3wv2"]
 [ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="9_hlxgx"]
 [ext_resource type="Theme" uid="uid://188b0mpq0nv5" path="res://globals/font.tres" id="10_g4k7e"]
+[ext_resource type="Texture2D" uid="uid://dbad4kau4kgp5" path="res://assets/graphics/lights/circle.png" id="13_uup40"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t31e8"]
 size = Vector2(24, 9.5)
@@ -497,6 +498,77 @@ Trouble"
 
 [node name="Player" parent="." index="11" instance=ExtResource("4_vhdi0")]
 position = Vector2(721, 507)
+
+[node name="Lights" type="Node" parent="." index="12"]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Lights" index="0"]
+color = Color(0.627451, 1, 1, 1)
+energy = 0.7
+blend_mode = 1
+shadow_color = Color(0, 1, 1, 1)
+
+[node name="PointLight2D13" type="PointLight2D" parent="Lights" index="1"]
+position = Vector2(-9, 542)
+color = Color(1, 0.580392, 0.286275, 1)
+energy = 3.0
+texture = ExtResource("13_uup40")
+texture_scale = 0.25
+
+[node name="PointLight2D14" type="PointLight2D" parent="Lights" index="2"]
+position = Vector2(54, 702)
+color = Color(1, 0.580392, 0.286275, 1)
+energy = 3.0
+texture = ExtResource("13_uup40")
+texture_scale = 0.25
+
+[node name="PointLight2D15" type="PointLight2D" parent="Lights" index="3"]
+position = Vector2(406, 703)
+color = Color(1, 0.580392, 0.286275, 1)
+energy = 3.0
+texture = ExtResource("13_uup40")
+texture_scale = 0.25
+
+[node name="PointLight2D16" type="PointLight2D" parent="Lights" index="4"]
+position = Vector2(663, 511)
+color = Color(1, 0.580392, 0.286275, 1)
+energy = 3.0
+texture = ExtResource("13_uup40")
+texture_scale = 0.25
+
+[node name="PointLight2D17" type="PointLight2D" parent="Lights" index="5"]
+position = Vector2(789, 509)
+color = Color(1, 0.580392, 0.286275, 1)
+energy = 3.0
+texture = ExtResource("13_uup40")
+texture_scale = 0.25
+
+[node name="PointLight2D18" type="PointLight2D" parent="Lights" index="6"]
+position = Vector2(1462, 571)
+color = Color(1, 0.580392, 0.286275, 1)
+energy = 3.0
+texture = ExtResource("13_uup40")
+texture_scale = 0.25
+
+[node name="PointLight2D19" type="PointLight2D" parent="Lights" index="7"]
+position = Vector2(1236, 667)
+color = Color(1, 0.580392, 0.286275, 1)
+energy = 3.0
+texture = ExtResource("13_uup40")
+texture_scale = 0.25
+
+[node name="PointLight2D20" type="PointLight2D" parent="Lights" index="8"]
+position = Vector2(754, 279)
+color = Color(1, 0.580392, 0.286275, 1)
+energy = 3.0
+texture = ExtResource("13_uup40")
+texture_scale = 0.25
+
+[node name="PointLight2D21" type="PointLight2D" parent="Lights" index="9"]
+position = Vector2(690, 278)
+color = Color(1, 0.580392, 0.286275, 1)
+energy = 3.0
+texture = ExtResource("13_uup40")
+texture_scale = 0.25
 
 [connection signal="body_entered" from="Objects/Button/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Objects/Button2/Area2D" to="." method="_on_area_2d_body_entered"]
