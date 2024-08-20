@@ -122,7 +122,7 @@ size = Vector2(1300, 500)
 
 [node name="NextLevel" parent="." index="8"]
 position = Vector2(2269, 1212)
-next_level_path = "res://scenes/levels/level_6.tscn"
+next_level_path = "res://scenes/levels/level_5.tscn"
 
 [node name="Tilemap" type="Node2D" parent="." index="11"]
 

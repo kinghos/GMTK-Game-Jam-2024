@@ -246,3 +246,10 @@ offset_right = -15.0
 offset_bottom = 762.0
 text = "Level 1
 the journey begins"
+
+[node name="Lights" type="Node" parent="." index="13"]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Lights" index="0"]
+color = Color(1, 1, 0, 1)
+energy = 0.42
+blend_mode = 1
