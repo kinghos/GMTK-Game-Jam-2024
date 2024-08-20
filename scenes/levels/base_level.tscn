@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dbifvccr5x412" path="res://scenes/levels/next_level_warp/next_level.tscn" id="3_jfif1"]
 [ext_resource type="Script" path="res://scenes/player/camera_2d.gd" id="4_83wwq"]
 [ext_resource type="PackedScene" uid="uid://e1vl7t8chqeg" path="res://scenes/ui/transition_layer.tscn" id="5_0rvuu"]
-[ext_resource type="Theme" uid="uid://n4scbabmp8ph" path="res://globals/font.tres" id="5_yyqta"]
+[ext_resource type="Theme" uid="uid://188b0mpq0nv5" path="res://globals/font.tres" id="5_yyqta"]
 
 [node name="Level" type="Node2D" groups=["Levels", "RootNodes"]]
 script = ExtResource("1_cfftt")

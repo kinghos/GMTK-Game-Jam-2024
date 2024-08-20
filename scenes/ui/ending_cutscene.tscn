@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=3 uid="uid://d18u5covyljbq"]
+
+[ext_resource type="Texture2D" uid="uid://bqpfxwlavti6b" path="res://assets/graphics/cutscenes/ending_skeleton.png" id="1_v2c6w"]
+
+[node name="EndingCutscene" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = -1
+offset_top = 180.0
+offset_right = 480.0
+offset_bottom = 360.0
+scale = Vector2(4, 4)
+texture = ExtResource("1_v2c6w")
+
+[node name="BlackBar1" type="ColorRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 180.0
+color = Color(0, 0, 0, 1)
+
+[node name="BlackBar2" type="ColorRect" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -180.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
