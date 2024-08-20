@@ -54,7 +54,7 @@ text = "peepschilli"
 layout_mode = 1
 anchors_preset = -1
 offset_left = 50.0
-offset_top = 350.0
+offset_top = 325.0
 alignment = 1
 
 [node name="Label" type="Label" parent="ArtContainer"]
@@ -84,7 +84,9 @@ text = "dogthegoose"
 layout_mode = 1
 anchors_preset = -1
 offset_left = 50.0
-offset_top = 700.0
+offset_top = 650.0
+offset_right = 489.0
+offset_bottom = 826.0
 alignment = 1
 
 [node name="Label" type="Label" parent="LevelDesignContainer"]
@@ -105,6 +107,24 @@ text = "mtonline"
 layout_mode = 2
 text = "peepschilli"
 
+[node name="LightingContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 50.0
+offset_top = 900.0
+alignment = 1
+
+[node name="Label" type="Label" parent="LightingContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+text = "Lighting"
+
+[node name="Briggles3" type="Label" parent="LightingContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Briggles3
+"
+
 [node name="UIContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -115,7 +135,7 @@ alignment = 1
 [node name="Label" type="Label" parent="UIContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 1, 1, 1)
-text = "UI / Lighting
+text = "UI
 "
 
 [node name="Briggles3" type="Label" parent="UIContainer"]
@@ -123,11 +143,15 @@ layout_mode = 2
 text = "Briggles3
 "
 
+[node name="MTOnline" type="Label" parent="UIContainer"]
+layout_mode = 2
+text = "MTOnline"
+
 [node name="MusicContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
 offset_left = 650.0
-offset_top = 800.0
+offset_top = 900.0
 alignment = 1
 
 [node name="Label" type="Label" parent="MusicContainer"]
