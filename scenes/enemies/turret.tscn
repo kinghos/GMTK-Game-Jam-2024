@@ -282,6 +282,7 @@ position = Vector2(0, -28)
 color = Color(0.407843, 0.384314, 0.854902, 1)
 energy = 0.7
 shadow_enabled = true
+shadow_item_cull_mask = 2
 texture = ExtResource("3_n28b6")
 
 [node name="RightCast" type="RayCast2D" parent="." index="5"]
@@ -296,13 +297,16 @@ collision_mask = 3
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="." index="7"]
 occluder = SubResource("OccluderPolygon2D_dd4yq")
+occluder_light_mask = 2
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="." index="8"]
 position = Vector2(-5, 1)
 occluder = SubResource("OccluderPolygon2D_xa0gt")
+occluder_light_mask = 2
 
 [node name="LightOccluder2D3" type="LightOccluder2D" parent="." index="9"]
 position = Vector2(-5, 15)
 occluder = SubResource("OccluderPolygon2D_xa0gt")
+occluder_light_mask = 2
 
 [connection signal="body_entered" from="KillArea" to="." method="_on_kill_area_body_entered"]
