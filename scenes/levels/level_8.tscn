@@ -129,3 +129,11 @@ offset_right = 668.0
 offset_bottom = 491.0
 text = "Level 8
 Final stretch..."
+
+[node name="Node" type="Node" parent="." index="12"]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Node" index="0"]
+color = Color(0.627451, 1, 1, 1)
+energy = 0.7
+blend_mode = 1
+shadow_color = Color(0, 1, 1, 1)
