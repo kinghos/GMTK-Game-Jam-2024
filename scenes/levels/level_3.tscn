@@ -77,8 +77,8 @@ position = Vector2(-10, -75)
 shape = SubResource("RectangleShape2D_ve6mn")
 
 [node name="Platform" parent="Objects" index="6" instance=ExtResource("7_0k7fq")]
-position = Vector2(2949, 595)
-rotation = 1.5708
+position = Vector2(2948, 619)
+rotation = -1.5708
 
 [node name="Turret" parent="Enemies" index="0" instance=ExtResource("3_ffbsa")]
 position = Vector2(785, 352)
