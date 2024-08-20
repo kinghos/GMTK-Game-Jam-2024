@@ -116,6 +116,7 @@ size = Vector2(2500, 1000)
 
 [node name="NextLevel" parent="." index="6"]
 position = Vector2(3918, 700)
+next_level_path = "res://scenes/ui/ending_cutscene.tscn"
 
 [node name="Player" parent="." index="7" instance=ExtResource("14_nkoa2")]
 position = Vector2(1865, 467)
