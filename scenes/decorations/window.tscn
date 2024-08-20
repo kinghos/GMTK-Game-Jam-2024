@@ -82,5 +82,4 @@ autoplay = "raining"
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(0.215686, 0.376471, 1, 1)
-shadow_enabled = true
 texture = ExtResource("2_ql4q0")
