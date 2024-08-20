@@ -130,6 +130,15 @@ tile_set = ExtResource("3_ffl25")
 [node name="Player" parent="." index="9" instance=ExtResource("13_sl2ye")]
 position = Vector2(227, 976)
 
+[node name="Label" type="Label" parent="Labels" index="0"]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 816.0
+offset_right = 731.0
+offset_bottom = 901.0
+text = "Level 7
+UP, down and around"
+
 [node name="Lights" type="Node" parent="." index="13"]
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Lights" index="0"]

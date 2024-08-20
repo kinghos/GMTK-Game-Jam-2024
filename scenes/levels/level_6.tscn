@@ -176,8 +176,17 @@ tile_set = ExtResource("10_mg7fc")
 position = Vector2(2428, 315)
 next_level_path = "res://scenes/levels/level_7.tscn"
 
+[node name="Label" type="Label" parent="Labels" index="0"]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 299.0
+offset_right = 580.0
+offset_bottom = 384.0
+text = "Level 6
+Triple threat"
+
 [node name="Player" parent="." index="12" instance=ExtResource("11_l4ktj")]
-position = Vector2(1719, 437)
+position = Vector2(169, 399)
 
 [connection signal="body_entered" from="Objects/RedButton/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Objects/GreenButton/Area2D" to="." method="_on_area_2d_body_entered"]

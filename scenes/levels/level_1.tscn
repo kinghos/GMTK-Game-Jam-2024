@@ -164,9 +164,9 @@ blend_mode = 1
 
 [node name="Label" type="Label" parent="Labels" index="0"]
 layout_mode = 0
-offset_left = -400.0
+offset_left = -271.0
 offset_top = 824.0
-offset_right = -193.0
+offset_right = -64.0
 offset_bottom = 855.0
 text = "Left Click / Q to Grow
 Right Click / E to Shrink"
@@ -237,3 +237,12 @@ text = "Buttons are hidden
 within levels"
 label_settings = SubResource("LabelSettings_w04xy")
 horizontal_alignment = 1
+
+[node name="Label8" type="Label" parent="Labels" index="7"]
+layout_mode = 0
+offset_left = -532.0
+offset_top = 677.0
+offset_right = -15.0
+offset_bottom = 762.0
+text = "Level 1
+the journey begins"

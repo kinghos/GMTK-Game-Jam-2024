@@ -156,6 +156,16 @@ offset_top = 539.0
 offset_right = 2727.0
 offset_bottom = 562.0
 
+[node name="Label" type="Label" parent="Labels" index="1"]
+layout_mode = 0
+offset_left = -182.0
+offset_top = 398.0
+offset_right = 167.0
+offset_bottom = 483.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Level 3
+Boulderdash"
+
 [node name="Lights" type="Node" parent="." index="15"]
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="Lights" index="0"]

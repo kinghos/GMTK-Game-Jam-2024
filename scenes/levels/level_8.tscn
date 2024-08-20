@@ -120,3 +120,12 @@ next_level_path = "res://scenes/ui/ending_cutscene.tscn"
 
 [node name="Player" parent="." index="7" instance=ExtResource("14_nkoa2")]
 position = Vector2(-3, 497)
+
+[node name="Label" type="Label" parent="Labels" index="0"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 406.0
+offset_right = 668.0
+offset_bottom = 491.0
+text = "Level 8
+Final stretch..."

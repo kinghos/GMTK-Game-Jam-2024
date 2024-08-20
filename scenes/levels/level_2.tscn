@@ -215,3 +215,13 @@ text = "Click trapdoors to shrink
 them out of existence"
 label_settings = SubResource("LabelSettings_jvlgj")
 horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Labels" index="1"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 50.0
+offset_top = 234.0
+offset_right = 461.0
+offset_bottom = 319.0
+text = "Level 2
+Into the castle"
