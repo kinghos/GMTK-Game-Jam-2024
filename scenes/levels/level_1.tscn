@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=4 uid="uid://b64feohs7ud18"]
+[gd_scene load_steps=24 format=4 uid="uid://b64feohs7ud18"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_xxpsw"]
+[ext_resource type="Script" path="res://scenes/levels/level_1.gd" id="2_4gx76"]
 [ext_resource type="Texture2D" uid="uid://bx2kuo38pcbh1" path="res://assets/graphics/backgrounds/outside.png" id="2_avu0q"]
 [ext_resource type="PackedScene" uid="uid://bqb28c3c0c76j" path="res://scenes/player/player.tscn" id="3_nynhs"]
 [ext_resource type="TileSet" uid="uid://dcgci8cyt1jnq" path="res://assets/graphics/tilesets/level1.tres" id="3_sfhsj"]
@@ -16,6 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://cellt2ya3waj0" path="res://scenes/objects/locked_door.tscn" id="9_xtexj"]
 [ext_resource type="PackedScene" uid="uid://fp07fue2vml1" path="res://scenes/objects/pressure_plate.tscn" id="10_5sam2"]
 [ext_resource type="FontFile" uid="uid://b4ac3jt34k6a" path="res://assets/fonts/Daydream.ttf" id="16_3d3u0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ysgt1"]
+size = Vector2(33, 59)
 
 [sub_resource type="LabelSettings" id="LabelSettings_00ob4"]
 font = ExtResource("16_3d3u0")
@@ -40,6 +44,7 @@ font_size = 10
 font_color = Color(0, 1, 0, 1)
 
 [node name="Level1" instance=ExtResource("1_xxpsw")]
+script = ExtResource("2_4gx76")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="0"]
 layer = -1
@@ -108,6 +113,13 @@ colour = Color(0, 1, 0, 1)
 position = Vector2(2951, 693)
 trigger_switch = NodePath("../PressurePlate")
 colour = Color(0, 1, 1, 1)
+
+[node name="BoulderLabelArea" type="Area2D" parent="Objects" index="10"]
+position = Vector2(1914, 714)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Objects/BoulderLabelArea" index="0"]
+position = Vector2(6.5, -17.5)
+shape = SubResource("RectangleShape2D_ysgt1")
 
 [node name="Turret" parent="Enemies" index="0" instance=ExtResource("7_5i8s7")]
 position = Vector2(2220, 982)
@@ -205,14 +217,12 @@ certain platforms"
 label_settings = SubResource("LabelSettings_00ob4")
 horizontal_alignment = 1
 
-[node name="Label5" type="Label" parent="Labels" index="4"]
+[node name="BoulderLabel" type="Label" parent="Labels" index="4"]
 layout_mode = 0
 offset_left = 1776.0
 offset_top = 630.0
 offset_right = 2066.0
 offset_bottom = 667.0
-text = "Maybe you can crush the
-turret with this boulder?"
 label_settings = SubResource("LabelSettings_ql6qm")
 horizontal_alignment = 1
 
@@ -253,3 +263,5 @@ the journey begins"
 color = Color(1, 1, 0, 1)
 energy = 0.42
 blend_mode = 1
+
+[connection signal="body_entered" from="Objects/BoulderLabelArea" to="." method="_on_boulder_label_area_body_entered"]
