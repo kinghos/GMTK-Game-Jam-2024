@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://b6ov1c07brllg"]
+[gd_scene load_steps=14 format=3 uid="uid://b6ov1c07brllg"]
 
 [ext_resource type="Script" path="res://scenes/ui/title_screen.gd" id="1_v1y6f"]
 [ext_resource type="Texture2D" uid="uid://cylwfxrx2sga2" path="res://assets/graphics/backgrounds/title_screen.png" id="2_islxs"]
 [ext_resource type="Texture2D" uid="uid://b3eq0u32uu8lu" path="res://assets/graphics/misc/transparent_menu_thing.png" id="3_0rx5v"]
 [ext_resource type="FontFile" uid="uid://b4ac3jt34k6a" path="res://assets/fonts/Daydream.ttf" id="4_qd7r5"]
+[ext_resource type="AudioStream" uid="uid://bk2jd843es8hw" path="res://assets/audio/Main Menu.mp3" id="5_o6snr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybjn8"]
 bg_color = Color(0, 0, 0, 1)
@@ -77,7 +78,7 @@ Button/styles/hover = SubResource("StyleBoxFlat_cybkc")
 Button/styles/normal = SubResource("StyleBoxFlat_rtsid")
 Button/styles/pressed = SubResource("StyleBoxFlat_dy071")
 
-[node name="TitleScreen" type="Control"]
+[node name="TitleScreen" type="Control" groups=["RootNodes"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -149,6 +150,10 @@ text = "CREDITS"
 layout_mode = 2
 size_flags_vertical = 3
 text = "EXIT"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_o6snr")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/LevelButton" to="." method="_on_level_button_pressed"]
