@@ -1,7 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccbhtu6e61a5y"]
+[gd_scene load_steps=11 format=3 uid="uid://ccbhtu6e61a5y"]
 
 [ext_resource type="Script" path="res://scenes/ui/level_select.gd" id="1_d41ka"]
 [ext_resource type="Texture2D" uid="uid://cylwfxrx2sga2" path="res://assets/graphics/backgrounds/title_screen.png" id="2_a4ld0"]
+[ext_resource type="Texture2D" uid="uid://bmedgvtk57bd1" path="res://assets/graphics/misc/menu_arrow.png" id="3_upqqv"]
+[ext_resource type="Texture2D" uid="uid://bqf5igwj6eaec" path="res://assets/graphics/misc/menu_arrow_hovering.png" id="4_brbk6"]
+[ext_resource type="Script" path="res://scenes/ui/back_to_title.gd" id="5_kgavl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybjn8"]
 bg_color = Color(0, 0, 0, 1)
@@ -39,9 +42,6 @@ Button/styles/normal = SubResource("StyleBoxFlat_vgio8")
 Button/styles/pressed = SubResource("StyleBoxFlat_u0tsj")
 
 [sub_resource type="SystemFont" id="SystemFont_awfm6"]
-font_names = PackedStringArray("Franklin Gothic")
-
-[sub_resource type="SystemFont" id="SystemFont_bhbqq"]
 font_names = PackedStringArray("Franklin Gothic")
 
 [node name="LevelSelect" type="Control" groups=["RootNodes"]]
@@ -156,11 +156,17 @@ theme_override_font_sizes/font_size = 30
 disabled = true
 text = "8"
 
-[node name="Back" type="Button" parent="GridContainer"]
-layout_mode = 2
-theme_override_fonts/font = SubResource("SystemFont_bhbqq")
-theme_override_font_sizes/font_size = 20
-text = "BACK"
+[node name="BackArrow" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1720.0
+offset_top = 916.0
+offset_right = 1760.0
+offset_bottom = 956.0
+scale = Vector2(5, 5)
+texture_normal = ExtResource("3_upqqv")
+texture_hover = ExtResource("4_brbk6")
+flip_h = true
+script = ExtResource("5_kgavl")
 
 [connection signal="pressed" from="GridContainer/Level1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="GridContainer/Level2" to="." method="_on_level_2_pressed"]
@@ -170,4 +176,4 @@ text = "BACK"
 [connection signal="pressed" from="GridContainer/Level6" to="." method="_on_level_6_pressed"]
 [connection signal="pressed" from="GridContainer/Level7" to="." method="_on_level_7_pressed"]
 [connection signal="pressed" from="GridContainer/Level8" to="." method="_on_level_8_pressed"]
-[connection signal="pressed" from="GridContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="BackArrow" to="BackArrow" method="_on_back_arrow_pressed"]

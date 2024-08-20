@@ -44,6 +44,7 @@ func resize(remove_collision: bool = false):
 	$Sprite2D.material.set_shader_parameter("width", 0)
 	expanded = true
 	var asp: AudioStreamPlayer2D = AudioStreamPlayer2D.new()
+	asp.bus = "Sound Effects"
 	if remove_collision:
 		asp.stream = SHRINK
 		add_child(asp)

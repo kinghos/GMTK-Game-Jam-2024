@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c2mf2amsripfd"]
+[gd_scene load_steps=6 format=3 uid="uid://c2mf2amsripfd"]
 
 [ext_resource type="Theme" uid="uid://188b0mpq0nv5" path="res://globals/font.tres" id="1_h37er"]
+[ext_resource type="Texture2D" uid="uid://cylwfxrx2sga2" path="res://assets/graphics/backgrounds/title_screen.png" id="2_0t23g"]
+[ext_resource type="Script" path="res://scenes/ui/back_to_title.gd" id="2_p1e12"]
+[ext_resource type="Texture2D" uid="uid://bmedgvtk57bd1" path="res://assets/graphics/misc/menu_arrow.png" id="3_corck"]
+[ext_resource type="Texture2D" uid="uid://bqf5igwj6eaec" path="res://assets/graphics/misc/menu_arrow_hovering.png" id="4_6muy2"]
 
 [node name="Credits" type="Control"]
 layout_mode = 3
@@ -10,83 +14,140 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_h37er")
+script = ExtResource("2_p1e12")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.1
+anchor_right = 0.5
+anchor_bottom = 0.1
+offset_left = -960.0
+offset_top = -108.0
+offset_right = 960.0
+offset_bottom = 972.0
 grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.162066, 0.162066, 0.162066, 1)
+texture = ExtResource("2_0t23g")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="ProgrammingContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 50.0
+offset_top = 100.0
+alignment = 1
 
-[node name="GridContainer" type="VBoxContainer" parent="HBoxContainer"]
+[node name="Label" type="Label" parent="ProgrammingContainer"]
 layout_mode = 2
-
-[node name="Label" type="Label" parent="HBoxContainer/GridContainer"]
-layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
 text = "Programming"
 
-[node name="Label2" type="Label" parent="HBoxContainer/GridContainer"]
+[node name="MTOnline" type="Label" parent="ProgrammingContainer"]
 layout_mode = 2
 text = "MTOnline"
 
-[node name="Label3" type="Label" parent="HBoxContainer/GridContainer"]
+[node name="PeepsChilli" type="Label" parent="ProgrammingContainer"]
 layout_mode = 2
 text = "peepschilli"
 
-[node name="Label4" type="Label" parent="HBoxContainer/GridContainer"]
-layout_mode = 2
-text = "briggles3"
+[node name="ArtContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 50.0
+offset_top = 350.0
+alignment = 1
 
-[node name="GridContainer2" type="VBoxContainer" parent="HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Label" type="Label" parent="HBoxContainer/GridContainer2"]
+[node name="Label" type="Label" parent="ArtContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 1, 1, 1)
 text = "Art"
 
-[node name="Label2" type="Label" parent="HBoxContainer/GridContainer2"]
+[node name="Fishmommy" type="Label" parent="ArtContainer"]
 layout_mode = 2
 text = "fishmommy"
 
-[node name="Label3" type="Label" parent="HBoxContainer/GridContainer2"]
+[node name="au_hermit" type="Label" parent="ArtContainer"]
 layout_mode = 2
 text = "au_hermit"
 
-[node name="Label4" type="Label" parent="HBoxContainer/GridContainer2"]
+[node name="AspectDuck" type="Label" parent="ArtContainer"]
 layout_mode = 2
 text = "aspectduck"
 
-[node name="Label5" type="Label" parent="HBoxContainer/GridContainer2"]
+[node name="DogtheGoose" type="Label" parent="ArtContainer"]
 layout_mode = 2
 text = "dogthegoose"
 
-[node name="GridContainer3" type="VBoxContainer" parent="HBoxContainer"]
-layout_mode = 2
+[node name="LevelDesignContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 50.0
+offset_top = 700.0
+alignment = 1
 
-[node name="Label" type="Label" parent="HBoxContainer/GridContainer3"]
+[node name="Label" type="Label" parent="LevelDesignContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
 text = "Level Design"
 
-[node name="Label2" type="Label" parent="HBoxContainer/GridContainer3"]
-layout_mode = 2
-text = "mtonline"
-
-[node name="Label3" type="Label" parent="HBoxContainer/GridContainer3"]
-layout_mode = 2
-text = "peepschilli"
-
-[node name="Label4" type="Label" parent="HBoxContainer/GridContainer3"]
+[node name="TheCurryDealer" type="Label" parent="LevelDesignContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 text = "thecurrydealer"
+
+[node name="MTOnline" type="Label" parent="LevelDesignContainer"]
+layout_mode = 2
+text = "mtonline"
+
+[node name="PeepsChilli" type="Label" parent="LevelDesignContainer"]
+layout_mode = 2
+text = "peepschilli"
+
+[node name="UIContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 650.0
+offset_top = 650.0
+alignment = 1
+
+[node name="Label" type="Label" parent="UIContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+text = "UI
+"
+
+[node name="Briggles3" type="Label" parent="UIContainer"]
+layout_mode = 2
+text = "Briggles3
+"
+
+[node name="MusicContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 650.0
+offset_top = 800.0
+alignment = 1
+
+[node name="Label" type="Label" parent="MusicContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 1, 1)
+text = "Music"
+
+[node name="Briggles3" type="Label" parent="MusicContainer"]
+layout_mode = 2
+text = "french_chicken"
+
+[node name="BackArrow" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 1720.0
+offset_top = 916.0
+offset_right = 1760.0
+offset_bottom = 956.0
+scale = Vector2(5, 5)
+texture_normal = ExtResource("3_corck")
+texture_hover = ExtResource("4_6muy2")
+flip_h = true
+
+[connection signal="pressed" from="BackArrow" to="." method="_on_back_arrow_pressed"]
