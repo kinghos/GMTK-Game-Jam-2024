@@ -320,6 +320,7 @@ offset_left = -86.0
 offset_top = -7.0
 offset_right = 1553.0
 offset_bottom = 995.0
+mouse_filter = 2
 color = Color(0.172549, 0.105882, 0.129412, 1)
 
 [node name="LockedDoor" parent="Objects" index="0" node_paths=PackedStringArray("trigger_switch") instance=ExtResource("3_rta56")]
