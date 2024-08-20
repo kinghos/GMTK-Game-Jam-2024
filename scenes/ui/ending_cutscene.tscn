@@ -1,11 +1,16 @@
-[gd_scene load_steps=8 format=4 uid="uid://d18u5covyljbq"]
+[gd_scene load_steps=13 format=4 uid="uid://d18u5covyljbq"]
 
 [ext_resource type="Script" path="res://scenes/ui/ending_cutscene.gd" id="1_amu2v"]
 [ext_resource type="Texture2D" uid="uid://bqpfxwlavti6b" path="res://assets/graphics/cutscenes/ending_skeleton.png" id="1_v2c6w"]
 [ext_resource type="TileSet" uid="uid://nanvlob5un3n" path="res://assets/graphics/tilesets/tileset.tres" id="2_hnwfx"]
+[ext_resource type="Theme" uid="uid://188b0mpq0nv5" path="res://globals/font.tres" id="3_scyji"]
 [ext_resource type="PackedScene" uid="uid://bqb28c3c0c76j" path="res://scenes/player/player.tscn" id="4_ejaox"]
+[ext_resource type="Texture2D" uid="uid://bmedgvtk57bd1" path="res://assets/graphics/misc/menu_arrow.png" id="4_hcgtq"]
 [ext_resource type="Script" path="res://scenes/player/camera_2d.gd" id="5_2p2r7"]
+[ext_resource type="Texture2D" uid="uid://bqf5igwj6eaec" path="res://assets/graphics/misc/menu_arrow_hovering.png" id="5_aanyq"]
+[ext_resource type="Texture2D" uid="uid://c56s2e50nylmu" path="res://assets/graphics/misc/menu_button.png" id="6_0fidy"]
 [ext_resource type="Texture2D" uid="uid://diylp04xmsnlv" path="res://assets/graphics/misc/tail.png" id="6_3cmj8"]
+[ext_resource type="Texture2D" uid="uid://byacmg765sngq" path="res://assets/graphics/misc/menu_button_hovering.png" id="7_3jfvn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_85rio"]
 radius = 54.0
@@ -14,18 +19,66 @@ height = 124.0
 [node name="EndingCutscene" type="Node"]
 script = ExtResource("1_amu2v")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="SkeletonBackground" type="CanvasLayer" parent="."]
 layer = -1
 offset = Vector2(0, -257)
 transform = Transform2D(1, 0, 0, 1, 0, -257)
 follow_viewport_scale = 0.6
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+[node name="TextureRect" type="TextureRect" parent="SkeletonBackground"]
 offset_top = 180.0
 offset_right = 480.0
 offset_bottom = 360.0
 scale = Vector2(4, 4)
 texture = ExtResource("1_v2c6w")
+
+[node name="CutsceneLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Frame" type="TextureRect" parent="CutsceneLayer"]
+offset_right = 480.0
+offset_bottom = 270.0
+scale = Vector2(4, 4)
+
+[node name="NextArrow" type="TextureButton" parent="CutsceneLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -140.0
+offset_bottom = -120.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("4_hcgtq")
+texture_hover = ExtResource("5_aanyq")
+
+[node name="BackArrow" type="TextureButton" parent="CutsceneLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 44.0
+offset_bottom = -120.0
+grow_vertical = 0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("4_hcgtq")
+texture_hover = ExtResource("5_aanyq")
+flip_h = true
+
+[node name="MenuButton" type="TextureButton" parent="CutsceneLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -140.0
+offset_bottom = -120.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("6_0fidy")
+texture_hover = ExtResource("7_3jfvn")
 
 [node name="Tail" type="Area2D" parent="."]
 position = Vector2(300, 1026)
@@ -49,10 +102,24 @@ tile_set = ExtResource("2_hnwfx")
 position = Vector2(-89, 1041)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(75, 1037)
+position = Vector2(-88, 1041)
 zoom = Vector2(2, 2)
 limit_smoothed = true
 position_smoothing_enabled = true
 script = ExtResource("5_2p2r7")
 
+[node name="Label2" type="Label" parent="."]
+texture_filter = 1
+offset_left = -457.0
+offset_top = 986.0
+offset_right = -46.0
+offset_bottom = 1073.0
+theme = ExtResource("3_scyji")
+theme_override_font_sizes/font_size = 20
+text = "Level 9
+???"
+
+[connection signal="pressed" from="CutsceneLayer/NextArrow" to="." method="_on_next_arrow_pressed"]
+[connection signal="pressed" from="CutsceneLayer/BackArrow" to="." method="_on_back_arrow_pressed"]
+[connection signal="pressed" from="CutsceneLayer/MenuButton" to="." method="_go_to_main_menu"]
 [connection signal="body_entered" from="Tail" to="." method="_on_tail_entered"]
