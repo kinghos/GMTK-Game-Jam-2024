@@ -81,3 +81,6 @@ position = Vector2(3915, 696)
 
 [node name="Player" parent="." index="7" instance=ExtResource("13_sl2ye")]
 position = Vector2(139, 493)
+
+[node name="TransitionLayer" parent="." index="11"]
+visible = false

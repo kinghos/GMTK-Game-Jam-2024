@@ -9,6 +9,7 @@ func _ready() -> void:
 	Globals.unlocked_levels.append($".".name)
 	for i in get_tree().get_nodes_in_group("Entities"):
 		i.connect("kill", kill_entity)
+	$TransitionLayer/AnimationPlayer.play("fade_in")
 
 func _process(_delta) -> void:
 	if Input.is_action_just_pressed("Pause"):
