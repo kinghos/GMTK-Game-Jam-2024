@@ -1,11 +1,11 @@
 @tool
 extends Area2D
 
-@export var texture: CompressedTexture2D = preload("res://assets/graphics/misc/portal.png") :
+@export var texture: CompressedTexture2D = preload("res://assets/graphics/misc/level_warp.png") :
 	set(value):
 		texture = value
 		update_texture()
-@export var texture_scale: float = 1.0 :
+@export var texture_scale: float = 2.25 :
 	set(value):
 		texture_scale = value
 		update_texture()

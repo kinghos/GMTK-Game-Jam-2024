@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b1xanlb78wt7y"
-path="res://.godot/imported/portal.png-ff5670a09ed724a5002ff8b2b610d40c.ctex"
+path="res://.godot/imported/level_warp.png-c7eddc7054b03557b76acde19485ffd4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/misc/portal.png"
-dest_files=["res://.godot/imported/portal.png-ff5670a09ed724a5002ff8b2b610d40c.ctex"]
+source_file="res://assets/graphics/misc/level_warp.png"
+dest_files=["res://.godot/imported/level_warp.png-c7eddc7054b03557b76acde19485ffd4.ctex"]
 
 [params]
 
