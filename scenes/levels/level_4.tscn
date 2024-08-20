@@ -46,7 +46,7 @@ offset_bottom = 957.0
 texture = ExtResource("2_2hcqo")
 
 [node name="Boulder" parent="Objects" index="0" instance=ExtResource("7_oll35")]
-position = Vector2(3052, 671)
+position = Vector2(401, 462)
 mass = 0.5
 initial_scale = "Small"
 
@@ -133,4 +133,4 @@ tile_map_data = PackedByteArray("AAAmABoAAQACAAAAAAAnABoAAQACAAAAAAAoABoAAQACAAA
 tile_set = ExtResource("13_b2iba")
 
 [node name="Player" parent="." index="14" instance=ExtResource("14_g3f8b")]
-position = Vector2(3418, 1135)
+position = Vector2(188, 466)
