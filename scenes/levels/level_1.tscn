@@ -6,7 +6,7 @@
 [ext_resource type="TileSet" uid="uid://dcgci8cyt1jnq" path="res://assets/graphics/tilesets/level1.tres" id="3_sfhsj"]
 [ext_resource type="TileSet" uid="uid://dn64p7d7jg05p" path="res://assets/graphics/tilesets/spikes.tres" id="4_25ov4"]
 [ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="4_r7reg"]
-[ext_resource type="PackedScene" uid="uid://dfrnp5hncwka" path="res://scenes/objects/platform.tscn" id="5_dlxn6"]
+[ext_resource type="PackedScene" uid="uid://dgtuht2c82fww" path="res://scenes/objects/platform.tscn" id="5_dlxn6"]
 [ext_resource type="PackedScene" uid="uid://dwr3vj83ale81" path="res://scenes/objects/boulder.tscn" id="6_vrebs"]
 [ext_resource type="PackedScene" uid="uid://c2rf2bqmkt8dr" path="res://scenes/enemies/turret.tscn" id="7_5i8s7"]
 [ext_resource type="Texture2D" uid="uid://dmnqrqc7h66qx" path="res://assets/graphics/decorations/grass.png" id="8_334mq"]
