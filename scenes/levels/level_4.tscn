@@ -15,7 +15,7 @@
 [ext_resource type="TileSet" uid="uid://dn64p7d7jg05p" path="res://assets/graphics/tilesets/spikes.tres" id="13_b2iba"]
 [ext_resource type="PackedScene" uid="uid://bqb28c3c0c76j" path="res://scenes/player/player.tscn" id="14_g3f8b"]
 
-[node name="Level 4" instance=ExtResource("1_bchmx")]
+[node name="Level4" instance=ExtResource("1_bchmx")]
 
 [node name="TextureRect" type="TextureRect" parent="." index="0"]
 offset_right = 1923.0

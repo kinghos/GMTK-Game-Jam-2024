@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://catkpplg4b0ug"]
+[gd_scene load_steps=13 format=4 uid="uid://bgyw4d2wkiyio"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_rng2l"]
 [ext_resource type="Script" path="res://scenes/levels/level_6.gd" id="2_037g6"]
@@ -15,7 +15,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c3abe"]
 size = Vector2(24, 11)
 
-[node name="Level" instance=ExtResource("1_rng2l")]
+[node name="Level6" instance=ExtResource("1_rng2l")]
 script = ExtResource("2_037g6")
 
 [node name="TextureRect2" type="TextureRect" parent="." index="0"]

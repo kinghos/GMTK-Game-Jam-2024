@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://blbrdd6kk8avu"]
+[gd_scene load_steps=14 format=4 uid="uid://bhi4e8ckchwjf"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_54he0"]
 [ext_resource type="TileSet" uid="uid://nanvlob5un3n" path="res://assets/graphics/tilesets/tileset.tres" id="2_wqrj8"]
@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cfjgl27uyhycb" path="res://scenes/utilities/camera_bounds.tscn" id="13_s0g78"]
 [ext_resource type="PackedScene" uid="uid://bqb28c3c0c76j" path="res://scenes/player/player.tscn" id="14_nkoa2"]
 
-[node name="Level 5" instance=ExtResource("1_54he0")]
+[node name="Level8" instance=ExtResource("1_54he0")]
 
 [node name="ColorRect" type="ColorRect" parent="." index="0"]
 offset_left = -132.0
