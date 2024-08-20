@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ksscipjj6y65" path="res://scenes/decorations/window.tscn" id="5_6htpq"]
 [ext_resource type="PackedScene" uid="uid://y08qj51uuc8j" path="res://scenes/objects/trapdoor.tscn" id="5_ov4of"]
 [ext_resource type="PackedScene" uid="uid://dwr3vj83ale81" path="res://scenes/objects/boulder.tscn" id="6_0virm"]
-[ext_resource type="PackedScene" uid="uid://dgtuht2c82fww" path="res://scenes/objects/platform.tscn" id="7_0k7fq"]
+[ext_resource type="PackedScene" uid="uid://dfrnp5hncwka" path="res://scenes/objects/platform.tscn" id="7_0k7fq"]
 [ext_resource type="PackedScene" uid="uid://8ugc5pmxilxp" path="res://scenes/objects/button.tscn" id="8_5s6nt"]
 [ext_resource type="PackedScene" uid="uid://cfjgl27uyhycb" path="res://scenes/utilities/camera_bounds.tscn" id="9_hbrm2"]
 [ext_resource type="PackedScene" uid="uid://cellt2ya3waj0" path="res://scenes/objects/locked_door.tscn" id="9_yijcl"]
