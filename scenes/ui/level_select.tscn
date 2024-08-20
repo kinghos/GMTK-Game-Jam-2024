@@ -83,7 +83,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 5
 theme_override_constants/v_separation = 5
-columns = 5
+columns = 4
 
 [node name="Level1" type="Button" parent="GridContainer"]
 layout_mode = 2
@@ -156,24 +156,6 @@ theme_override_font_sizes/font_size = 30
 disabled = true
 text = "8"
 
-[node name="Level9" type="Button" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_fonts/font = SubResource("SystemFont_awfm6")
-theme_override_font_sizes/font_size = 30
-disabled = true
-text = "9"
-
-[node name="Level10" type="Button" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_fonts/font = SubResource("SystemFont_awfm6")
-theme_override_font_sizes/font_size = 30
-disabled = true
-text = "10"
-
 [node name="Back" type="Button" parent="GridContainer"]
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_bhbqq")
@@ -188,6 +170,4 @@ text = "BACK"
 [connection signal="pressed" from="GridContainer/Level6" to="." method="_on_level_6_pressed"]
 [connection signal="pressed" from="GridContainer/Level7" to="." method="_on_level_7_pressed"]
 [connection signal="pressed" from="GridContainer/Level8" to="." method="_on_level_8_pressed"]
-[connection signal="pressed" from="GridContainer/Level9" to="." method="_on_level_9_pressed"]
-[connection signal="pressed" from="GridContainer/Level10" to="." method="_on_level_10_pressed"]
 [connection signal="pressed" from="GridContainer/Back" to="." method="_on_back_pressed"]
