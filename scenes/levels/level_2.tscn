@@ -229,11 +229,11 @@ Into the castle"
 
 [node name="Label3" type="Label" parent="Labels" index="2"]
 layout_mode = 0
-offset_left = 889.0
+offset_left = 825.0
 offset_top = 603.0
-offset_right = 1508.0
+offset_right = 1234.0
 offset_bottom = 646.0
-text = "I smell a button below?"
+text = "Button below!"
 autowrap_mode = 2
 
 [node name="Lights" type="Node" parent="." index="12"]
