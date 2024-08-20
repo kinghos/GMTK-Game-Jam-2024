@@ -99,7 +99,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/font = SubResource("SystemFont_awfm6")
 theme_override_font_sizes/font_size = 30
-disabled = true
 text = "2"
 
 [node name="Level3" type="Button" parent="GridContainer"]
@@ -108,7 +107,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/font = SubResource("SystemFont_awfm6")
 theme_override_font_sizes/font_size = 30
-disabled = true
 text = "3"
 
 [node name="Level4" type="Button" parent="GridContainer"]
@@ -117,7 +115,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/font = SubResource("SystemFont_awfm6")
 theme_override_font_sizes/font_size = 30
-disabled = true
 text = "4"
 
 [node name="Level5" type="Button" parent="GridContainer"]
@@ -126,7 +123,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/font = SubResource("SystemFont_awfm6")
 theme_override_font_sizes/font_size = 30
-disabled = true
 text = "5"
 
 [node name="Level6" type="Button" parent="GridContainer"]
@@ -135,7 +131,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/font = SubResource("SystemFont_awfm6")
 theme_override_font_sizes/font_size = 30
-disabled = true
 text = "6"
 
 [node name="Level7" type="Button" parent="GridContainer"]
@@ -144,7 +139,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/font = SubResource("SystemFont_awfm6")
 theme_override_font_sizes/font_size = 30
-disabled = true
 text = "7"
 
 [node name="Level8" type="Button" parent="GridContainer"]
@@ -153,7 +147,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/font = SubResource("SystemFont_awfm6")
 theme_override_font_sizes/font_size = 30
-disabled = true
 text = "8"
 
 [node name="BackArrow" type="TextureButton" parent="."]
