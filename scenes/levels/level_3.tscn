@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cellt2ya3waj0" path="res://scenes/objects/locked_door.tscn" id="9_yijcl"]
 [ext_resource type="TileSet" uid="uid://nanvlob5un3n" path="res://assets/graphics/tilesets/tileset.tres" id="11_bgpte"]
 [ext_resource type="TileSet" uid="uid://dn64p7d7jg05p" path="res://assets/graphics/tilesets/spikes.tres" id="12_wsccu"]
-[ext_resource type="Texture2D" path="res://assets/graphics/misc/portal.png" id="13_33rxn"]
+[ext_resource type="Texture2D" uid="uid://b1xanlb78wt7y" path="res://assets/graphics/misc/level_warp.png" id="13_33rxn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ve6mn"]
 size = Vector2(29, 364)
