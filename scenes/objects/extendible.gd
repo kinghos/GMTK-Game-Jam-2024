@@ -30,21 +30,12 @@ func _ready() -> void:
 		update_initial_scale(initial_scale)
 		update_expanded_scale(expanded_scale)
 
-#func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	#if event is InputEventMouseButton and event.is_pressed() and not expanded:
-		#if initial_scale < expanded_scale and event.button_index == MOUSE_BUTTON_LEFT:
-			#resize()
-		#if initial_scale > expanded_scale and event.button_index == MOUSE_BUTTON_RIGHT:
-			#resize(true)
-
-func _process(delta: float) -> void:
-	if not expanded:
-		if Input.is_action_pressed("Primary") and initial_scale < expanded_scale:
+func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.is_pressed() and not expanded:
+		if initial_scale < expanded_scale and event.button_index == MOUSE_BUTTON_LEFT:
 			resize()
-		if Input.is_action_pressed("Secondary") and initial_scale > expanded_scale:
+		if initial_scale > expanded_scale and event.button_index == MOUSE_BUTTON_RIGHT:
 			resize(true)
-		
-
 
 func resize(remove_collision: bool = false):
 	var resize_tween = get_tree().create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
