@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bwornrfyehb5y"]
 
 [ext_resource type="Script" path="res://scenes/objects/base_resizable.gd" id="1_u6frm"]
-[ext_resource type="Material" uid="uid://bhrpt2g8vv43i" path="res://scenes/objects/shader_material.tres" id="2_d2p2f"]
+[ext_resource type="Material" path="res://scenes/objects/shader_material.tres" id="2_d2p2f"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jvgvc"]
 friction = 0.4
@@ -23,7 +23,6 @@ material = ExtResource("2_d2p2f")
 scale = Vector2(5, 5)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
-bus = &"Sound Effects"
 
 [connection signal="mouse_shape_entered" from="." to="." method="_on_mouse_enter"]
 [connection signal="mouse_shape_exited" from="." to="." method="_on_mouse_exit"]
