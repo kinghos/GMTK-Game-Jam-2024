@@ -7,11 +7,13 @@ var frames = [
 	preload("res://assets/graphics/cutscenes/opening_4.png"),
 	preload("res://assets/graphics/cutscenes/opening_5.png")
 ]
+const CUTSCENE = preload("res://assets/audio/Cutscene.mp3")
 var current_frame: int = 0
 var tween: Tween
 var transitioning: bool = false
 
 func _ready() -> void:
+	Music._play_music_level(CUTSCENE)
 	update_current_frame()
 
 func update_current_frame():

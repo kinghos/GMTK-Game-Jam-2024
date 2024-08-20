@@ -4,9 +4,11 @@ class_name BaseLevel
 var death: PackedScene = preload("res://scenes/utilities/death.tscn")
 var paused: bool = false
 @onready var camera_2d: Camera2D = $Camera2D
+const MANSION = preload("res://assets/audio/Mansion.mp3")
 
 func _ready() -> void:
 	Globals.unlocked_levels.append($".".name)
+	Music._play_music_level(MANSION, -10)
 	for i in get_tree().get_nodes_in_group("Entities"):
 		i.connect("kill", kill_entity)
 	$TransitionLayer/AnimationPlayer.play("fade_in")

@@ -44,7 +44,7 @@ font_names = PackedStringArray("Franklin Gothic")
 [sub_resource type="SystemFont" id="SystemFont_bhbqq"]
 font_names = PackedStringArray("Franklin Gothic")
 
-[node name="LevelSelect" type="Control"]
+[node name="LevelSelect" type="Control" groups=["RootNodes"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
