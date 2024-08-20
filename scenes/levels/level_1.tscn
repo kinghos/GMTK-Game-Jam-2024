@@ -101,11 +101,11 @@ position = Vector2(1529, 977)
 texture = ExtResource("8_334mq")
 
 [node name="CameraBound" parent="CameraBounds" index="0" instance=ExtResource("8_l471g")]
-position = Vector2(1052, 764)
-size = Vector2(2000, 1080)
+position = Vector2(997, 764)
+size = Vector2(1920, 1080)
 
 [node name="CameraBound2" parent="CameraBounds" index="1" instance=ExtResource("8_l471g")]
-position = Vector2(2593, 687)
+position = Vector2(2538, 691)
 size = Vector2(1200, 800)
 
 [node name="CameraBound3" parent="CameraBounds" index="2" instance=ExtResource("8_l471g")]
