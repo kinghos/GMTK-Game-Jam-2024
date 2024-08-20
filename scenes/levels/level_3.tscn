@@ -133,6 +133,7 @@ priority = 3
 
 [node name="NextLevel" parent="." index="8"]
 position = Vector2(3354, 548)
+next_level_path = "res://scenes/levels/level_4.tscn"
 
 [node name="Tilemaps" type="Node2D" parent="." index="10"]
 
