@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=4 uid="uid://6a2um2dipot4"]
+[gd_scene load_steps=14 format=4 uid="uid://cldaq8vyid1br"]
 
 [ext_resource type="PackedScene" uid="uid://5w74eu3bsjko" path="res://scenes/levels/base_level.tscn" id="1_bchmx"]
 [ext_resource type="Texture2D" uid="uid://cwb2iqs54y2w6" path="res://assets/graphics/backgrounds/BG2.png" id="2_loo40"]
-[ext_resource type="PackedScene" uid="uid://dgtuht2c82fww" path="res://scenes/objects/platform.tscn" id="3_73xue"]
+[ext_resource type="PackedScene" uid="uid://dfrnp5hncwka" path="res://scenes/objects/platform.tscn" id="3_73xue"]
 [ext_resource type="PackedScene" uid="uid://y08qj51uuc8j" path="res://scenes/objects/trapdoor.tscn" id="4_4f8m0"]
 [ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="5_t37vu"]
 [ext_resource type="PackedScene" uid="uid://fp07fue2vml1" path="res://scenes/objects/pressure_plate.tscn" id="6_vkwvp"]
@@ -127,6 +127,3 @@ tile_set = ExtResource("11_8pagl")
 
 [node name="Player" parent="." index="9" instance=ExtResource("9_g233q")]
 position = Vector2(778, 251)
-
-[node name="TransitionLayer" parent="." index="12"]
-visible = false
