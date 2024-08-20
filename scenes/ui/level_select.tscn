@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://ccbhtu6e61a5y"]
 
 [ext_resource type="Script" path="res://scenes/ui/level_select.gd" id="1_d41ka"]
-[ext_resource type="Texture2D" uid="uid://cf6qqo3nxar2k" path="res://assets/graphics/backgrounds/temp_menu_background.png" id="2_tdjt6"]
+[ext_resource type="Texture2D" uid="uid://cylwfxrx2sga2" path="res://assets/graphics/backgrounds/title_screen.png" id="2_a4ld0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybjn8"]
 bg_color = Color(0, 0, 0, 1)
@@ -54,7 +54,7 @@ grow_vertical = 2
 theme = SubResource("Theme_loue4")
 script = ExtResource("1_d41ka")
 
-[node name="ColorBackground" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -66,7 +66,7 @@ offset_top = -108.0
 offset_right = 960.0
 offset_bottom = 972.0
 grow_horizontal = 2
-texture = ExtResource("2_tdjt6")
+texture = ExtResource("2_a4ld0")
 
 [node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
@@ -75,10 +75,10 @@ anchor_left = 0.3
 anchor_top = 0.3
 anchor_right = 0.7
 anchor_bottom = 0.6
-offset_left = -73.0
-offset_top = -45.0
-offset_right = 73.0
-offset_bottom = 45.0
+offset_left = -416.0
+offset_top = 300.0
+offset_right = -270.0
+offset_bottom = 390.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/h_separation = 5

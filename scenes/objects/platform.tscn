@@ -1,8 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfrnp5hncwka"]
+[gd_scene load_steps=6 format=3 uid="uid://dfrnp5hncwka"]
 
 [ext_resource type="Script" path="res://scenes/objects/extendible.gd" id="1_5ampk"]
-[ext_resource type="Material" path="res://scenes/objects/shader_material.tres" id="2_740p2"]
 [ext_resource type="Texture2D" uid="uid://chpnwqa163woh" path="res://assets/graphics/objects/platform.png" id="2_j1f05"]
+[ext_resource type="Shader" path="res://scenes/objects/resizable.gdshader" id="2_pewlg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_evvr1"]
+resource_local_to_scene = true
+shader = ExtResource("2_pewlg")
+shader_parameter/line_color = Color(0.415686, 0.745098, 0.188235, 1)
+shader_parameter/width = 1.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ynbds"]
 size = Vector2(96, 8)
@@ -14,7 +20,7 @@ input_pickable = true
 script = ExtResource("1_5ampk")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-material = ExtResource("2_740p2")
+material = SubResource("ShaderMaterial_evvr1")
 position = Vector2(0, 12)
 texture = ExtResource("2_j1f05")
 

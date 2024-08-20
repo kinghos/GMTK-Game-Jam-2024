@@ -11,7 +11,6 @@ extends Node
 		update_expanded_scale(value)
 @export var tween_duration: float = 1
 
-var hovering: bool = false
 var expanded: bool = false
 
 func update_initial_scale(new_scale):
@@ -47,9 +46,8 @@ func resize(remove_collision: bool = false):
 
 func _on_mouse_entered() -> void:
 	if not expanded:
-		$Sprite2D.material.set_shader_parameter("width", 0.5)
-		hovering = true
+		$Sprite2D.material.set_shader_parameter("width", 2)
 
 func _on_mouse_exited() -> void:
-	$Sprite2D.material.set_shader_parameter("width", 0)
-	hovering = false
+	if not expanded:
+		$Sprite2D.material.set_shader_parameter("width", 1)
