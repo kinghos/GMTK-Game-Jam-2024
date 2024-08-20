@@ -164,3 +164,4 @@ angle_max = 720.0
 scale_amount_min = 0.7
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+bus = &"Sound Effects"
