@@ -76,7 +76,7 @@ position = Vector2(144, 739)
 position = Vector2(144, 803)
 
 [node name="Crate3" parent="Objects" index="11" instance=ExtResource("10_5born")]
-position = Vector2(80, 847)
+position = Vector2(128, 847)
 
 [node name="Trapdoor5" parent="Objects" index="12" instance=ExtResource("6_0rhry")]
 position = Vector2(2800, 573)
@@ -90,9 +90,6 @@ expanded_scale = 4.0
 
 [node name="Turret" parent="Enemies" index="0" instance=ExtResource("11_jevg8")]
 position = Vector2(975, 512)
-
-[node name="Turret2" parent="Enemies" index="1" instance=ExtResource("11_jevg8")]
-position = Vector2(1520, 512)
 
 [node name="Window" parent="Decorations" index="0" instance=ExtResource("12_fgm7j")]
 position = Vector2(1235, 428)
