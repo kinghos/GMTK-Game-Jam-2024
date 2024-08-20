@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bqf5igwj6eaec" path="res://assets/graphics/misc/menu_arrow_hovering.png" id="8_f418f"]
 [ext_resource type="Texture2D" uid="uid://dhnrehrn5o57n" path="res://assets/graphics/misc/play_button_hovering.png" id="8_no587"]
 
-[node name="OpeningCutscene" type="CanvasLayer"]
+[node name="OpeningCutscene" type="CanvasLayer" groups=["RootNodes"]]
 script = ExtResource("1_w77wd")
 
 [node name="Frame" type="TextureRect" parent="."]

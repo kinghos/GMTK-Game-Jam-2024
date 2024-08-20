@@ -77,7 +77,7 @@ Button/styles/hover = SubResource("StyleBoxFlat_cybkc")
 Button/styles/normal = SubResource("StyleBoxFlat_rtsid")
 Button/styles/pressed = SubResource("StyleBoxFlat_dy071")
 
-[node name="TitleScreen" type="Control"]
+[node name="TitleScreen" type="Control" groups=["RootNodes"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

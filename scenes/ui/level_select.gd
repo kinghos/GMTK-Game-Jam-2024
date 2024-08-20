@@ -1,6 +1,9 @@
 extends Control
 
+const MAIN_MENU = preload("res://assets/audio/Main Menu.mp3")
+
 func _ready() -> void:
+	Music._play_music_level(MAIN_MENU)
 	var container = $GridContainer
 	for level in Globals.unlocked_levels:
 		for child in container.get_children():

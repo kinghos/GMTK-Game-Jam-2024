@@ -6,7 +6,7 @@
 [ext_resource type="TileSet" uid="uid://dcgci8cyt1jnq" path="res://assets/graphics/tilesets/level1.tres" id="3_sfhsj"]
 [ext_resource type="TileSet" uid="uid://dn64p7d7jg05p" path="res://assets/graphics/tilesets/spikes.tres" id="4_25ov4"]
 [ext_resource type="PackedScene" uid="uid://beswcdd2gg8gg" path="res://scenes/objects/crate.tscn" id="4_r7reg"]
-[ext_resource type="PackedScene" uid="uid://dgtuht2c82fww" path="res://scenes/objects/platform.tscn" id="5_dlxn6"]
+[ext_resource type="PackedScene" uid="uid://dfrnp5hncwka" path="res://scenes/objects/platform.tscn" id="5_dlxn6"]
 [ext_resource type="PackedScene" uid="uid://dwr3vj83ale81" path="res://scenes/objects/boulder.tscn" id="6_vrebs"]
 [ext_resource type="PackedScene" uid="uid://c2rf2bqmkt8dr" path="res://scenes/enemies/turret.tscn" id="7_5i8s7"]
 [ext_resource type="Texture2D" uid="uid://dmnqrqc7h66qx" path="res://assets/graphics/decorations/grass.png" id="8_334mq"]
@@ -101,11 +101,11 @@ position = Vector2(1529, 977)
 texture = ExtResource("8_334mq")
 
 [node name="CameraBound" parent="CameraBounds" index="0" instance=ExtResource("8_l471g")]
-position = Vector2(1052, 764)
-size = Vector2(2000, 1080)
+position = Vector2(997, 764)
+size = Vector2(1920, 1080)
 
 [node name="CameraBound2" parent="CameraBounds" index="1" instance=ExtResource("8_l471g")]
-position = Vector2(2593, 687)
+position = Vector2(2538, 691)
 size = Vector2(1200, 800)
 
 [node name="CameraBound3" parent="CameraBounds" index="2" instance=ExtResource("8_l471g")]
@@ -125,6 +125,3 @@ position = Vector2(378, 902)
 position = Vector2(502, 182)
 energy = 0.1
 blend_mode = 1
-
-[node name="TransitionLayer" parent="." index="12"]
-visible = false
