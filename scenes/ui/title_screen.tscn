@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://b6ov1c07brllg"]
+[gd_scene load_steps=13 format=3 uid="uid://b6ov1c07brllg"]
 
 [ext_resource type="Script" path="res://scenes/ui/title_screen.gd" id="1_v1y6f"]
 [ext_resource type="Texture2D" uid="uid://cylwfxrx2sga2" path="res://assets/graphics/backgrounds/title_screen.png" id="2_islxs"]
 [ext_resource type="Texture2D" uid="uid://b3eq0u32uu8lu" path="res://assets/graphics/misc/transparent_menu_thing.png" id="3_0rx5v"]
+[ext_resource type="FontFile" uid="uid://b4ac3jt34k6a" path="res://assets/fonts/Daydream.ttf" id="4_qd7r5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybjn8"]
 bg_color = Color(0, 0, 0, 1)
@@ -33,6 +34,7 @@ border_width_bottom = 5
 shadow_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Theme" id="Theme_1tync"]
+default_font = ExtResource("4_qd7r5")
 default_font_size = 30
 Button/colors/font_pressed_color = Color(0, 0, 0, 1)
 Button/styles/hover = SubResource("StyleBoxFlat_ybjn8")
@@ -124,11 +126,13 @@ alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_j1u01")
+theme_override_font_sizes/font_size = 40
 text = "PLAY"
 
 [node name="LevelButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 25
 text = "LEVEL SELECT"
 
 [node name="OptionsButton" type="Button" parent="VBoxContainer"]
