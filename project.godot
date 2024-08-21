@@ -14,6 +14,7 @@ config/name="GMTK Game Jam 2024"
 run/main_scene="res://scenes/ui/title_screen.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 run/max_fps=60
+config/windows_native_icon="res://assets/graphics/misc/random_wizliz_img.ico"
 
 [autoload]
 
